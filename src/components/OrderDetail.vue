@@ -9,14 +9,14 @@
         {{stime}}
       </div>
       <div class="seats">
-        <span v-for="item in chosen">
+        <!-- <span v-for="item in chosen">
           {{item.row}}排{{item.column}}座
-        </span>
+        </span> -->
       </div>
     </div>
     <div class="price">
       <div>
-      <span>实付金额</span> <span>{{prize}}元</span>        
+      <span>实付金额</span> <span>{{price}}元</span>        
       </div>
       <div>
         <span>订单号</span><span>{{order}}</span>
@@ -41,6 +41,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'orderDetail',
   data () {
@@ -54,6 +55,7 @@ export default {
       btime:'03-15 09:25-11:04'
     }
   },
+  props:[],
   mounted() {
   },
   computed:{

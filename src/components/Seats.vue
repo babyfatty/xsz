@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import x from 'bootstrap'
 export default {
   name: 'Seats',
   data () {
