@@ -1,17 +1,17 @@
 webpackJsonp([3,8],{
 
-/***/ 16:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(46)
+__webpack_require__(35)
 
-var Component = __webpack_require__(3)(
+var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(22),
+  __webpack_require__(24),
   /* template */
-  __webpack_require__(52),
+  __webpack_require__(41),
   /* scopeId */
   "data-v-46075134",
   /* cssModules */
@@ -23,11 +23,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 22:
+/***/ 24:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -64,18 +66,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   name: 'Login',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      name: '',
+      school: '',
+      grade: '',
+      phone: '',
+      varyCode: ''
     };
   },
-  mounted() {}
+  mounted() {},
+  methods: {
+    submit() {
+      this.$http.post('http://localhost:3000/api/addUser', {
+        name: this.name,
+        grade: this.grade,
+        school: this.school,
+        phone: this.phone
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    vary() {
+      this.$http.get('http://localhost:3000/api/varyCode', {
+        params: {
+          code: this.varyCode
+        }
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://localhost:3000/api/sendSMS').then(res => {
+        console.log(res);
+      });
+    }
+  }
 };
 
 /***/ }),
 
-/***/ 40:
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)();
+exports = module.exports = __webpack_require__(14)();
 // imports
 
 
@@ -87,17 +119,17 @@ exports.push([module.i, "\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-we
 
 /***/ }),
 
-/***/ 46:
+/***/ 35:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(40);
+var content = __webpack_require__(29);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(13)("05478f3f", content, true);
+var update = __webpack_require__(15)("05478f3f", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -114,12 +146,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 52:
+/***/ 41:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
   }, [_c('h2', [_vm._v("注册")]), _vm._v(" "), _c('form', [_c('div', {
@@ -129,11 +159,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": ""
     }
   }, [_vm._v("姓名")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.name),
+      expression: "name"
+    }],
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
       "id": "",
       "placeholder": "姓名"
+    },
+    domProps: {
+      "value": (_vm.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.name = $event.target.value
+      }
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
@@ -142,11 +187,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": ""
     }
   }, [_vm._v("年级")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.grade),
+      expression: "grade"
+    }],
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
       "id": "",
       "placeholder": "年级"
+    },
+    domProps: {
+      "value": (_vm.grade)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.grade = $event.target.value
+      }
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
@@ -155,11 +215,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": ""
     }
   }, [_vm._v("学校")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.school),
+      expression: "school"
+    }],
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
       "id": "",
       "placeholder": "学校"
+    },
+    domProps: {
+      "value": (_vm.school)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.school = $event.target.value
+      }
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
@@ -168,11 +243,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": ""
     }
   }, [_vm._v("手机号")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.phone),
+      expression: "phone"
+    }],
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
       "id": "",
       "placeholder": "手机号"
+    },
+    domProps: {
+      "value": (_vm.phone)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.phone = $event.target.value
+      }
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
@@ -181,21 +271,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "for": ""
     }
   }, [_vm._v("验证码")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.varyCode),
+      expression: "varyCode"
+    }],
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
       "id": "",
       "placeholder": "验证码"
+    },
+    domProps: {
+      "value": (_vm.varyCode)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.varyCode = $event.target.value
+      }
     }
-  })]), _vm._v(" "), _c('button', {
+  }), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
     attrs: {
       "type": "button"
+    },
+    on: {
+      "click": _vm.vary
+    }
+  }, [_vm._v("提交")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.sendSms
+    }
+  }, [_vm._v("发送")])]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.submit
     }
   }, [_vm._v("提交")])])])
-}]}
+},staticRenderFns: []}
 
 /***/ })
 
 });
-//# sourceMappingURL=3.34332f3572f65e4c3390.js.map
+//# sourceMappingURL=3.f27d1ed0f7e41e02b35e.js.map

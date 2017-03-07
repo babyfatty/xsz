@@ -4,25 +4,27 @@
     <form>
       <div class="form-group">
       <label for="">姓名</label>
-      <input type="numbder" class="form-control" id="" placeholder="姓名">
+      <input type="numbder" class="form-control" id="" v-model="name" placeholder="姓名">
       </div>
       <div class="form-group">
         <label for="">年级</label>
-        <input type="numbder" class="form-control" id="" placeholder="年级">
+        <input type="numbder" class="form-control" id="" v-model="grade" placeholder="年级">
       </div>
       <div class="form-group">
         <label for="">学校</label>
-        <input type="numbder" class="form-control" id="" placeholder="学校">
+        <input type="numbder" class="form-control" id="" v-model="school" placeholder="学校">
       </div>
       <div class="form-group">
         <label for="">手机号</label>
-        <input type="numbder" class="form-control" id="" placeholder="手机号">
+        <input type="numbder" class="form-control" id="" v-model="phone" placeholder="手机号">
       </div>
       <div class="form-group">
         <label for="">验证码</label>
-        <input type="numbder" class="form-control" id="" placeholder="验证码">
+        <input type="numbder" class="form-control" id="" v-model="varyCode" placeholder="验证码">
+        <button type="button" class="btn btn-primary" v-on:click="vary">提交</button>
+        <button type="button" class="btn btn-primary" v-on:click="sendSms">发送</button>
       </div>
-      <button type="button" class="btn btn-primary">提交</button>
+      <button type="button" class="btn btn-primary" v-on:click="submit">提交</button>
     </form>
     
 
@@ -34,10 +36,40 @@ export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      name: '',
+      school:'',
+      grade:'',
+      phone:'',
+      varyCode:''
     }
   },
   mounted() {
+  },
+  methods: {
+    submit(){
+      this.$http.post('http://localhost:3000/api/addUser',{
+        name:this.name,
+        grade:this.grade,
+        school:this.school,
+        phone:this.phone
+      }).then((res)=>{
+        console.log(res)
+      })
+    },
+    vary(){
+      this.$http.get('http://localhost:3000/api/varyCode',{
+        params:{
+          code:this.varyCode
+        }
+      }).then((res)=>{
+        console.log(res)
+      })
+    },
+    sendSms(){
+      this.$http.get('http://localhost:3000/api/sendSMS').then((res)=>{
+        console.log(res)
+      })
+    }
   }
 }
 </script>
