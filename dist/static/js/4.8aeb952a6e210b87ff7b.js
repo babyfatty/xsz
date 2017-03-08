@@ -1,4 +1,4 @@
-webpackJsonp([3,8],{
+webpackJsonp([4,8],{
 
 /***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
@@ -11,7 +11,7 @@ var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(24),
   /* template */
-  __webpack_require__(41),
+  __webpack_require__(44),
   /* scopeId */
   "data-v-46075134",
   /* cssModules */
@@ -112,7 +112,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n", "", {"version":3,"sources":["/./src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,oBAAoB;CACrB;AACD;EACE,sBAAsB;EACtB,WAAW;CACZ;AACD;EACE,sBAAsB;EACtB,eAAe;CAChB;AACD;EACE,eAAe;CAChB","file":"Register.vue","sourcesContent":["\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,oBAAoB;CACrB;AACD;EACE,sBAAsB;EACtB,WAAW;CACZ;AACD;EACE,sBAAsB;EACtB,eAAe;CAChB;AACD;EACE,eAAe;CAChB","file":"Register.vue","sourcesContent":["\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -146,7 +146,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 41:
+/***/ 44:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -322,4 +322,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=3.f27d1ed0f7e41e02b35e.js.map
+//# sourceMappingURL=4.8aeb952a6e210b87ff7b.js.map

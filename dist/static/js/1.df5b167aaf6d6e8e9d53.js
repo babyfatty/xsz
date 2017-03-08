@@ -1,19 +1,19 @@
 webpackJsonp([1,8],{
 
-/***/ 20:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(38)
+__webpack_require__(34)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(26),
+  __webpack_require__(27),
   /* template */
-  __webpack_require__(44),
+  __webpack_require__(43),
   /* scopeId */
-  "data-v-7cf2bb89",
+  "data-v-15830e28",
   /* cssModules */
   null
 )
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 26:
+/***/ 27:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65,28 +65,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = {
-  name: 'checkOrder',
+  name: 'orderDetail',
   data() {
     return {
       sname: '小高考公益讲座',
       slocation: '南京市中山会议中心中山厅',
       phone: '13222001020',
-      stime: '03-15 09:25-11:04'
+      stime: '03-15 09:25-11:04',
+      price: '123',
+      order: '123412412',
+      btime: '03-15 09:25-11:04'
     };
   },
+  props: [],
   mounted() {},
-  computed: {
-    chosen() {
-      return JSON.parse(this.$route.query.chosen);
-    }
-  }
+  computed: {}
 };
 
 /***/ }),
 
-/***/ 32:
+/***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -94,30 +100,30 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":"webpack://"}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"orderDetail.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 38:
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(32);
+var content = __webpack_require__(28);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(15)("caf6fde2", content, true);
+var update = __webpack_require__(15)("6d006f82", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7cf2bb89&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkOrder.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7cf2bb89&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkOrder.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-15830e28&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./orderDetail.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-15830e28&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./orderDetail.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -128,7 +134,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 44:
+/***/ 43:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -142,31 +148,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "time"
   }, [_vm._v("\n      " + _vm._s(_vm.stime) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "seats"
-  }, _vm._l((_vm.chosen), function(item) {
-    return _c('span', [_vm._v("\n        " + _vm._s(item.row) + "排" + _vm._s(item.column) + "座\n      ")])
-  })), _vm._v(" "), _c('div', [_vm._v("\n      " + _vm._s(_vm.phone) + "\n    ")])]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), _c('div', {
     staticClass: "price"
-  }, [_vm._v("\n    预约费用总计：4元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])
+  }, [_c('div', [_c('span', [_vm._v("实付金额")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.price) + "元")])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("订单号")]), _c('span', [_vm._v(_vm._s(_vm.order))])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("购买时间")]), _c('span', [_vm._v(_vm._s(_vm.btime))])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("手机号")]), _c('span', [_vm._v(_vm._s(_vm.phone))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "statement"
-  }, [_c('h5', [_vm._v("购票须知")]), _vm._v(" "), _c('div', [_vm._v("1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金")]), _vm._v(" "), _c('div', [_vm._v("2,本场讲座设计大量人力物力，预约成功不可退款")])])
+  }, [_c('h5', [_vm._v("取票须知")]), _vm._v(" "), _c('div', [_vm._v("1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金")]), _vm._v(" "), _c('div', [_vm._v("2,本场讲座设计大量人力物力，预约成功不可退款")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "priceInfo"
-  }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付4元")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "payBtn"
-  }, [_c('button', {
-    staticClass: "btn btn-danger",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("立即付款")])])
+    staticClass: "kfInfo"
+  }, [_c('span', [_vm._v("客服联系")]), _vm._v(" "), _c('span', [_vm._v("吴老师：12341231")])])
 }]}
 
 /***/ })
 
 });
-//# sourceMappingURL=1.8c3a40c11781f8e4ffda.js.map
+//# sourceMappingURL=1.df5b167aaf6d6e8e9d53.js.map

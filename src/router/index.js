@@ -43,6 +43,11 @@ export default new Router({
       path: '/orderdetail/',
       name: 'orderdetail',
       component: orderDetail
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: Payment
     }
   ]
 })
