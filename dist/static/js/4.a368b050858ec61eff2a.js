@@ -1,110 +1,6 @@
 webpackJsonp([4,8],{
 
-/***/ 18:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(35)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(24),
-  /* template */
-  __webpack_require__(44),
-  /* scopeId */
-  "data-v-46075134",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 24:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      name: '',
-      school: '',
-      grade: '',
-      phone: '',
-      varyCode: ''
-    };
-  },
-  mounted() {},
-  methods: {
-    submit() {
-      this.$http.post('http://localhost:3000/api/addUser', {
-        name: this.name,
-        grade: this.grade,
-        school: this.school,
-        phone: this.phone
-      }).then(res => {
-        console.log(res);
-      });
-    },
-    vary() {
-      this.$http.get('http://localhost:3000/api/varyCode', {
-        params: {
-          code: this.varyCode
-        }
-      }).then(res => {
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.$http.get('http://localhost:3000/api/sendSMS').then(res => {
-        console.log(res);
-      });
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 29:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -119,13 +15,13 @@ exports.push([module.i, "\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-we
 
 /***/ }),
 
-/***/ 35:
+/***/ 137:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(29);
+var content = __webpack_require__(109);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -146,7 +42,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 44:
+/***/ 174:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -319,7 +215,111 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("提交")])])])
 },staticRenderFns: []}
 
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(137)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(91),
+  /* template */
+  __webpack_require__(174),
+  /* scopeId */
+  "data-v-46075134",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 91:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      name: '',
+      school: '',
+      grade: '',
+      phone: '',
+      varyCode: ''
+    };
+  },
+  mounted() {},
+  methods: {
+    submit() {
+      this.$http.post('http://localhost:3000/api/addUser', {
+        name: this.name,
+        grade: this.grade,
+        school: this.school,
+        phone: this.phone
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    vary() {
+      this.$http.get('http://localhost:3000/api/varyCode', {
+        params: {
+          code: this.varyCode
+        }
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://localhost:3000/api/sendSMS').then(res => {
+        console.log(res);
+      });
+    }
+  }
+};
+
 /***/ })
 
 });
-//# sourceMappingURL=4.8aeb952a6e210b87ff7b.js.map
+//# sourceMappingURL=4.a368b050858ec61eff2a.js.map
