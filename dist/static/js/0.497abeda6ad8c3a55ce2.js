@@ -1,35 +1,18 @@
-webpackJsonp([0,8],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
+webpackJsonp([0,8],Array(20).concat([
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(139)
+__webpack_require__(177)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(90),
+  __webpack_require__(163),
   /* template */
-  __webpack_require__(177),
+  __webpack_require__(183),
   /* scopeId */
-  "data-v-505a5eda",
+  "data-v-7cf2bb89",
   /* cssModules */
   null
 )
@@ -38,9 +21,6 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 18 */,
-/* 19 */,
-/* 20 */,
 /* 21 */,
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -56,8 +36,8 @@ module.exports = Component.exports
 
 
 
-var base64 = __webpack_require__(95)
-var ieee754 = __webpack_require__(150)
+var base64 = __webpack_require__(89)
+var ieee754 = __webpack_require__(130)
 var isArray = __webpack_require__(70)
 
 exports.Buffer = Buffer
@@ -5299,7 +5279,7 @@ if (typeof Object.create === 'function') {
   };
 })(typeof module === 'undefined' || module, this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(182)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(156)(module)))
 
 /***/ }),
 /* 25 */
@@ -5310,15 +5290,15 @@ if (typeof Object.create === 'function') {
 
 var elliptic = exports;
 
-elliptic.version = __webpack_require__(136).version;
-elliptic.utils = __webpack_require__(135);
+elliptic.version = __webpack_require__(123).version;
+elliptic.utils = __webpack_require__(122);
 elliptic.rand = __webpack_require__(56);
 elliptic.curve = __webpack_require__(42);
-elliptic.curves = __webpack_require__(127);
+elliptic.curves = __webpack_require__(114);
 
 // Protocols
-elliptic.ec = __webpack_require__(128);
-elliptic.eddsa = __webpack_require__(131);
+elliptic.ec = __webpack_require__(115);
+elliptic.eddsa = __webpack_require__(118);
 
 
 /***/ }),
@@ -5327,11 +5307,11 @@ elliptic.eddsa = __webpack_require__(131);
 
 var hash = exports;
 
-hash.utils = __webpack_require__(148);
-hash.common = __webpack_require__(144);
-hash.sha = __webpack_require__(147);
-hash.ripemd = __webpack_require__(146);
-hash.hmac = __webpack_require__(145);
+hash.utils = __webpack_require__(128);
+hash.common = __webpack_require__(124);
+hash.sha = __webpack_require__(127);
+hash.ripemd = __webpack_require__(126);
+hash.hmac = __webpack_require__(125);
 
 // Proxy hash functions to the main object
 hash.sha1 = hash.sha.sha1;
@@ -5672,11 +5652,11 @@ var EE = __webpack_require__(69).EventEmitter;
 var inherits = __webpack_require__(23);
 
 inherits(Stream, EE);
-Stream.Readable = __webpack_require__(163);
-Stream.Writable = __webpack_require__(165);
-Stream.Duplex = __webpack_require__(161);
-Stream.Transform = __webpack_require__(164);
-Stream.PassThrough = __webpack_require__(162);
+Stream.Readable = __webpack_require__(143);
+Stream.Writable = __webpack_require__(145);
+Stream.Duplex = __webpack_require__(141);
+Stream.Transform = __webpack_require__(144);
+Stream.PassThrough = __webpack_require__(142);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -5879,8 +5859,8 @@ CipherBase.prototype._toString = function (value, enc, fin) {
 /* WEBPACK VAR INJECTION */(function(Buffer) {
 var inherits = __webpack_require__(23)
 var md5 = __webpack_require__(67)
-var rmd160 = __webpack_require__(166)
-var sha = __webpack_require__(169)
+var rmd160 = __webpack_require__(146)
+var sha = __webpack_require__(149)
 
 var Base = __webpack_require__(31)
 
@@ -6617,10 +6597,10 @@ exports.encrypt = function (self, chunk) {
 
 var curve = exports;
 
-curve.base = __webpack_require__(123);
-curve.short = __webpack_require__(126);
-curve.mont = __webpack_require__(125);
-curve.edwards = __webpack_require__(124);
+curve.base = __webpack_require__(110);
+curve.short = __webpack_require__(113);
+curve.mont = __webpack_require__(112);
+curve.edwards = __webpack_require__(111);
 
 
 /***/ }),
@@ -6702,9 +6682,9 @@ function EVP_BytesToKey (password, salt, keyLen, ivLen) {
 /* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(154)
-var aesid = __webpack_require__(153)
-var fixProc = __webpack_require__(155)
+/* WEBPACK VAR INJECTION */(function(Buffer) {var asn1 = __webpack_require__(134)
+var aesid = __webpack_require__(133)
+var fixProc = __webpack_require__(135)
 var ciphers = __webpack_require__(45)
 var compat = __webpack_require__(73)
 module.exports = parseKeys
@@ -6810,10 +6790,10 @@ function decrypt (data, password) {
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ciphers = __webpack_require__(97)
+var ciphers = __webpack_require__(91)
 exports.createCipher = exports.Cipher = ciphers.createCipher
 exports.createCipheriv = exports.Cipheriv = ciphers.createCipheriv
-var deciphers = __webpack_require__(96)
+var deciphers = __webpack_require__(90)
 exports.createDecipher = exports.Decipher = deciphers.createDecipher
 exports.createDecipheriv = exports.Decipheriv = deciphers.createDecipheriv
 var modes = __webpack_require__(40)
@@ -6953,11 +6933,11 @@ module.exports = function createHmac(alg, key) {
 "use strict";
 
 
-exports.utils = __webpack_require__(119);
-exports.Cipher = __webpack_require__(116);
-exports.DES = __webpack_require__(117);
-exports.CBC = __webpack_require__(115);
-exports.EDE = __webpack_require__(118);
+exports.utils = __webpack_require__(106);
+exports.Cipher = __webpack_require__(103);
+exports.DES = __webpack_require__(104);
+exports.CBC = __webpack_require__(102);
+exports.EDE = __webpack_require__(105);
 
 
 /***/ }),
@@ -8723,7 +8703,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(183);
+    var crypto = __webpack_require__(157);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -8742,7 +8722,7 @@ if (typeof self === 'object') {
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(39)
 var Transform = __webpack_require__(31)
 var inherits = __webpack_require__(23)
-var GHASH = __webpack_require__(98)
+var GHASH = __webpack_require__(92)
 var xor = __webpack_require__(35)
 inherits(StreamCipher, Transform)
 module.exports = StreamCipher
@@ -9144,7 +9124,7 @@ exports['1.3.132.0.35'] = 'p521'
  * See http://pajhome.org.uk/crypt/md5 for more info.
  */
 
-var helpers = __webpack_require__(106);
+var helpers = __webpack_require__(100);
 
 /*
  * Calculate the MD5 of an array of little-endian words, and a bit length
@@ -9908,7 +9888,7 @@ utils.encode = function encode(arr, enc) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, Buffer) {var createHmac = __webpack_require__(47)
-var checkParameters = __webpack_require__(156)
+var checkParameters = __webpack_require__(136)
 
 exports.pbkdf2 = function (password, salt, iterations, keylen, digest, callback) {
   if (typeof digest === 'function') {
@@ -10138,7 +10118,7 @@ var StringDecoder;
 
 
 /*<replacement>*/
-var debug = __webpack_require__(184);
+var debug = __webpack_require__(158);
 if (debug && debug.debuglog) {
   debug = debug.debuglog('stream');
 } else {
@@ -11470,7 +11450,7 @@ function Entity(name, body) {
 Entity.prototype._createNamed = function createNamed(base) {
   var named;
   try {
-    named = __webpack_require__(174).runInThisContext(
+    named = __webpack_require__(154).runInThisContext(
       '(function ' + this.name + '(entity) {\n' +
       '  this._initNamed(entity);\n' +
       '})'
@@ -12431,103 +12411,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 
 
 /***/ }),
-/* 89 */,
-/* 90 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_js_md5__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_js_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_js_md5__);
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'payment',
-  data() {
-    return {};
-  },
-  mounted() {
-    var self = this;
-    this.$http.get('/xsz/api/sign', {
-      params: {
-        url: location.href
-      }
-    }).then(res => {
-      var data = res.data;
-      console.log('data', data);
-      wx.config({
-        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-        appId: 'wx829b884172f246ea', // 必填，公众号的唯一标识
-        timestamp: data.timestamp, // 必填，生成签名的时间戳
-        nonceStr: data.nonceStr, // 必填，生成签名的随机串
-        signature: data.signature, // 必填，签名，见附录1
-        jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-      });
-      wx.ready(function () {
-        self.$http.get('/xsz/api/unifiedorder').then(res => {
-          console.log(res);
-          var nonceStr = __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(new Date().getTime()).substring(0, 32);
-          var time = Math.floor(new Date().getTime() / 1000);
-          var payload = {
-            appId: 'wx829b884172f246ea',
-            nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
-            signType: 'MD5',
-            timeStamp: time
-          };
-          let genSign = function () {
-            var stringA = "";
-            for (var i in payload) {
-              stringA += i + '=' + payload[i] + '&';
-            }
-            var stringSignTemp = stringA + "key=d41d8cd98f00b204e9800998ecf8427e";
-            console.log(stringSignTemp);
-            var sign = __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(stringSignTemp).toUpperCase();
-            return sign;
-          };
-          console.log(payload);
-          wx.chooseWXPay({
-            nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data,
-            signType: 'MD5',
-            timestamp: time,
-            paySign: genSign(),
-            success: function (res) {
-              alert(JSON.stringify(res));
-              console.log('success', res);
-            },
-            fail: function (res) {
-              alert(res);
-            },
-            cancel: function (res) {
-              alert(res);
-              self.$router.replace({ "name": "orderdetail" });
-            }
-          });
-        });
-      });
-    });
-  },
-  methods: {
-    pay() {}
-  }
-};
-
-/***/ }),
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12648,7 +12532,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 96 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(39)
@@ -12792,7 +12676,7 @@ exports.createDecipheriv = createDecipheriv
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 97 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var aes = __webpack_require__(39)
@@ -12921,7 +12805,7 @@ exports.createCipher = createCipher
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 98 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var zeros = new Buffer(16)
@@ -13026,13 +12910,13 @@ function xor (a, b) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 99 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ebtk = __webpack_require__(43)
 var aes = __webpack_require__(45)
-var DES = __webpack_require__(100)
-var desModes = __webpack_require__(101)
+var DES = __webpack_require__(94)
+var desModes = __webpack_require__(95)
 var aesModes = __webpack_require__(40)
 function createCipher (suite, password) {
   var keyLen, ivLen
@@ -13105,7 +12989,7 @@ exports.listCiphers = exports.getCiphers = getCiphers
 
 
 /***/ }),
-/* 100 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var CipherBase = __webpack_require__(31)
@@ -13155,7 +13039,7 @@ DES.prototype._final = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 101 */
+/* 95 */
 /***/ (function(module, exports) {
 
 exports['des-ecb'] = {
@@ -13185,15 +13069,15 @@ exports['des-ede'] = {
 
 
 /***/ }),
-/* 102 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var _algos = __webpack_require__(65)
 var createHash = __webpack_require__(32)
 var inherits = __webpack_require__(23)
-var sign = __webpack_require__(103)
+var sign = __webpack_require__(97)
 var stream = __webpack_require__(30)
-var verify = __webpack_require__(104)
+var verify = __webpack_require__(98)
 
 var algos = {}
 Object.keys(_algos).forEach(function (key) {
@@ -13295,7 +13179,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 103 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
@@ -13487,7 +13371,7 @@ module.exports.makeKey = makeKey
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 104 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
@@ -13597,7 +13481,7 @@ module.exports = verify
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 105 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var elliptic = __webpack_require__(25);
@@ -13726,7 +13610,7 @@ function formatReturnValue(bn, enc, len) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 106 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13767,7 +13651,7 @@ exports.hash = hash;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 107 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13786,7 +13670,7 @@ var p = __webpack_require__(73)
 exports.pbkdf2 = p.pbkdf2
 exports.pbkdf2Sync = p.pbkdf2Sync
 
-var aes = __webpack_require__(99)
+var aes = __webpack_require__(93)
 ;[
   'Cipher',
   'createCipher',
@@ -13802,7 +13686,7 @@ var aes = __webpack_require__(99)
   exports[key] = aes[key]
 })
 
-var dh = __webpack_require__(120)
+var dh = __webpack_require__(107)
 ;[
   'DiffieHellmanGroup',
   'createDiffieHellmanGroup',
@@ -13813,7 +13697,7 @@ var dh = __webpack_require__(120)
   exports[key] = dh[key]
 })
 
-var sign = __webpack_require__(102)
+var sign = __webpack_require__(96)
 ;[
   'createSign',
   'Sign',
@@ -13823,9 +13707,9 @@ var sign = __webpack_require__(102)
   exports[key] = sign[key]
 })
 
-exports.createECDH = __webpack_require__(105)
+exports.createECDH = __webpack_require__(99)
 
-var publicEncrypt = __webpack_require__(157)
+var publicEncrypt = __webpack_require__(137)
 
 ;[
   'publicEncrypt',
@@ -13851,27 +13735,7 @@ var publicEncrypt = __webpack_require__(157)
 
 
 /***/ }),
-/* 108 */,
-/* 109 */,
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(14)();
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
-
-// exports
-
-
-/***/ }),
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13943,7 +13807,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
 
 
 /***/ }),
-/* 116 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14091,7 +13955,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
 
 
 /***/ }),
-/* 117 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14241,7 +14105,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
 
 
 /***/ }),
-/* 118 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14303,7 +14167,7 @@ EDE.prototype._unpad = DES.prototype._unpad;
 
 
 /***/ }),
-/* 119 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14566,13 +14430,13 @@ exports.padSplit = function padSplit(num, size, group) {
 
 
 /***/ }),
-/* 120 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var generatePrime = __webpack_require__(68)
-var primes = __webpack_require__(122)
+var primes = __webpack_require__(109)
 
-var DH = __webpack_require__(121)
+var DH = __webpack_require__(108)
 
 function getDiffieHellman (mod) {
   var prime = new Buffer(primes[mod].prime, 'hex')
@@ -14615,7 +14479,7 @@ exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 121 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var BN = __webpack_require__(24);
@@ -14786,7 +14650,7 @@ function formatReturnValue(bn, enc) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 122 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -14825,7 +14689,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 123 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15207,7 +15071,7 @@ BasePoint.prototype.dblp = function dblp(k) {
 
 
 /***/ }),
-/* 124 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15647,7 +15511,7 @@ Point.prototype.mixedAdd = Point.prototype.add;
 
 
 /***/ }),
-/* 125 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15834,7 +15698,7 @@ Point.prototype.getX = function getX() {
 
 
 /***/ }),
-/* 126 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16779,7 +16643,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
 
 
 /***/ }),
-/* 127 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16952,7 +16816,7 @@ defineCurve('ed25519', {
 
 var pre;
 try {
-  pre = __webpack_require__(134);
+  pre = __webpack_require__(121);
 } catch (e) {
   pre = undefined;
 }
@@ -16991,20 +16855,20 @@ defineCurve('secp256k1', {
 
 
 /***/ }),
-/* 128 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var BN = __webpack_require__(24);
-var HmacDRBG = __webpack_require__(149);
+var HmacDRBG = __webpack_require__(129);
 var elliptic = __webpack_require__(25);
 var utils = elliptic.utils;
 var assert = utils.assert;
 
-var KeyPair = __webpack_require__(129);
-var Signature = __webpack_require__(130);
+var KeyPair = __webpack_require__(116);
+var Signature = __webpack_require__(117);
 
 function EC(options) {
   if (!(this instanceof EC))
@@ -17238,7 +17102,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
 
 
 /***/ }),
-/* 129 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17364,7 +17228,7 @@ KeyPair.prototype.inspect = function inspect() {
 
 
 /***/ }),
-/* 130 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17506,7 +17370,7 @@ Signature.prototype.toDER = function toDER(enc) {
 
 
 /***/ }),
-/* 131 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17517,8 +17381,8 @@ var elliptic = __webpack_require__(25);
 var utils = elliptic.utils;
 var assert = utils.assert;
 var parseBytes = utils.parseBytes;
-var KeyPair = __webpack_require__(132);
-var Signature = __webpack_require__(133);
+var KeyPair = __webpack_require__(119);
+var Signature = __webpack_require__(120);
 
 function EDDSA(curve) {
   assert(curve === 'ed25519', 'only tested with ed25519 so far');
@@ -17631,7 +17495,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
 
 
 /***/ }),
-/* 132 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17734,7 +17598,7 @@ module.exports = KeyPair;
 
 
 /***/ }),
-/* 133 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17807,7 +17671,7 @@ module.exports = Signature;
 
 
 /***/ }),
-/* 134 */
+/* 121 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -18593,7 +18457,7 @@ module.exports = {
 
 
 /***/ }),
-/* 135 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18720,7 +18584,7 @@ utils.intFromLE = intFromLE;
 
 
 /***/ }),
-/* 136 */
+/* 123 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -18847,39 +18711,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 137 */,
-/* 138 */,
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(110);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(15)("6772d99e", content, true);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-505a5eda&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-505a5eda&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(26);
@@ -18976,7 +18808,7 @@ BlockHash.prototype._pad = function pad() {
 
 
 /***/ }),
-/* 145 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hmac = exports;
@@ -19030,7 +18862,7 @@ Hmac.prototype.digest = function digest(enc) {
 
 
 /***/ }),
-/* 146 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(26);
@@ -19180,7 +19012,7 @@ var sh = [
 
 
 /***/ }),
-/* 147 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hash = __webpack_require__(26);
@@ -19750,7 +19582,7 @@ function g1_512_lo(xh, xl) {
 
 
 /***/ }),
-/* 148 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var utils = exports;
@@ -20013,7 +19845,7 @@ exports.shr64_lo = shr64_lo;
 
 
 /***/ }),
-/* 149 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20133,7 +19965,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
 
 
 /***/ }),
-/* 150 */
+/* 130 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -20223,7 +20055,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 151 */
+/* 131 */
 /***/ (function(module, exports) {
 
 
@@ -20238,7 +20070,7 @@ module.exports = function(arr, obj){
 };
 
 /***/ }),
-/* 152 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -20259,7 +20091,7 @@ module.exports = function(arr, obj){
     root = global;
   }
   var COMMON_JS = !root.JS_MD5_NO_COMMON_JS && typeof module === 'object' && module.exports;
-  var AMD = "function" === 'function' && __webpack_require__(181);
+  var AMD = "function" === 'function' && __webpack_require__(155);
   var ARRAY_BUFFER = !root.JS_MD5_NO_ARRAY_BUFFER && typeof ArrayBuffer !== 'undefined';
   var HEX_CHARS = '0123456789abcdef'.split('');
   var EXTRA = [128, 32768, 8388608, -2147483648];
@@ -20366,7 +20198,7 @@ module.exports = function(arr, obj){
   };
 
   var nodeWrap = function (method) {
-    var crypto = __webpack_require__(107);
+    var crypto = __webpack_require__(101);
     var Buffer = __webpack_require__(22).Buffer;
     var nodeMethod = function (message) {
       if (typeof message === 'string') {
@@ -20845,7 +20677,7 @@ module.exports = function(arr, obj){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28), __webpack_require__(5)))
 
 /***/ }),
-/* 153 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -20864,7 +20696,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 154 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // from https://github.com/indutny/self-signed/blob/gh-pages/lib/asn1.js
@@ -20987,7 +20819,7 @@ exports.signature = asn1.define('signature', function () {
 
 
 /***/ }),
-/* 155 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {// adapted from https://github.com/apatil/pemstrip
@@ -21024,7 +20856,7 @@ module.exports = function (okey, password) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 156 */
+/* 136 */
 /***/ (function(module, exports) {
 
 var MAX_ALLOC = Math.pow(2, 30) - 1 // default in iojs
@@ -21048,11 +20880,11 @@ module.exports = function (iterations, keylen) {
 
 
 /***/ }),
-/* 157 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.publicEncrypt = __webpack_require__(159);
-exports.privateDecrypt = __webpack_require__(158);
+exports.publicEncrypt = __webpack_require__(139);
+exports.privateDecrypt = __webpack_require__(138);
 
 exports.privateEncrypt = function privateEncrypt(key, buf) {
   return exports.publicEncrypt(key, buf, true);
@@ -21063,7 +20895,7 @@ exports.publicDecrypt = function publicDecrypt(key, buf) {
 };
 
 /***/ }),
-/* 158 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(44);
@@ -21177,7 +21009,7 @@ function compare(a, b){
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 159 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var parseKeys = __webpack_require__(44);
@@ -21278,27 +21110,27 @@ function nonZero(len, crypto) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 160 */
+/* 140 */
 /***/ (function(module, exports) {
 
 module.exports = "!function (a, b) {\n  \"function\" == typeof define && (define.amd || define.cmd) ? define(function () {\n    return b(a);\n  }) : b(a, !0);\n}(this, function (a, b) {\n  function c(b, c, d) {\n    a.WeixinJSBridge ? WeixinJSBridge.invoke(b, e(c), function (a) {\n      g(b, a, d);\n    }) : j(b, d);\n  }function d(b, c, d) {\n    a.WeixinJSBridge ? WeixinJSBridge.on(b, function (a) {\n      d && d.trigger && d.trigger(a), g(b, a, c);\n    }) : d ? j(b, d) : j(b, c);\n  }function e(a) {\n    return a = a || {}, a.appId = E.appId, a.verifyAppId = E.appId, a.verifySignType = \"sha1\", a.verifyTimestamp = E.timestamp + \"\", a.verifyNonceStr = E.nonceStr, a.verifySignature = E.signature, a;\n  }function f(a) {\n    return { timeStamp: a.timestamp + \"\", nonceStr: a.nonceStr, \"package\": a.package, paySign: a.paySign, signType: a.signType || \"SHA1\" };\n  }function g(a, b, c) {\n    var d, e, f;switch (delete b.err_code, delete b.err_desc, delete b.err_detail, d = b.errMsg, d || (d = b.err_msg, delete b.err_msg, d = h(a, d), b.errMsg = d), c = c || {}, c._complete && (c._complete(b), delete c._complete), d = b.errMsg || \"\", E.debug && !c.isInnerInvoke && alert(JSON.stringify(b)), e = d.indexOf(\":\"), f = d.substring(e + 1)) {case \"ok\":\n        c.success && c.success(b);break;case \"cancel\":\n        c.cancel && c.cancel(b);break;default:\n        c.fail && c.fail(b);}c.complete && c.complete(b);\n  }function h(a, b) {\n    var e,\n        f,\n        c = a,\n        d = p[c];return d && (c = d), e = \"ok\", b && (f = b.indexOf(\":\"), e = b.substring(f + 1), \"confirm\" == e && (e = \"ok\"), \"failed\" == e && (e = \"fail\"), -1 != e.indexOf(\"failed_\") && (e = e.substring(7)), -1 != e.indexOf(\"fail_\") && (e = e.substring(5)), e = e.replace(/_/g, \" \"), e = e.toLowerCase(), (\"access denied\" == e || \"no permission to execute\" == e) && (e = \"permission denied\"), \"config\" == c && \"function not exist\" == e && (e = \"ok\"), \"\" == e && (e = \"fail\")), b = c + \":\" + e;\n  }function i(a) {\n    var b, c, d, e;if (a) {\n      for (b = 0, c = a.length; c > b; ++b) d = a[b], e = o[d], e && (a[b] = e);return a;\n    }\n  }function j(a, b) {\n    if (!(!E.debug || b && b.isInnerInvoke)) {\n      var c = p[a];c && (a = c), b && b._complete && delete b._complete, console.log('\"' + a + '\",', b || \"\");\n    }\n  }function k() {\n    0 != D.preVerifyState && (u || v || E.debug || \"6.0.2\" > z || D.systemType < 0 || A || (A = !0, D.appId = E.appId, D.initTime = C.initEndTime - C.initStartTime, D.preVerifyTime = C.preVerifyEndTime - C.preVerifyStartTime, H.getNetworkType({ isInnerInvoke: !0, success: function (a) {\n        var b, c;D.networkType = a.networkType, b = \"http://open.weixin.qq.com/sdk/report?v=\" + D.version + \"&o=\" + D.preVerifyState + \"&s=\" + D.systemType + \"&c=\" + D.clientVersion + \"&a=\" + D.appId + \"&n=\" + D.networkType + \"&i=\" + D.initTime + \"&p=\" + D.preVerifyTime + \"&u=\" + D.url, c = new Image(), c.src = b;\n      } })));\n  }function l() {\n    return new Date().getTime();\n  }function m(b) {\n    w && (a.WeixinJSBridge ? b() : q.addEventListener && q.addEventListener(\"WeixinJSBridgeReady\", b, !1));\n  }function n() {\n    H.invoke || (H.invoke = function (b, c, d) {\n      a.WeixinJSBridge && WeixinJSBridge.invoke(b, e(c), d);\n    }, H.on = function (b, c) {\n      a.WeixinJSBridge && WeixinJSBridge.on(b, c);\n    });\n  }var o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H;if (!a.jWeixin) return o = { config: \"preVerifyJSAPI\", onMenuShareTimeline: \"menu:share:timeline\", onMenuShareAppMessage: \"menu:share:appmessage\", onMenuShareQQ: \"menu:share:qq\", onMenuShareWeibo: \"menu:share:weiboApp\", onMenuShareQZone: \"menu:share:QZone\", previewImage: \"imagePreview\", getLocation: \"geoLocation\", openProductSpecificView: \"openProductViewWithPid\", addCard: \"batchAddCard\", openCard: \"batchViewCard\", chooseWXPay: \"getBrandWCPayRequest\" }, p = function () {\n    var b,\n        a = {};for (b in o) a[o[b]] = b;return a;\n  }(), q = a.document, r = q.title, s = navigator.userAgent.toLowerCase(), t = navigator.platform.toLowerCase(), u = !(!t.match(\"mac\") && !t.match(\"win\")), v = -1 != s.indexOf(\"wxdebugger\"), w = -1 != s.indexOf(\"micromessenger\"), x = -1 != s.indexOf(\"android\"), y = -1 != s.indexOf(\"iphone\") || -1 != s.indexOf(\"ipad\"), z = function () {\n    var a = s.match(/micromessenger\\/(\\d+\\.\\d+\\.\\d+)/) || s.match(/micromessenger\\/(\\d+\\.\\d+)/);return a ? a[1] : \"\";\n  }(), A = !1, B = !1, C = { initStartTime: l(), initEndTime: 0, preVerifyStartTime: 0, preVerifyEndTime: 0 }, D = { version: 1, appId: \"\", initTime: 0, preVerifyTime: 0, networkType: \"\", preVerifyState: 1, systemType: y ? 1 : x ? 2 : -1, clientVersion: z, url: encodeURIComponent(location.href) }, E = {}, F = { _completes: [] }, G = { state: 0, data: {} }, m(function () {\n    C.initEndTime = l();\n  }), H = { config: function (a) {\n      E = a, j(\"config\", a);var b = E.check === !1 ? !1 : !0;m(function () {\n        var a, d, e;if (b) c(o.config, { verifyJsApiList: i(E.jsApiList) }, function () {\n          F._complete = function (a) {\n            C.preVerifyEndTime = l(), G.state = 1, G.data = a;\n          }, F.success = function () {\n            D.preVerifyState = 0;\n          }, F.fail = function (a) {\n            F._fail ? F._fail(a) : G.state = -1;\n          };var a = F._completes;return a.push(function () {\n            k();\n          }), F.complete = function () {\n            for (var c = 0, d = a.length; d > c; ++c) a[c]();F._completes = [];\n          }, F;\n        }()), C.preVerifyStartTime = l();else {\n          for (G.state = 1, a = F._completes, d = 0, e = a.length; e > d; ++d) a[d]();F._completes = [];\n        }\n      }), E.beta && n();\n    }, ready: function (a) {\n      0 != G.state ? a() : (F._completes.push(a), !w && E.debug && a());\n    }, error: function (a) {\n      \"6.0.2\" > z || B || (B = !0, -1 == G.state ? a(G.data) : F._fail = a);\n    }, checkJsApi: function (a) {\n      var b = function (a) {\n        var c,\n            d,\n            b = a.checkResult;for (c in b) d = p[c], d && (b[d] = b[c], delete b[c]);return a;\n      };c(\"checkJsApi\", { jsApiList: i(a.jsApiList) }, function () {\n        return a._complete = function (a) {\n          if (x) {\n            var c = a.checkResult;c && (a.checkResult = JSON.parse(c));\n          }a = b(a);\n        }, a;\n      }());\n    }, onMenuShareTimeline: function (a) {\n      d(o.onMenuShareTimeline, { complete: function () {\n          c(\"shareTimeline\", { title: a.title || r, desc: a.title || r, img_url: a.imgUrl || \"\", link: a.link || location.href, type: a.type || \"link\", data_url: a.dataUrl || \"\" }, a);\n        } }, a);\n    }, onMenuShareAppMessage: function (a) {\n      d(o.onMenuShareAppMessage, { complete: function () {\n          c(\"sendAppMessage\", { title: a.title || r, desc: a.desc || \"\", link: a.link || location.href, img_url: a.imgUrl || \"\", type: a.type || \"link\", data_url: a.dataUrl || \"\" }, a);\n        } }, a);\n    }, onMenuShareQQ: function (a) {\n      d(o.onMenuShareQQ, { complete: function () {\n          c(\"shareQQ\", { title: a.title || r, desc: a.desc || \"\", img_url: a.imgUrl || \"\", link: a.link || location.href }, a);\n        } }, a);\n    }, onMenuShareWeibo: function (a) {\n      d(o.onMenuShareWeibo, { complete: function () {\n          c(\"shareWeiboApp\", { title: a.title || r, desc: a.desc || \"\", img_url: a.imgUrl || \"\", link: a.link || location.href }, a);\n        } }, a);\n    }, onMenuShareQZone: function (a) {\n      d(o.onMenuShareQZone, { complete: function () {\n          c(\"shareQZone\", { title: a.title || r, desc: a.desc || \"\", img_url: a.imgUrl || \"\", link: a.link || location.href }, a);\n        } }, a);\n    }, startRecord: function (a) {\n      c(\"startRecord\", {}, a);\n    }, stopRecord: function (a) {\n      c(\"stopRecord\", {}, a);\n    }, onVoiceRecordEnd: function (a) {\n      d(\"onVoiceRecordEnd\", a);\n    }, playVoice: function (a) {\n      c(\"playVoice\", { localId: a.localId }, a);\n    }, pauseVoice: function (a) {\n      c(\"pauseVoice\", { localId: a.localId }, a);\n    }, stopVoice: function (a) {\n      c(\"stopVoice\", { localId: a.localId }, a);\n    }, onVoicePlayEnd: function (a) {\n      d(\"onVoicePlayEnd\", a);\n    }, uploadVoice: function (a) {\n      c(\"uploadVoice\", { localId: a.localId, isShowProgressTips: 0 == a.isShowProgressTips ? 0 : 1 }, a);\n    }, downloadVoice: function (a) {\n      c(\"downloadVoice\", { serverId: a.serverId, isShowProgressTips: 0 == a.isShowProgressTips ? 0 : 1 }, a);\n    }, translateVoice: function (a) {\n      c(\"translateVoice\", { localId: a.localId, isShowProgressTips: 0 == a.isShowProgressTips ? 0 : 1 }, a);\n    }, chooseImage: function (a) {\n      c(\"chooseImage\", { scene: \"1|2\", count: a.count || 9, sizeType: a.sizeType || [\"original\", \"compressed\"], sourceType: a.sourceType || [\"album\", \"camera\"] }, function () {\n        return a._complete = function (a) {\n          if (x) {\n            var b = a.localIds;b && (a.localIds = JSON.parse(b));\n          }\n        }, a;\n      }());\n    }, previewImage: function (a) {\n      c(o.previewImage, { current: a.current, urls: a.urls }, a);\n    }, uploadImage: function (a) {\n      c(\"uploadImage\", { localId: a.localId, isShowProgressTips: 0 == a.isShowProgressTips ? 0 : 1 }, a);\n    }, downloadImage: function (a) {\n      c(\"downloadImage\", { serverId: a.serverId, isShowProgressTips: 0 == a.isShowProgressTips ? 0 : 1 }, a);\n    }, getNetworkType: function (a) {\n      var b = function (a) {\n        var c,\n            d,\n            e,\n            b = a.errMsg;if (a.errMsg = \"getNetworkType:ok\", c = a.subtype, delete a.subtype, c) a.networkType = c;else switch (d = b.indexOf(\":\"), e = b.substring(d + 1)) {case \"wifi\":case \"edge\":case \"wwan\":\n            a.networkType = e;break;default:\n            a.errMsg = \"getNetworkType:fail\";}return a;\n      };c(\"getNetworkType\", {}, function () {\n        return a._complete = function (a) {\n          a = b(a);\n        }, a;\n      }());\n    }, openLocation: function (a) {\n      c(\"openLocation\", { latitude: a.latitude, longitude: a.longitude, name: a.name || \"\", address: a.address || \"\", scale: a.scale || 28, infoUrl: a.infoUrl || \"\" }, a);\n    }, getLocation: function (a) {\n      a = a || {}, c(o.getLocation, { type: a.type || \"wgs84\" }, function () {\n        return a._complete = function (a) {\n          delete a.type;\n        }, a;\n      }());\n    }, hideOptionMenu: function (a) {\n      c(\"hideOptionMenu\", {}, a);\n    }, showOptionMenu: function (a) {\n      c(\"showOptionMenu\", {}, a);\n    }, closeWindow: function (a) {\n      a = a || {}, c(\"closeWindow\", {}, a);\n    }, hideMenuItems: function (a) {\n      c(\"hideMenuItems\", { menuList: a.menuList }, a);\n    }, showMenuItems: function (a) {\n      c(\"showMenuItems\", { menuList: a.menuList }, a);\n    }, hideAllNonBaseMenuItem: function (a) {\n      c(\"hideAllNonBaseMenuItem\", {}, a);\n    }, showAllNonBaseMenuItem: function (a) {\n      c(\"showAllNonBaseMenuItem\", {}, a);\n    }, scanQRCode: function (a) {\n      a = a || {}, c(\"scanQRCode\", { needResult: a.needResult || 0, scanType: a.scanType || [\"qrCode\", \"barCode\"] }, function () {\n        return a._complete = function (a) {\n          var b, c;y && (b = a.resultStr, b && (c = JSON.parse(b), a.resultStr = c && c.scan_code && c.scan_code.scan_result));\n        }, a;\n      }());\n    }, openProductSpecificView: function (a) {\n      c(o.openProductSpecificView, { pid: a.productId, view_type: a.viewType || 0, ext_info: a.extInfo }, a);\n    }, addCard: function (a) {\n      var e,\n          f,\n          g,\n          h,\n          b = a.cardList,\n          d = [];for (e = 0, f = b.length; f > e; ++e) g = b[e], h = { card_id: g.cardId, card_ext: g.cardExt }, d.push(h);c(o.addCard, { card_list: d }, function () {\n        return a._complete = function (a) {\n          var c,\n              d,\n              e,\n              b = a.card_list;if (b) {\n            for (b = JSON.parse(b), c = 0, d = b.length; d > c; ++c) e = b[c], e.cardId = e.card_id, e.cardExt = e.card_ext, e.isSuccess = e.is_succ ? !0 : !1, delete e.card_id, delete e.card_ext, delete e.is_succ;a.cardList = b, delete a.card_list;\n          }\n        }, a;\n      }());\n    }, chooseCard: function (a) {\n      c(\"chooseCard\", { app_id: E.appId, location_id: a.shopId || \"\", sign_type: a.signType || \"SHA1\", card_id: a.cardId || \"\", card_type: a.cardType || \"\", card_sign: a.cardSign, time_stamp: a.timestamp + \"\", nonce_str: a.nonceStr }, function () {\n        return a._complete = function (a) {\n          a.cardList = a.choose_card_info, delete a.choose_card_info;\n        }, a;\n      }());\n    }, openCard: function (a) {\n      var e,\n          f,\n          g,\n          h,\n          b = a.cardList,\n          d = [];for (e = 0, f = b.length; f > e; ++e) g = b[e], h = { card_id: g.cardId, code: g.code }, d.push(h);c(o.openCard, { card_list: d }, a);\n    }, chooseWXPay: function (a) {\n      c(o.chooseWXPay, f(a), a);\n    } }, b && (a.wx = a.jWeixin = H), H;\n});"
 
 /***/ }),
-/* 161 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(29)
 
 
 /***/ }),
-/* 162 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(77)
 
 
 /***/ }),
-/* 163 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {exports = module.exports = __webpack_require__(78);
@@ -21315,21 +21147,21 @@ if (!process.browser && __webpack_require__.i({"NODE_ENV":"production"}).READABL
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28)))
 
 /***/ }),
-/* 164 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(49)
 
 
 /***/ }),
-/* 165 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(50)
 
 
 /***/ }),
-/* 166 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -21546,7 +21378,7 @@ module.exports = ripemd160
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 167 */
+/* 147 */
 /***/ (function(module, exports) {
 
 /*
@@ -21562,13 +21394,13 @@ module.exports = function(src) {
 
 
 /***/ }),
-/* 168 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(167)(__webpack_require__(160))
+__webpack_require__(147)(__webpack_require__(140))
 
 /***/ }),
-/* 169 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var exports = module.exports = function SHA (algorithm) {
@@ -21580,16 +21412,16 @@ var exports = module.exports = function SHA (algorithm) {
   return new Algorithm()
 }
 
-exports.sha = __webpack_require__(170)
-exports.sha1 = __webpack_require__(171)
-exports.sha224 = __webpack_require__(172)
+exports.sha = __webpack_require__(150)
+exports.sha1 = __webpack_require__(151)
+exports.sha224 = __webpack_require__(152)
 exports.sha256 = __webpack_require__(79)
-exports.sha384 = __webpack_require__(173)
+exports.sha384 = __webpack_require__(153)
 exports.sha512 = __webpack_require__(80)
 
 
 /***/ }),
-/* 170 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -21689,7 +21521,7 @@ module.exports = Sha
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 171 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -21794,7 +21626,7 @@ module.exports = Sha1
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 172 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/**
@@ -21853,7 +21685,7 @@ module.exports = Sha224
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 173 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {var inherits = __webpack_require__(23)
@@ -21916,10 +21748,10 @@ module.exports = Sha384
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(22).Buffer))
 
 /***/ }),
-/* 174 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var indexOf = __webpack_require__(151);
+var indexOf = __webpack_require__(131);
 
 var Object_keys = function (obj) {
     if (Object.keys) return Object.keys(obj)
@@ -22060,30 +21892,7 @@ exports.createContext = Script.createContext = function (context) {
 
 
 /***/ }),
-/* 175 */,
-/* 176 */,
-/* 177 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "payment"
-  }, [_c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button"
-    },
-    on: {
-      "click": _vm.pay
-    }
-  }, [_vm._v("付款")])])
-},staticRenderFns: []}
-
-/***/ }),
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */
+/* 155 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -22092,7 +21901,7 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 182 */
+/* 156 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -22120,17 +21929,261 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 183 */
+/* 157 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 184 */
+/* 158 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
+/***/ }),
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_script_loader_assets_wx_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_js_md5__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_js_md5___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_js_md5__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'checkOrder',
+  data() {
+    return {
+      sname: '小高考公益讲座',
+      slocation: '南京市中山会议中心中山厅',
+      phone: '13222001020',
+      stime: '03-15 09:25-11:04'
+    };
+  },
+  mounted() {
+    console.log(this.$route.params);
+    var self = this;
+    this.$http.get('/xsz/api/sign', {
+      params: {
+        url: location.href
+      }
+    }).then(res => {
+      var data = res.data;
+      console.log('data', data);
+      wx.config({
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx829b884172f246ea', // 必填，公众号的唯一标识
+        timestamp: data.timestamp, // 必填，生成签名的时间戳
+        nonceStr: data.nonceStr, // 必填，生成签名的随机串
+        signature: data.signature, // 必填，签名，见附录1
+        jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+      });
+    });
+  },
+  computed: {
+    chosen() {
+      return JSON.parse(this.$route.params.chosen);
+    },
+    user() {
+      return this.$route.params.user;
+    }
+  },
+  methods: {
+    goToPay() {
+      var self = this;
+      wx.ready(function () {
+        self.$http.get('/xsz/api/unifiedorder').then(res => {
+          console.log(res);
+          var nonceStr = __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(new Date().getTime()).substring(0, 32);
+          var time = Math.floor(new Date().getTime() / 1000);
+          var payload = {
+            appId: 'wx829b884172f246ea',
+            nonceStr: nonceStr,
+            package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            signType: 'MD5',
+            timeStamp: time
+          };
+          let genSign = function () {
+            var stringA = "";
+            for (var i in payload) {
+              stringA += i + '=' + payload[i] + '&';
+            }
+            var stringSignTemp = stringA + "key=d41d8cd98f00b204e9800998ecf8427e";
+            console.log(stringSignTemp);
+            var sign = __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(stringSignTemp).toUpperCase();
+            return sign;
+          };
+          console.log(payload);
+          wx.chooseWXPay({
+            nonceStr: nonceStr,
+            package: 'prepay_id=' + res.data,
+            signType: 'MD5',
+            timestamp: time,
+            paySign: genSign(),
+            success: function (res) {
+              alert(JSON.stringify(res));
+              self.$router.replace({ "name": "orderdetail" });
+              console.log('success', res);
+            },
+            fail: function (res) {
+              alert(res);
+            },
+            cancel: function (res) {
+              alert(res);
+              self.$router.replace({ "name": "orderdetail" });
+            }
+          });
+        });
+      });
+      // this.$router.replace({'name':'payment'})
+    }
+  }
+};
+
+/***/ }),
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)();
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(170);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(15)("caf6fde2", content, true);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7cf2bb89&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkOrder.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7cf2bb89&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkOrder.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "checkOrder"
+  }, [_c('div', {
+    staticClass: "confirm-seats-info"
+  }, [_c('h3', [_vm._v(_vm._s(_vm.sname))]), _vm._v(" "), _c('div', {
+    staticClass: "location"
+  }, [_vm._v("\n      " + _vm._s(_vm.slocation) + "\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "time"
+  }, [_vm._v("\n      " + _vm._s(_vm.stime) + "\n    ")]), _vm._v(" "), _c('div', {
+    staticClass: "seats"
+  }, _vm._l((_vm.chosen), function(item) {
+    return _c('span', [_vm._v("\n        " + _vm._s(item.row * 1 + 1) + "排" + _vm._s(item.column * 1 + 1) + "座\n      ")])
+  })), _vm._v(" "), _c('div', [_vm._v("\n      电话：" + _vm._s(_vm.user.phone) + "\n    ")]), _vm._v(" "), _c('div', [_vm._v("\n      预订人：" + _vm._s(_vm.user.username) + "\n    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "price"
+  }, [_vm._v("\n    预约费用总计：4元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "payBtn"
+  }, [_c('button', {
+    staticClass: "btn btn-danger",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.goToPay
+    }
+  }, [_vm._v("立即付款")])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "statement"
+  }, [_c('h5', [_vm._v("购票须知")]), _vm._v(" "), _c('div', [_vm._v("1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金")]), _vm._v(" "), _c('div', [_vm._v("2,本场讲座设计大量人力物力，预约成功不可退款")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "priceInfo"
+  }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付4元")])])
+}]}
+
 /***/ })
-]);
-//# sourceMappingURL=0.7c1fdd5e0ae53d1ece94.js.map
+]));
+//# sourceMappingURL=0.497abeda6ad8c3a55ce2.js.map

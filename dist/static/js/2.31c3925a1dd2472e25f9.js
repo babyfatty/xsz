@@ -1,6 +1,104 @@
-webpackJsonp([1,8],{
+webpackJsonp([2,8],{
 
-/***/ 111:
+/***/ 159:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      wait: 30,
+      btnShow: true,
+      varyCode: "",
+      phone: ""
+    };
+  },
+  mounted() {},
+  methods: {
+    vary() {
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
+        params: {
+          code: this.varyCode,
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
+        console.log(res);
+        if (res.data.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(175)
+__webpack_require__(176)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(159),
+  /* template */
+  __webpack_require__(182),
+  /* scopeId */
+  "data-v-55a34494",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -15,7 +113,7 @@ exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n", 
 
 /***/ }),
 
-/***/ 112:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -30,13 +128,13 @@ exports.push([module.i, "\n.submitBtn[data-v-55a34494]{\n  width: 100%;\n}\n", "
 
 /***/ }),
 
-/***/ 140:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(111);
+var content = __webpack_require__(168);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57,13 +155,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 141:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(112);
+var content = __webpack_require__(169);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -84,31 +182,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 16:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(140)
-__webpack_require__(141)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(89),
-  /* template */
-  __webpack_require__(178),
-  /* scopeId */
-  "data-v-55a34494",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 178:
+/***/ 182:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -209,81 +283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("发送")])])
 },staticRenderFns: []}
 
-/***/ }),
-
-/***/ 89:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      wait: 30,
-      btnShow: true,
-      varyCode: "",
-      phone: ""
-    };
-  },
-  mounted() {},
-  methods: {
-    vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
-        params: {
-          code: this.varyCode,
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
-        console.log(res);
-        if (res.data.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
-        }
-      });
-    }
-  }
-};
-
 /***/ })
 
 });
-//# sourceMappingURL=1.a802784177f2cac84acc.js.map
+//# sourceMappingURL=2.31c3925a1dd2472e25f9.js.map

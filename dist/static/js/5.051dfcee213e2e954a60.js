@@ -1,6 +1,107 @@
 webpackJsonp([5,8],{
 
-/***/ 109:
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      name: '',
+      school: '',
+      grade: '',
+      phone: '',
+      varyCode: '',
+      wait: 10,
+      btnShow: true
+    };
+  },
+  mounted() {},
+  methods: {
+    submit() {
+      this.$http.post('http://xesfun.com/xsz/api/addUser', {
+        name: this.name,
+        grade: this.grade,
+        school: this.school,
+        phone: this.phone
+      }).then(res => {
+        console.log(res.data);
+        if (res.data.success) {
+          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
+        } else {
+          alert('注册失败');
+        }
+      });
+    },
+    vary() {
+      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
+        params: {
+          code: this.varyCode
+        }
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
+        console.log(res);
+        if (res.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -15,13 +116,13 @@ exports.push([module.i, "\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\
 
 /***/ }),
 
-/***/ 138:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(109);
+var content = __webpack_require__(166);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -42,7 +143,30 @@ if(false) {
 
 /***/ }),
 
-/***/ 176:
+/***/ 18:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(173)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(161),
+  /* template */
+  __webpack_require__(180),
+  /* scopeId */
+  "data-v-46075134",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 180:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -237,131 +361,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("提交")])])], 1)
 },staticRenderFns: []}
 
-/***/ }),
-
-/***/ 18:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(138)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(91),
-  /* template */
-  __webpack_require__(176),
-  /* scopeId */
-  "data-v-46075134",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      name: '',
-      school: '',
-      grade: '',
-      phone: '',
-      varyCode: '',
-      wait: 10,
-      btnShow: true
-    };
-  },
-  mounted() {},
-  methods: {
-    submit() {
-      this.$http.post('http://xesfun.com/xsz/api/addUser', {
-        name: this.name,
-        grade: this.grade,
-        school: this.school,
-        phone: this.phone
-      }).then(res => {
-        console.log(res.data);
-        if (res.data.success) {
-          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
-        } else {
-          alert('注册失败');
-        }
-      });
-    },
-    vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
-        params: {
-          code: this.varyCode
-        }
-      }).then(res => {
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
-        console.log(res);
-        if (res.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
-        }
-      });
-    }
-  }
-};
-
 /***/ })
 
 });
-//# sourceMappingURL=5.4aa9a9c967f33e9bdb1d.js.map
+//# sourceMappingURL=5.051dfcee213e2e954a60.js.map

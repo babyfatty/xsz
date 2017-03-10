@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import 'script-loader!../assets/wx.js';
+import md5 from 'js-md5'
 export default {
   name: 'checkOrder',
   data () {
