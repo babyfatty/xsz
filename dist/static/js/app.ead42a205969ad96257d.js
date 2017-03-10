@@ -51,6 +51,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     path: '/payment',
     name: 'payment',
     component: Payment
+  }, {
+    path: '/',
+    name: 'index',
+    component: Payment
   }]
 });
 
@@ -161,4 +165,4 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ })
 ],[13]);
-//# sourceMappingURL=app.b0241e51679eaa5627c6.js.map
+//# sourceMappingURL=app.ead42a205969ad96257d.js.map

@@ -48,6 +48,11 @@ export default new Router({
       path: '/payment',
       name: 'payment',
       component: Payment
+    },
+    {
+      path: '/',
+      name:'index',
+      component:Payment
     }
   ]
 })
