@@ -104,7 +104,7 @@ app.use(async (ctx,next)=>{
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:genChar(),
-          notify_url:'http://xesfun.com/xsz/#/payment/',
+          notify_url:'http://xesfun.com/xsz/',
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
