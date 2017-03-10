@@ -39,7 +39,7 @@ export default {
                 nonceStr: md5(new Date().getTime()).substring(0, 32), 
                 package: 'prepay_id='+res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                 signType: 'MD5', 
-                timestamp: (new Date().getTime()).toString().substring(0,10)
+                timeStamp: (new Date().getTime()).toString().substring(0,10)
               }
               let genSign = function(){  
                var stringA="";
