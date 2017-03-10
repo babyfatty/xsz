@@ -89,15 +89,16 @@ app.use(async (ctx,next)=>{
         let genTrans = function(){
           return md5(new Date().getTime()).substring(1, 33)
         }
-        console.log(ip.address())
+        // console.log(ip.address())
+        console.log('openid',ctx.session.openid.openid)
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:genChar(),
           notify_url:'http://xesfun.com/xsz/',
-          // openid:ctx.session.openid.openid,
-          openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
+          openid:ctx.session.openid.openid,
+          // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:genTrans(),
           spbill_create_ip:ip.address(),
           total_fee:8888,
@@ -172,12 +173,6 @@ app.use(async (ctx,next)=>{
         var wxcode = ctx.query.code
         console.log('wxcode',wxcode)
         if(!!wxcode){
-          var openidParams = {
-            secret:'36a0109564e755f9ad96322a835d0d07',
-            code:wxcode,
-            appid:'wx829b884172f246ea',
-            grant_type:'authorization_code'
-          }
           var openidUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?grant_type=authorization_code&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07&code='+wxcode
           var openid = await rp(openidUrl)
           console.log('openid',openid)
