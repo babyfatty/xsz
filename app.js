@@ -164,6 +164,7 @@ app.use(async (ctx,next)=>{
     default:
         // var code = '0219qaJ21jPNZM1D9GK21S0rJ219qaJO'
         var wxcode = ctx.query.code
+        console.log('wxcode',wxcode)
         if(!!wxcode){
           var openidParams = {
             secret:'36a0109564e755f9ad96322a835d0d07',
@@ -174,7 +175,8 @@ app.use(async (ctx,next)=>{
           var openidUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?grant_type=authorization_code&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07&code='+wxcode
           var openid = await rp(openidUrl)
           console.log('openid',openid)
-          ctx.redirect(ctx.originalUrl.split('?')[0]+'?/openid='+openid)
+          ctx.session.openid = openid
+          // ctx.redirect(ctx.originalUrl.split('?')[0]+'?openid='+openid)
         }
         const template = fs.readFileSync(resolve('./dist/static/index.html'), 'utf-8')
         ctx.body = template
