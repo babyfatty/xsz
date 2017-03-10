@@ -1,6 +1,6 @@
-webpackJsonp([3,8],{
+webpackJsonp([4,8],{
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -8,20 +8,20 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B;AACD;EACE,YAAY;CACb","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 141:
+/***/ 143:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(113);
+var content = __webpack_require__(114);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -42,7 +42,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 178:
+/***/ 180:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -74,26 +74,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "infoSection"
   }, [_c('div', {
-    staticClass: "reserveInfo"
-  }, [_vm._v("预约信息")]), _vm._v(" "), _c('div', {
+    staticClass: "reserveInfo lead"
+  }, [_vm._v("预约信息")]), _vm._v(" "), _c('ul', [_c('li', [_c('div', {
     staticClass: "speachName"
-  }, [_c('span', [_vm._v("讲座名：")]), _c('span', [_vm._v(_vm._s(_vm.session.name))])]), _vm._v(" "), _c('div', {
+  }, [_c('span', [_vm._v("讲座名：")]), _c('span', [_vm._v(_vm._s(_vm.session.name))])])]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "speachTime"
-  }, [_c('span', [_vm._v("讲座时间：")]), _c('span', [_vm._v(_vm._s(_vm.session.time))])]), _vm._v(" "), _c('div', {
+  }, [_c('span', [_vm._v("讲座时间：")]), _c('span', [_vm._v(_vm._s(_vm.session.time))])])]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "seatsChosen"
   }, [_c('span', [_vm._v("已选座位：")]), _vm._v(" "), _vm._l((_vm.chosen), function(csn) {
-    return _c('span', [_vm._v("\n          " + _vm._s(csn.row) + "排" + _vm._s(csn.column) + "座\n        ")])
-  })], 2)]), _vm._v(" "), _c('div', {
-    staticClass: "submitBtn"
-  }, [_c('button', {
-    staticClass: "btn btn-primary",
+    return _c('span', [_vm._v("\n              " + _vm._s(csn.row) + "排" + _vm._s(csn.column) + "座\n            ")])
+  })], 2)])])]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary submitBtn",
     attrs: {
       "type": "button"
     },
     on: {
       "click": _vm.chooseSeat
     }
-  }, [_vm._v("确认选座")])])], 2)
+  }, [_vm._v("确认选座")])], 2)
 },staticRenderFns: []}
 
 /***/ }),
@@ -103,13 +101,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(141)
+__webpack_require__(143)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(92),
   /* template */
-  __webpack_require__(178),
+  __webpack_require__(180),
   /* scopeId */
   "data-v-ac2ff24a",
   /* cssModules */
@@ -152,6 +150,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Seats',
@@ -167,15 +169,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   beforeCreate() {
     this.$http.get('http://localhost:8889/api/checkLogin').then(res => {
-      if (res.data.success) {
-        console.log(res.data.user);
-      } else {
-        console.log(res.data.success);
-        this.$router.push({ name: 'register' });
-      }
+      // if(res.data.success){
+      //   console.log(res.data.user)
+      // }else{
+      //   console.log(res.data.success)
+      //   this.$router.push({name: 'register'})
+      // }
     });
   },
   mounted() {
+    console.log(this.$route.params);
     this.getSessionInfo().then(res => {
       this.session = res.data[0];
     });
@@ -200,10 +203,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     chooseSeat() {
-      this.$router.push({ name: 'checkorder', query: { chosen: JSON.stringify(this.chosen) } });
+      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user } });
     },
     getSessionInfo() {
-      return this.$http.get('/api/sessionInfo');
+      return this.$http.get('http://localhost:8889/api/sessionInfo');
     }
   }
 
@@ -212,4 +215,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=3.3527022fe21bc2c5b475.js.map
+//# sourceMappingURL=4.903569abd0760a2b42f5.js.map

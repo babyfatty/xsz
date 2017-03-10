@@ -34,32 +34,40 @@ export default {
         wx.ready(function(){
           self.$http.get('/xsz/api/unifiedorder').then((res)=>{
             console.log(res)
+              var nonceStr = md5(new Date().getTime()).substring(0, 32)
+              var time = Math.floor(new Date().getTime()/1000)
               var payload = {
                 appId:'wx829b884172f246ea',
-                nonceStr: md5(new Date().getTime()).substring(0, 32), 
-                package: 'prepay_id='+res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                nonceStr: nonceStr, 
+                package: 'prepay_id='+res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                 signType: 'MD5', 
-                timestamp: (new Date().getTime()).toString().substring(0,10)
+                timestamp: time
               }
               let genSign = function(){  
                var stringA="";
                for(var i in payload){
-                 stringA+=i+'='+payload[i]+'&'
+                 stringA+=(i+'='+payload[i]+'&')
                }
                var stringSignTemp=stringA+"key=d41d8cd98f00b204e9800998ecf8427e"
                console.log(stringSignTemp)
                var sign=md5(stringSignTemp).toUpperCase()
                return sign
               }
-              console.log(genSign())
-              wx.chooseWXPay(
-                Object.assign(payload,{
+              console.log(payload)
+              wx.chooseWXPay({
+                  nonceStr: nonceStr, 
+                  package: 'prepay_id='+res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                  signType: 'MD5', 
+                  timestamp: time,
                   paySign: genSign(), // 支付签名
                   success: function (res) {
                     // 支付成功后的回调函数
                     console.log('success',res)
+                  },
+                  fail: function(res){
+                    alert(res)
                   }
-                }))
+              })
               
           })
         })

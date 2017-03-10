@@ -45,14 +45,14 @@ export default new Router({
       component: orderDetail
     },
     {
-      path: '/payment',
+      path: '/payment/',
       name: 'payment',
       component: Payment
     },
     {
       path: '/',
       name:'index',
-      component:Payment
+      component:Register
     }
   ]
 })

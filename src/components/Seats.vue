@@ -8,19 +8,23 @@
         </div>
       </div>
       <div class="infoSection">
-        <div class="reserveInfo">预约信息</div>
-        <div class="speachName"><span>讲座名：</span><span>{{session.name}}</span></div>
-        <div class="speachTime"><span>讲座时间：</span><span>{{session.time}}</span></div>
-        <div class="seatsChosen">
-          <span>已选座位：</span>
-          <span v-for="csn in chosen">
-            {{csn.row}}排{{csn.column}}座
-          </span>
-        </div>
+        <div class="reserveInfo lead">预约信息</div>
+        <ul>
+          <li><div class="speachName"><span>讲座名：</span><span>{{session.name}}</span></div></li>
+          <li>
+            <div class="speachTime"><span>讲座时间：</span><span>{{session.time}}</span></div>
+          </li>
+          <li>
+            <div class="seatsChosen">
+              <span>已选座位：</span>
+              <span v-for="csn in chosen">
+                {{csn.row}}排{{csn.column}}座
+              </span>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="submitBtn">
-        <button type="button" class="btn btn-primary" v-on:click="chooseSeat">确认选座</button>
-      </div>
+      <button type="button" class="btn btn-primary submitBtn" v-on:click="chooseSeat">确认选座</button>
   </div>
 </template>
 
@@ -41,15 +45,16 @@ export default {
   },
   beforeCreate(){
     this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
-        if(res.data.success){
-          console.log(res.data.user)
-        }else{
-          console.log(res.data.success)
-          this.$router.push({name: 'register'})
-        }
+        // if(res.data.success){
+        //   console.log(res.data.user)
+        // }else{
+        //   console.log(res.data.success)
+        //   this.$router.push({name: 'register'})
+        // }
     })
   },
   mounted(){
+    console.log(this.$route.params)
     this.getSessionInfo().then((res)=>{
       this.session = res.data[0]
     })
@@ -74,10 +79,10 @@ export default {
       }
     },
     chooseSeat(){
-      this.$router.push({ name: 'checkorder', query: { chosen: JSON.stringify(this.chosen) }})
+      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user}})
     },
     getSessionInfo(){
-      return this.$http.get('/api/sessionInfo')
+      return this.$http.get('http://localhost:8889/api/sessionInfo')
     }
   },
   
@@ -124,5 +129,8 @@ div.seatCharts-seat.unavailable {
 }
 div.seatCharts-seat.selected {
     background-color: #E6CAC4;
+}
+.submitBtn{
+  width: 100%;
 }
 </style>

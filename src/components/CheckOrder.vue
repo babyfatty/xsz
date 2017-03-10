@@ -14,7 +14,10 @@
         </span>
       </div>
       <div>
-        {{phone}}
+        电话：{{user.phone}}
+      </div>
+      <div>
+        预订人：{{user.username}}
       </div>
     </div>
     <div class="price">
@@ -47,15 +50,19 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route.params)
   },
   computed:{
     chosen(){
-      return JSON.parse(this.$route.query.chosen)
+      return JSON.parse(this.$route.params.chosen)
+    },
+    user(){
+      return this.$route.params.user
     }
   },
   methods:{
     goToPay(){
-      this.$router.push({'name':'payment'})
+      this.$router.replace({'name':'payment'})
     }
   }
 }

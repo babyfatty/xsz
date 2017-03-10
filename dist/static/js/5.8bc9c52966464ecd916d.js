@@ -1,4 +1,4 @@
-webpackJsonp([4,8],{
+webpackJsonp([5,8],{
 
 /***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
@@ -8,14 +8,14 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,oBAAoB;CACrB;AACD;EACE,sBAAsB;EACtB,WAAW;CACZ;AACD;EACE,sBAAsB;EACtB,eAAe;CAChB;AACD;EACE,eAAe;CAChB","file":"Register.vue","sourcesContent":["\nh1[data-v-46075134], h2[data-v-46075134] {\n  font-weight: normal;\n}\nul[data-v-46075134] {\n  list-style-type: none;\n  padding: 0;\n}\nli[data-v-46075134] {\n  display: inline-block;\n  margin: 0 10px;\n}\na[data-v-46075134] {\n  color: #42b983;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,gBAAgB;CACjB;AACD;EACE,aAAa;CACd;AACD;EACE,mBAAmB;EACnB,UAAU;EACV,SAAS;CACV;AACD;EACE,mBAAmB;CACpB;AACD;EACE,YAAY;CACb","file":"Register.vue","sourcesContent":["\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 137:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -42,13 +42,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 174:
+/***/ 176:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
-  }, [_c('h2', [_vm._v("注册")]), _vm._v(" "), _c('form', [_c('div', {
+  }, [_c('span', {
+    staticClass: "registerTitle"
+  }, [_vm._v("注册")]), _vm._v(" "), _c('router-link', {
+    staticClass: "loginLink",
+    attrs: {
+      "to": {
+        name: 'login'
+      }
+    }
+  }, [_vm._v("已经注册过，直接登录 >>")]), _vm._v(" "), _c('form', [_c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -161,6 +170,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), _c('div', {
+    staticClass: "form-inline"
+  }, [_c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -176,7 +187,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-control",
     attrs: {
       "type": "numbder",
-      "id": "",
       "placeholder": "验证码"
     },
     domProps: {
@@ -189,30 +199,42 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.btnShow),
+      expression: "!btnShow"
+    }],
+    staticClass: "btn btn-default codeBtn",
     attrs: {
-      "type": "button"
-    },
-    on: {
-      "click": _vm.vary
+      "type": "button",
+      "disabled": "disabled"
     }
-  }, [_vm._v("提交")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "type": "button"
-    },
+  }, [_vm._v("等待" + _vm._s(_vm.wait) + "s")]), _vm._v(" "), _c('button', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.btnShow),
+      expression: "btnShow"
+    }],
+    staticClass: "btn btn-primary codeBtn",
     on: {
       "click": _vm.sendSms
     }
   }, [_vm._v("发送")])]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
+    on: {
+      "click": _vm.vary
+    }
+  }, [_vm._v("提交")])]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary submitBtn",
     attrs: {
       "type": "button"
     },
     on: {
       "click": _vm.submit
     }
-  }, [_vm._v("提交")])])])
+  }, [_vm._v("提交")])])], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -222,13 +244,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(137)
+__webpack_require__(138)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(91),
   /* template */
-  __webpack_require__(174),
+  __webpack_require__(176),
   /* scopeId */
   "data-v-46075134",
   /* cssModules */
@@ -278,6 +300,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Login',
@@ -287,7 +310,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       school: '',
       grade: '',
       phone: '',
-      varyCode: ''
+      varyCode: '',
+      wait: 10,
+      btnShow: true
     };
   },
   mounted() {},
@@ -319,6 +344,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     sendSms() {
       this.$http.get('http://localhost:8889/api/sendSMS').then(res => {
         console.log(res);
+        if (res.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
       });
     }
   }
@@ -327,4 +364,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.e57993e1a8c32b834f7f.js.map
+//# sourceMappingURL=5.8bc9c52966464ecd916d.js.map

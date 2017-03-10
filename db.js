@@ -31,6 +31,10 @@ var addUser = function(user){
 	return User.create(user);
 }
 
+var findUserByPhone = function(phone){
+	return User.findOne({ where: {phone: phone} })
+}
+
 var register = function(regInfo){
 	return  Register.create(regInfo)
 }
@@ -42,5 +46,6 @@ var sessionInfo = function(){
 module.exports = {
 	addUser,
 	register,
-	sessionInfo
+	sessionInfo,
+	findUserByPhone
 }

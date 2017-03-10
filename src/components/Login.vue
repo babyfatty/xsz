@@ -1,15 +1,23 @@
 <template>
   <div class="hello">
-    <h2>登录</h2>
-    <div class="form-group">
-        <label for="">手机号</label>
-        <input type="numbder" class="form-control" id="" placeholder="手机号">
+    <h3>登录</h3>
+      <form class="form-horizontal">
+        <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">手机号</label>
+        <div class="col-sm-10">
+          <input type="numbder" class="form-control" id="inputEmail3" v-model="phone" placeholder="手机号">
+        </div>
       </div>
       <div class="form-group">
-        <label for="">验证码</label>
-        <input type="numbder" class="form-control" id="" placeholder="验证码">
+        <label for="inputEmail3" class="col-sm-2 control-label">验证码</label>
+        <div class="col-sm-10">
+          <input type="numbder" class="form-control" id="inputEmail3" v-model="varyCode" placeholder="验证码">
+        </div>
       </div>
-      <button type="button" class="btn btn-primary">提交</button>
+      </form>      
+        <button class="btn btn-primary" v-on:click="vary">提交</button>
+        <button type="button" class="btn btn-default" disabled="disabled" v-show="!btnShow">等待{{wait}}s</button>
+        <button class="btn btn-primary" v-on:click="sendSms" v-show="btnShow">发送</button>
   </div>
 </template>
 
@@ -18,30 +26,54 @@ export default {
   name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      wait:30,
+      btnShow:true,
+      varyCode:"",
+      phone:""
     }
   },
   mounted() {
+  },
+  methods:{
+    vary(){
+      this.$http.get('http://localhost:8889/api/varyLogin',{
+        params:{
+          code:this.varyCode,
+          phone:this.phone
+        }
+      }).then((res)=>{
+        console.log(res)
+      })
+    },
+    sendSms(){
+      this.$http.get('http://localhost:8889/api/sendSMS').then((res)=>{
+        console.log(res)
+        if(res.data.success){
+          this.btnShow = false
+          var interval = setInterval(()=>{
+          if(this.wait>0){
+            this.wait--
+          }else{
+            this.btnShow = true
+            this.wait = 30
+            clearInterval(interval)
+          }
+        },1000)
+        }
+      })
+    }
   }
 }
 </script>
-
+<style>
+  #app{
+    padding: 20px;
+    padding-top: 10px;
+  }
+</style>
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.submitBtn{
+  width: 100%;
 }
 </style>

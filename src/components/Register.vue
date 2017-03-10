@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h2>注册</h2>
+    <span class="registerTitle">注册</span>
+    <router-link :to="{name:'login'}" class="loginLink">已经注册过，直接登录 >></router-link>
     <form>
       <div class="form-group">
       <label for="">姓名</label>
@@ -18,19 +19,19 @@
         <label for="">手机号</label>
         <input type="numbder" class="form-control" id="" v-model="phone" placeholder="手机号">
       </div>
-      <div class="form-group">
-        <label for="">验证码</label>
-        <input type="numbder" class="form-control" id="" v-model="varyCode" placeholder="验证码">
-        <button type="button" class="btn btn-primary" v-on:click="vary">提交</button>
-        <button type="button" class="btn btn-primary" v-on:click="sendSms">发送</button>
+      <div class="form-inline">
+        <div class="form-group">
+          <label for="">验证码</label>
+          <input type="numbder" class="form-control" v-model="varyCode" placeholder="验证码">
+          <button type="button" class="btn btn-default codeBtn" disabled="disabled" v-show="!btnShow">等待{{wait}}s</button>
+          <button class="btn btn-primary codeBtn" v-on:click="sendSms" v-show="btnShow">发送</button>
+        </div>
+        <button class="btn btn-primary" v-on:click="vary">提交</button>
       </div>
-      <button type="button" class="btn btn-primary" v-on:click="submit">提交</button>
+      <button type="button" class="btn btn-primary submitBtn" v-on:click="submit">提交</button>
     </form>
-    
-
   </div>
 </template>
-
 <script>
 export default {
   name: 'Login',
@@ -40,7 +41,9 @@ export default {
       school:'',
       grade:'',
       phone:'',
-      varyCode:''
+      varyCode:'',
+      wait:10,
+      btnShow:true
     }
   },
   mounted() {
@@ -73,6 +76,19 @@ export default {
     sendSms(){
       this.$http.get('http://localhost:8889/api/sendSMS').then((res)=>{
         console.log(res)
+        if(res.success){
+          this.btnShow = false
+          var interval = setInterval(()=>{
+            if(this.wait>0){
+              this.wait--
+            }else{
+              this.btnShow = true
+              this.wait = 30
+              clearInterval(interval)
+            }
+          },1000)
+        }
+        
       })
     }
   }
@@ -80,21 +96,21 @@ export default {
 </script>
 
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.registerTitle{
+  font-size: 17px;
 }
-
-ul {
-  list-style-type: none;
-  padding: 0;
+.loginLink{
+  float: right;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+.codeBtn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-
-a {
-  color: #42b983;
+.form-group{
+  position: relative;
+}
+.submitBtn{
+  width: 100%;
 }
 </style>

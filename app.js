@@ -33,7 +33,6 @@ app.use(async (ctx,next)=>{
       let code = tool.genVaryCode(4)
       try {
         var res = await tool.sendMsg(code,ctx)
-
         ctx.session.code = code
         console.log(ctx.session)
         ctx.body = res
@@ -42,7 +41,17 @@ app.use(async (ctx,next)=>{
         // statements
         ctx.body = e
       }
-      break;  
+      break; 
+    case '/api/varyLogin':
+      console.log('1',ctx.query.code)
+      console.log('2',ctx.session)
+      if(ctx.query.code===ctx.session.code){
+        let userFind = db.findUserByPhone(ctx.query.phone)
+        ctx.body = {success:true,user:userFind}    
+      }else{
+        ctx.body = {success:false}  
+      }
+      break;   
     case '/api/varyCode':
       console.log('1',ctx.query.code)
       console.log('2',ctx.session)
@@ -59,7 +68,6 @@ app.use(async (ctx,next)=>{
     case '/api/addUser':
       console.log(ctx.request.body)
       var param = ctx.request.body
-
       try {
         var ausr = await db.addUser({
           username: param.name,
@@ -96,7 +104,7 @@ app.use(async (ctx,next)=>{
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:genChar(),
-          notify_url:'http://xesfun.com/xsz/',
+          notify_url:'http://xesfun.com/xsz/#/payment/',
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
