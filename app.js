@@ -118,7 +118,7 @@ app.use(async (ctx,next)=>{
         //统一下单接口 参数
         var params = Object.assign({sign:genSign()},payload)
         console.log('params',params)
-        var out  = '<xml>'+await tool.toXml(params)+'</xml>'
+        var out  = '<xml>'+await tool.toXml(JSON.stringify(params))+'</xml>'
         console.log(out)
         //通过统一下单接口获取package
         var xml = await rp({
