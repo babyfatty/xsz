@@ -86,16 +86,19 @@ app.use(async (ctx,next)=>{
         let genChar = function(){
           return md5(new Date().getTime()).substring(0, 32)
         }
+        let genTrans = function(){
+          return md5(new Date().getTime()).substring(1, 33)
+        }
         console.log(ip.address())
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:genChar(),
-          notify_url:'http://xesfun.com/xsz/#/',
+          notify_url:'http://xesfun.com/xsz/',
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
-          out_trade_no:genChar(),
+          out_trade_no:genTrans(),
           spbill_create_ip:ip.address(),
           total_fee:8888,
           trade_type:'JSAPI'
@@ -128,7 +131,7 @@ app.use(async (ctx,next)=>{
         var res = JSON.parse(await tool.toJson(xml.toString()))
         console.log(res)
         ctx.body = res.xml.prepay_id
-      break;  
+        break;  
     case '/api/checkLogin':
       var user = ctx.session.user
       console.log('user',user)
