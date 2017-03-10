@@ -64,7 +64,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (res.data.success) {
           this.$router.replace({ name: 'seats', params: { user: res.data.user } });
         } else {
-          alert('注册失败');
+          alert(res.data.msg);
         }
       });
     },
@@ -79,31 +79,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     sendSms() {
       this.btnShow = false;
-      var interval = setInterval(() => {
-        if (this.wait > 0) {
-          this.wait--;
-        } else {
-          this.btnShow = true;
-          this.wait = 30;
-          clearInterval(interval);
-        }
-      }, 1000);
-      // this.$http.get('http://xesfun.com/xsz/api/sendSMS').then((res)=>{
-      //   console.log(res)
-      //   if(res.data.success){
-      //     this.btnShow = false
-      //     var interval = setInterval(()=>{
-      //       if(this.wait>0){
-      //         this.wait--
-      //       }else{
-      //         this.btnShow = true
-      //         this.wait = 30
-      //         clearInterval(interval)
-      //       }
-      //     },1000)
+      // var interval = setInterval(()=>{
+      //   if(this.wait>0){
+      //     this.wait--
+      //   }else{
+      //     this.btnShow = true
+      //     this.wait = 30
+      //     clearInterval(interval)
       //   }
-
-      // })
+      // },1000)
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
+        params: {
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res);
+        if (res.data.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
     }
   }
 };
@@ -411,4 +414,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=2.268fd8c879c0d2da626e.js.map
+//# sourceMappingURL=2.bca2b18317fae630a03a.js.map

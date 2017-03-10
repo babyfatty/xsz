@@ -58,7 +58,7 @@ export default {
         if(res.data.success){
           this.$router.replace({name:'seats',params:{user:res.data.user}})
         }else{
-          alert('注册失败')
+          alert(res.data.msg)
         }
       })
     },
@@ -73,6 +73,23 @@ export default {
     },
     sendSms(){
       this.btnShow = false
+          // var interval = setInterval(()=>{
+          //   if(this.wait>0){
+          //     this.wait--
+          //   }else{
+          //     this.btnShow = true
+          //     this.wait = 30
+          //     clearInterval(interval)
+          //   }
+          // },1000)
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS',{
+        params:{
+          phone:this.phone
+        }
+      }).then((res)=>{
+        console.log(res)
+        if(res.data.success){
+          this.btnShow = false
           var interval = setInterval(()=>{
             if(this.wait>0){
               this.wait--
@@ -82,22 +99,9 @@ export default {
               clearInterval(interval)
             }
           },1000)
-      // this.$http.get('http://xesfun.com/xsz/api/sendSMS').then((res)=>{
-      //   console.log(res)
-      //   if(res.data.success){
-      //     this.btnShow = false
-      //     var interval = setInterval(()=>{
-      //       if(this.wait>0){
-      //         this.wait--
-      //       }else{
-      //         this.btnShow = true
-      //         this.wait = 30
-      //         clearInterval(interval)
-      //       }
-      //     },1000)
-      //   }
+        }
         
-      // })
+      })
     }
   }
 }

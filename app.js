@@ -32,7 +32,7 @@ app.use(async (ctx,next)=>{
     case '/api/sendSMS':
       let code = tool.genVaryCode(4)
       try {
-        var res = await tool.sendMsg(code,ctx)
+        var res = await tool.sendMsg(code,ctx.query.phone)
         ctx.session.code = code
         console.log(ctx.session)
         ctx.body = res
