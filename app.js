@@ -11,8 +11,6 @@ const session = require('koa-session');
 const convert = require('koa-convert');
 const fs = require('fs')
 const resolve = file => path.resolve(__dirname, file)
-// const session = require('koa-session2');
-// const session = require('koa2-cookie-session');
 app.keys = ['1232312312312'];
 app.use(require('koa-static')(path.join(__dirname, 'dist')))
 // app.use(convert(session(CONFIG,app)));
@@ -118,10 +116,10 @@ app.use(async (ctx,next)=>{
         
         //统一下单接口 参数
         var params = Object.assign({sign:genSign()},payload)
-        var out  = '<xml>'+converter.toXML(params)+'</xml>'
+        var out  = '<xml>'+await tool.toXml(params)+'</xml>'
 
         //通过统一下单接口获取package
-        var res = JSON.parse(parse.toJson(await rp({
+        var res = JSON.parse(await tool.toJson(await rp({
                 method: 'POST',
                 headers: { 'Content-Type':'text/xml; charset=utf-8' },
                 uri: 'https://api.mch.weixin.qq.com/pay/unifiedorder',
