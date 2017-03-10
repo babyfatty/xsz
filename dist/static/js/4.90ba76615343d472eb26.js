@@ -168,14 +168,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted() {},
   beforeCreate() {
-    this.$http.get('http://localhost:8889/api/checkLogin').then(res => {
-      // if(res.data.success){
-      //   console.log(res.data.user)
-      // }else{
-      //   console.log(res.data.success)
-      //   this.$router.push({name: 'register'})
-      // }
-    });
+    // this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
+    //     // if(res.data.success){
+    //     //   console.log(res.data.user)
+    //     // }else{
+    //     //   console.log(res.data.success)
+    //     //   this.$router.push({name: 'register'})
+    //     // }
+    // })
   },
   mounted() {
     console.log(this.$route.params);
@@ -206,7 +206,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user } });
     },
     getSessionInfo() {
-      return this.$http.get('http://localhost:8889/api/sessionInfo');
+      return this.$http.get('http://xesfun.com/xsz/api/sessionInfo');
     }
   }
 
@@ -215,4 +215,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.903569abd0760a2b42f5.js.map
+//# sourceMappingURL=4.90ba76615343d472eb26.js.map

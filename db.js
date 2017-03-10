@@ -1,6 +1,14 @@
 var SQL = require('sequelize')
-var sql = new SQL('xsz', 'root')
-
+// var sql = new SQL('xsz', 'root')
+var sql = new SQL('xsz', 'root', 'VIvid1993@', {
+  host: 'rm-bp1z7c3g05d1nr18ho.mysql.rds.aliyuncs.com',
+  dialect: 'mysql',
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+});
 var User = sql.define('user', {
   username: SQL.STRING,
   school: SQL.STRING,

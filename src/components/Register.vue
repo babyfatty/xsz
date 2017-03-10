@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     submit(){
-      this.$http.post('http://localhost:8889/api/addUser',{
+      this.$http.post('http://xesfun.com/xsz/api/addUser',{
         name:this.name,
         grade:this.grade,
         school:this.school,
@@ -65,7 +65,7 @@ export default {
       })
     },
     vary(){
-      this.$http.get('http://localhost:8889/api/varyCode',{
+      this.$http.get('http://xesfun.com/xsz/api/varyCode',{
         params:{
           code:this.varyCode
         }
@@ -74,7 +74,7 @@ export default {
       })
     },
     sendSms(){
-      this.$http.get('http://localhost:8889/api/sendSMS').then((res)=>{
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then((res)=>{
         console.log(res)
         if(res.success){
           this.btnShow = false

@@ -44,14 +44,14 @@ export default {
     
   },
   beforeCreate(){
-    this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
-        // if(res.data.success){
-        //   console.log(res.data.user)
-        // }else{
-        //   console.log(res.data.success)
-        //   this.$router.push({name: 'register'})
-        // }
-    })
+    // this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
+    //     // if(res.data.success){
+    //     //   console.log(res.data.user)
+    //     // }else{
+    //     //   console.log(res.data.success)
+    //     //   this.$router.push({name: 'register'})
+    //     // }
+    // })
   },
   mounted(){
     console.log(this.$route.params)
@@ -82,7 +82,7 @@ export default {
       this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user}})
     },
     getSessionInfo(){
-      return this.$http.get('http://localhost:8889/api/sessionInfo')
+      return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')
     }
   },
   

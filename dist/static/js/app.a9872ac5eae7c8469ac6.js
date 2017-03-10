@@ -10,13 +10,6 @@ webpackJsonp([7,8],[
 
 
 
-// import Login from 'components/Login.vue'
-// import Seats from 'components/Seats.vue'
-// import Register from 'components/Register.vue'
-// import Payment from 'components/Payment.vue'
-// import checkOrder from 'components/CheckOrder.vue'
-// import orderDetail from 'components/OrderDetail.vue'
-
 const Login = resolve => __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(16)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 const Seats = resolve => __webpack_require__.e/* require */(4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(19)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 const Register = resolve => __webpack_require__.e/* require */(5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(18)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
@@ -165,4 +158,4 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ })
 ],[13]);
-//# sourceMappingURL=app.3aa21118026277ee5f12.js.map
+//# sourceMappingURL=app.a9872ac5eae7c8469ac6.js.map

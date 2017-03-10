@@ -254,7 +254,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   methods: {
     vary() {
-      this.$http.get('http://localhost:8889/api/varyLogin', {
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
         params: {
           code: this.varyCode,
           phone: this.phone
@@ -264,7 +264,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     sendSms() {
-      this.$http.get('http://localhost:8889/api/sendSMS').then(res => {
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
         console.log(res);
         if (res.data.success) {
           this.btnShow = false;
@@ -286,4 +286,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=1.d61d58e90d7f57fca306.js.map
+//# sourceMappingURL=1.a802784177f2cac84acc.js.map

@@ -37,7 +37,7 @@ export default {
   },
   methods:{
     vary(){
-      this.$http.get('http://localhost:8889/api/varyLogin',{
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin',{
         params:{
           code:this.varyCode,
           phone:this.phone
@@ -47,7 +47,7 @@ export default {
       })
     },
     sendSms(){
-      this.$http.get('http://localhost:8889/api/sendSMS').then((res)=>{
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then((res)=>{
         console.log(res)
         if(res.data.success){
           this.btnShow = false
