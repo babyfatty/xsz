@@ -102,7 +102,7 @@ app.use(async (ctx,next)=>{
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
-          out_trade_no:md5(new Date().getTime()).substring(0, 32),
+          out_trade_no:(new Date().getTime()*Math.random()*Math.random()*100000)+"",
           spbill_create_ip:ip.address(),
           total_fee:1,
           trade_type:'JSAPI'
