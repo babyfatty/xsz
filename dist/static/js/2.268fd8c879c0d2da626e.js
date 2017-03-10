@@ -1,11 +1,10 @@
-webpackJsonp([5,8],{
+webpackJsonp([2,8],{
 
 /***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -58,7 +57,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         name: this.name,
         grade: this.grade,
         school: this.school,
-        phone: this.phone
+        phone: this.phone,
+        code: this.varyCode
       }).then(res => {
         console.log(res.data);
         if (res.data.success) {
@@ -78,21 +78,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS').then(res => {
-        console.log(res);
-        if (res.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
+      this.btnShow = false;
+      var interval = setInterval(() => {
+        if (this.wait > 0) {
+          this.wait--;
+        } else {
+          this.btnShow = true;
+          this.wait = 30;
+          clearInterval(interval);
         }
-      });
+      }, 1000);
+      // this.$http.get('http://xesfun.com/xsz/api/sendSMS').then((res)=>{
+      //   console.log(res)
+      //   if(res.data.success){
+      //     this.btnShow = false
+      //     var interval = setInterval(()=>{
+      //       if(this.wait>0){
+      //         this.wait--
+      //       }else{
+      //         this.btnShow = true
+      //         this.wait = 30
+      //         clearInterval(interval)
+      //       }
+      //     },1000)
+      //   }
+
+      // })
     }
   }
 };
@@ -100,6 +111,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 
 /***/ 166:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(14)();
+// imports
+
+
+// module
+exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,cAAc;EACd,kBAAkB;CACnB","file":"Register.vue","sourcesContent":["\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -124,13 +150,40 @@ var content = __webpack_require__(166);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(15)("05478f3f", content, true);
+var update = __webpack_require__(15)("7e0133ac", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Register.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 174:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(167);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(15)("55f16d40", content, true);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Register.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-46075134&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./Register.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -147,6 +200,7 @@ if(false) {
 
 /* styles */
 __webpack_require__(173)
+__webpack_require__(174)
 
 var Component = __webpack_require__(4)(
   /* script */
@@ -343,12 +397,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.sendSms
     }
-  }, [_vm._v("发送")])]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary",
-    on: {
-      "click": _vm.vary
-    }
-  }, [_vm._v("提交")])]), _vm._v(" "), _c('button', {
+  }, [_vm._v("发送")])])]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary submitBtn",
     attrs: {
       "type": "button"
@@ -362,4 +411,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=5.c2d9067d68b6c759140c.js.map
+//# sourceMappingURL=2.268fd8c879c0d2da626e.js.map

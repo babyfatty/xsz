@@ -67,7 +67,30 @@ app.use(async (ctx,next)=>{
       break;  
     case '/api/addUser':
       console.log(ctx.request.body)
+      console.log('2',ctx.session)
       var param = ctx.request.body
+      if(param.code!==ctx.session.code){
+        ctx.body = {
+          success:false,
+          msg:"验证码错误"
+        }
+        return    
+      }
+      try {
+        // statements
+        let hasUser = await db.findUserByPhone(param.phone) 
+        console.log(hasUser)
+        if(!!hasUser){
+          ctx.body = {
+            success:false,
+            msg:"手机号已被注册"
+          }
+          return 
+        }       
+      } catch(e) {
+        // statements
+        console.log(e);
+      }
       try {
         var ausr = await db.addUser({
           username: param.name,
@@ -84,7 +107,8 @@ app.use(async (ctx,next)=>{
       } catch(e) {
         // statements
         ctx.body = {
-          success:false
+          success:false,
+          msg:"fail"
         }
         console.log(e);
       }

@@ -66,12 +66,6 @@ export default {
   }
 }
 </script>
-<style>
-  #app{
-    padding: 20px;
-    padding-top: 10px;
-  }
-</style>
 <style scoped>
 .submitBtn{
   width: 100%;
