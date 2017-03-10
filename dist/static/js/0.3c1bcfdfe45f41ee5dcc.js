@@ -12463,7 +12463,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }).then(res => {
       var data = res.data;
-      console.log(data);
+      console.log('data', data);
       wx.config({
         debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: 'wx829b884172f246ea', // 必填，公众号的唯一标识
@@ -12477,7 +12477,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log(res);
           var payload = {
             nonceStr: '123',
-            package: res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            package: 'prepay_id=' + res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             signType: 'MD5',
             timestamp: 0
           };
@@ -12494,7 +12494,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           wx.chooseWXPay({
             timestamp: 0, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
             nonceStr: '123', // 支付签名随机串，不长于 32 位
-            package: res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            package: 'prepay_id=' + res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             paySign: genSign(), // 支付签名
             signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
             success: function (res) {
@@ -22120,4 +22120,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.30d74f9699529d726533.js.map
+//# sourceMappingURL=0.3c1bcfdfe45f41ee5dcc.js.map
