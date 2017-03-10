@@ -95,7 +95,7 @@ app.use(async (ctx,next)=>{
           return md5(new Date().getTime()).substring(0, 32)
         }
         let genTrans = function(){
-          return md5(new Date().getTime()).substring(1, 33)
+          return md5(new Date().getTime()*Math.random()*10000).substring(1, 33)
         }
         // console.log(ip.address())
         // console.log('openid',ctx.session.openid.openid)
