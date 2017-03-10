@@ -79,6 +79,7 @@ export default {
   },
   methods:{
     goToPay(){
+      var self = this
       wx.ready(function(){
           self.$http.get('/xsz/api/unifiedorder').then((res)=>{
             console.log(res)
@@ -110,6 +111,7 @@ export default {
                   paySign: genSign(), 
                   success: function (res) {
                     alert(JSON.stringify(res))
+                    self.$router.replace({"name":"orderdetail"})
                     console.log('success',res)
                   },
                   fail: function(res){
