@@ -128,9 +128,9 @@ app.use(async (ctx,next)=>{
             body: out
         })
         console.log('xml',xml)
-        var res = JSON.parse(await tool.toJson(xml.toString()))
-        console.log(res)
-        ctx.body = res.xml.prepay_id
+        var xmlJson = await tool.toJson(xml.toString())
+        console.log(xmlJson)
+        ctx.body = xmlJson.xml.prepay_id
         break;  
     case '/api/checkLogin':
       var user = ctx.session.user
