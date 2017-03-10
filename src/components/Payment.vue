@@ -67,7 +67,8 @@ export default {
                     alert(res)
                   },
                   cancel: function(res){
-                      this.$router.replace({"name":"orderdetail"})
+                      alert(res)
+                      self.$router.replace({"name":"orderdetail"})
                   }
               })
               

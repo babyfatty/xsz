@@ -12508,7 +12508,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               alert(res);
             },
             cancel: function (res) {
-              this.$router.replace({ "name": "orderdetail" });
+              alert(res);
+              self.$router.replace({ "name": "orderdetail" });
             }
           });
         });
@@ -13859,7 +13860,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22131,4 +22132,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.019c98a65d8ad0c41e35.js.map
+//# sourceMappingURL=0.115163535ef499fa4219.js.map
