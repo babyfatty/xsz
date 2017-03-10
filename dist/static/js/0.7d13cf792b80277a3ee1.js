@@ -12476,6 +12476,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         self.$http.get('/xsz/api/unifiedorder').then(res => {
           console.log(res);
           var payload = {
+            appId: 'wx829b884172f246ea',
             nonceStr: __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(new Date().getTime()).substring(0, 32),
             package: 'prepay_id=' + res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             signType: 'MD5',
@@ -13847,7 +13848,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22117,4 +22118,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.3a591fab479ed14ee318.js.map
+//# sourceMappingURL=0.7d13cf792b80277a3ee1.js.map

@@ -35,6 +35,7 @@ export default {
           self.$http.get('/xsz/api/unifiedorder').then((res)=>{
             console.log(res)
               var payload = {
+                appId:'wx829b884172f246ea',
                 nonceStr: md5(new Date().getTime()).substring(0, 32), 
                 package: 'prepay_id='+res.body, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                 signType: 'MD5', 
