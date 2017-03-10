@@ -12482,7 +12482,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             nonceStr: nonceStr,
             package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             signType: 'MD5',
-            timestamp: time
+            timeStamp: time
           };
           let genSign = function () {
             var stringA = "";
@@ -22129,4 +22129,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.c430bc789f49a5127c6b.js.map
+//# sourceMappingURL=0.48568c88314ec56b69bc.js.map

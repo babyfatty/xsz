@@ -41,7 +41,7 @@ export default {
                 nonceStr: nonceStr, 
                 package: 'prepay_id='+res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                 signType: 'MD5', 
-                timestamp: time
+                timeStamp: time
               }
               let genSign = function(){  
                var stringA="";
