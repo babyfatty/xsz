@@ -61,6 +61,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
+                    alert(JSON.stringify(res))
                     console.log('success',res)
                   },
                   fail: function(res){

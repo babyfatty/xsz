@@ -110,7 +110,7 @@ app.use(async (ctx,next)=>{
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:genTrans(),
           spbill_create_ip:ip.address(),
-          total_fee:8888,
+          total_fee:1,
           trade_type:'JSAPI'
         }
         // 统一下单接口签名
