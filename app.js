@@ -96,7 +96,8 @@ app.use(async (ctx,next)=>{
           mch_id:'1446670502',
           nonce_str:genChar(),
           notify_url:'http://xesfun.com/xsz/#/',
-          openid:ctx.session.openid,
+          // openid:ctx.session.openid.openid,
+          openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM'
           out_trade_no:genChar(),
           spbill_create_ip:getIP(),
           total_fee:8888,
