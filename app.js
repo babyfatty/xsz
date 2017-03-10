@@ -90,7 +90,7 @@ app.use(async (ctx,next)=>{
           return md5(new Date().getTime()).substring(1, 33)
         }
         // console.log(ip.address())
-        console.log('openid',ctx.session.openid.openid)
+        // console.log('openid',ctx.session.openid.openid)
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
