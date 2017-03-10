@@ -35,7 +35,12 @@ var register = function(regInfo){
 	return  Register.create(regInfo)
 }
 
+var sessionInfo = function(){
+	return Speech.findAll()
+}
+
 module.exports = {
-	addUser:addUser,
-	register:register
+	addUser,
+	register,
+	sessionInfo
 }

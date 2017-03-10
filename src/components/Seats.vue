@@ -9,8 +9,8 @@
       </div>
       <div class="infoSection">
         <div class="reserveInfo">预约信息</div>
-        <div class="speachName"><span>讲座名：</span><span>123</span></div>
-        <div class="speachTime"><span>讲座时间：</span><span>123</span></div>
+        <div class="speachName"><span>讲座名：</span><span>{{session.name}}</span></div>
+        <div class="speachTime"><span>讲座时间：</span><span>{{session.time}}</span></div>
         <div class="seatsChosen">
           <span>已选座位：</span>
           <span v-for="csn in chosen">
@@ -32,14 +32,34 @@ export default {
       rows: new Array(10),
       columns: new Array(10),
       chosen: [],
-      chosenArray: [] 
+      chosenArray: [],
+      session:{} 
     }
   },
   mounted() {
     
   },
+  beforeCreate(){
+    this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
+        if(res.data.success){
+          console.log(res.data.user)
+        }else{
+          console.log(res.data.success)
+          this.$router.push({name: 'register'})
+        }
+    })
+  },
+  mounted(){
+    this.getSessionInfo().then((res)=>{
+      this.session = res.data[0]
+    })
+  },
   methods: {
     handleClick(r,c){
+      if(this.chosenArray.length>=2){
+        alert('只能选两个座位')
+        return 
+      }
       var temp = r+''+c
       var index = this.chosenArray.indexOf(temp)
       if(index===-1){
@@ -55,6 +75,9 @@ export default {
     },
     chooseSeat(){
       this.$router.push({ name: 'checkorder', query: { chosen: JSON.stringify(this.chosen) }})
+    },
+    getSessionInfo(){
+      return this.$http.get('/api/sessionInfo')
     }
   },
   

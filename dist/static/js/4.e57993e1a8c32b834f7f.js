@@ -293,17 +293,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   methods: {
     submit() {
-      this.$http.post('http://localhost:3000/api/addUser', {
+      this.$http.post('http://localhost:8889/api/addUser', {
         name: this.name,
         grade: this.grade,
         school: this.school,
         phone: this.phone
       }).then(res => {
-        console.log(res);
+        console.log(res.data);
+        if (res.data.success) {
+          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
+        } else {
+          alert('注册失败');
+        }
       });
     },
     vary() {
-      this.$http.get('http://localhost:3000/api/varyCode', {
+      this.$http.get('http://localhost:8889/api/varyCode', {
         params: {
           code: this.varyCode
         }
@@ -312,7 +317,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     sendSms() {
-      this.$http.get('http://localhost:3000/api/sendSMS').then(res => {
+      this.$http.get('http://localhost:8889/api/sendSMS').then(res => {
         console.log(res);
       });
     }
@@ -322,4 +327,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.a368b050858ec61eff2a.js.map
+//# sourceMappingURL=4.e57993e1a8c32b834f7f.js.map

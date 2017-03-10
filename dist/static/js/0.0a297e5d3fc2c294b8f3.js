@@ -12457,12 +12457,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted() {
     var self = this;
-    this.$http.get('/xsz/api/sign', {
+    this.$http.get('http://localhost:8889/api/sign', {
       params: {
         url: location.href
       }
     }).then(res => {
       var data = res.data;
+      console.log(data);
       wx.config({
         debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: 'wx829b884172f246ea', // 必填，公众号的唯一标识
@@ -13853,7 +13854,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22123,4 +22124,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.9e8a86a9ab2b91aabef9.js.map
+//# sourceMappingURL=0.0a297e5d3fc2c294b8f3.js.map

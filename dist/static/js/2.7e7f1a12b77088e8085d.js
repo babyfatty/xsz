@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -57,10 +57,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("\n      " + _vm._s(_vm.stime) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "seats"
   }, _vm._l((_vm.chosen), function(item) {
-    return _c('span', [_vm._v("\n        " + _vm._s(item.row) + "排" + _vm._s(item.column) + "座\n      ")])
+    return _c('span', [_vm._v("\n        " + _vm._s(item.row * 1 + 1) + "排" + _vm._s(item.column * 1 + 1) + "座\n      ")])
   })), _vm._v(" "), _c('div', [_vm._v("\n      " + _vm._s(_vm.phone) + "\n    ")])]), _vm._v(" "), _c('div', {
     staticClass: "price"
-  }, [_vm._v("\n    预约费用总计：4元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])
+  }, [_vm._v("\n    预约费用总计：4元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "payBtn"
+  }, [_c('button', {
+    staticClass: "btn btn-danger",
+    attrs: {
+      "type": "button"
+    },
+    on: {
+      "click": _vm.goToPay
+    }
+  }, [_vm._v("立即付款")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "statement"
@@ -69,15 +79,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "priceInfo"
   }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付4元")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "payBtn"
-  }, [_c('button', {
-    staticClass: "btn btn-danger",
-    attrs: {
-      "type": "button"
-    }
-  }, [_vm._v("立即付款")])])
 }]}
 
 /***/ }),
@@ -163,10 +164,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     chosen() {
       return JSON.parse(this.$route.query.chosen);
     }
+  },
+  methods: {
+    goToPay() {
+      this.$router.push({ 'name': 'payment' });
+    }
   }
 };
 
 /***/ })
 
 });
-//# sourceMappingURL=2.5ea935cdfb2b82cf2d74.js.map
+//# sourceMappingURL=2.7e7f1a12b77088e8085d.js.map

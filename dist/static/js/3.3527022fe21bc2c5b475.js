@@ -75,7 +75,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "infoSection"
   }, [_c('div', {
     staticClass: "reserveInfo"
-  }, [_vm._v("预约信息")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_vm._v("预约信息")]), _vm._v(" "), _c('div', {
+    staticClass: "speachName"
+  }, [_c('span', [_vm._v("讲座名：")]), _c('span', [_vm._v(_vm._s(_vm.session.name))])]), _vm._v(" "), _c('div', {
+    staticClass: "speachTime"
+  }, [_c('span', [_vm._v("讲座时间：")]), _c('span', [_vm._v(_vm._s(_vm.session.time))])]), _vm._v(" "), _c('div', {
     staticClass: "seatsChosen"
   }, [_c('span', [_vm._v("已选座位：")]), _vm._v(" "), _vm._l((_vm.chosen), function(csn) {
     return _c('span', [_vm._v("\n          " + _vm._s(csn.row) + "排" + _vm._s(csn.column) + "座\n        ")])
@@ -90,15 +94,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.chooseSeat
     }
   }, [_vm._v("确认选座")])])], 2)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "speachName"
-  }, [_c('span', [_vm._v("讲座名：")]), _c('span', [_vm._v("123")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "speachTime"
-  }, [_c('span', [_vm._v("讲座时间：")]), _c('span', [_vm._v("123")])])
-}]}
+},staticRenderFns: []}
 
 /***/ }),
 
@@ -164,12 +160,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       rows: new Array(10),
       columns: new Array(10),
       chosen: [],
-      chosenArray: []
+      chosenArray: [],
+      session: {}
     };
   },
   mounted() {},
+  beforeCreate() {
+    this.$http.get('http://localhost:8889/api/checkLogin').then(res => {
+      if (res.data.success) {
+        console.log(res.data.user);
+      } else {
+        console.log(res.data.success);
+        this.$router.push({ name: 'register' });
+      }
+    });
+  },
+  mounted() {
+    this.getSessionInfo().then(res => {
+      this.session = res.data[0];
+    });
+  },
   methods: {
     handleClick(r, c) {
+      if (this.chosenArray.length >= 2) {
+        alert('只能选两个座位');
+        return;
+      }
       var temp = r + '' + c;
       var index = this.chosenArray.indexOf(temp);
       if (index === -1) {
@@ -185,6 +201,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     chooseSeat() {
       this.$router.push({ name: 'checkorder', query: { chosen: JSON.stringify(this.chosen) } });
+    },
+    getSessionInfo() {
+      return this.$http.get('/api/sessionInfo');
     }
   }
 
@@ -193,4 +212,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=3.64b688956b97bd9ed515.js.map
+//# sourceMappingURL=3.3527022fe21bc2c5b475.js.map

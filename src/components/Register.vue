@@ -47,17 +47,22 @@ export default {
   },
   methods: {
     submit(){
-      this.$http.post('http://localhost:3000/api/addUser',{
+      this.$http.post('http://localhost:8889/api/addUser',{
         name:this.name,
         grade:this.grade,
         school:this.school,
         phone:this.phone
       }).then((res)=>{
-        console.log(res)
+        console.log(res.data)
+        if(res.data.success){
+          this.$router.replace({name:'seats',params:{user:res.data.user}})
+        }else{
+          alert('注册失败')
+        }
       })
     },
     vary(){
-      this.$http.get('http://localhost:3000/api/varyCode',{
+      this.$http.get('http://localhost:8889/api/varyCode',{
         params:{
           code:this.varyCode
         }
@@ -66,7 +71,7 @@ export default {
       })
     },
     sendSms(){
-      this.$http.get('http://localhost:3000/api/sendSMS').then((res)=>{
+      this.$http.get('http://localhost:8889/api/sendSMS').then((res)=>{
         console.log(res)
       })
     }

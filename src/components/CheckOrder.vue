@@ -10,7 +10,7 @@
       </div>
       <div class="seats">
         <span v-for="item in chosen">
-          {{item.row}}排{{item.column}}座
+          {{item.row*1+1}}排{{item.column*1+1}}座
         </span>
       </div>
       <div>
@@ -30,7 +30,7 @@
       <span>应付4元</span>
     </div>
     <div class="payBtn">
-        <button type="button" class="btn btn-danger">立即付款</button>
+        <button type="button" v-on:click="goToPay" class="btn btn-danger">立即付款</button>
     </div>
   </div>
 </template>
@@ -51,6 +51,11 @@ export default {
   computed:{
     chosen(){
       return JSON.parse(this.$route.query.chosen)
+    }
+  },
+  methods:{
+    goToPay(){
+      this.$router.push({'name':'payment'})
     }
   }
 }
