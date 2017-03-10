@@ -127,6 +127,7 @@ app.use(async (ctx,next)=>{
                 uri: 'https://api.mch.weixin.qq.com/pay/unifiedorder',
                 body: out
             })
+        xml = ""+xml+""
         console.log('xml',xml)
         var res = JSON.parse(await tool.toJson(xml))
         console.log(res)
