@@ -116,7 +116,7 @@ app.use(async (ctx,next)=>{
         
         //统一下单接口 参数
         var params = Object.assign({sign:genSign()},payload)
-        console.log(params)
+        console.log('params',params)
         var out  = '<xml>'+await tool.toXml(params)+'</xml>'
 
         //通过统一下单接口获取package
@@ -126,7 +126,7 @@ app.use(async (ctx,next)=>{
                 uri: 'https://api.mch.weixin.qq.com/pay/unifiedorder',
                 body: out
             })
-        console.log(xml)
+        console.log('xml',xml)
         var res = JSON.parse(await tool.toJson(xml))
         console.log(res)
         ctx.body = res.xml.prepay_id
