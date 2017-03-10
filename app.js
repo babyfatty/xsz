@@ -148,13 +148,16 @@ app.use(async (ctx,next)=>{
       break;
     case '/api/sign':  
       var ACCESS_TOKEN = await rp('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07')
+      ACCESS_TOKEN = JSON.parse(ACCESS_TOKEN)
+      console.log(ACCESS_TOKEN)
       var requestUrl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ACCESS_TOKEN.access_token+'&type=jsapi'
       let jsapiTicket = await rp(requestUrl)
-      console.log('jsapiTicket',jsapiTicket)
+      jsapiTicket = JSON.parse(jsapiTicket)
+      console.log(jsapiTicket)
       let url = ctx.query.url
       var res = await sign(jsapiTicket.ticket,url)
-      var openid = ctx.session.openid
-      ctx.body = Object.assign(res,{openid:openid})
+      // var openid = ctx.session.openid
+      ctx.body = res
       console.log('body',ctx.body)
       break;
     case '/api/accessToken': 
