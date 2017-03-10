@@ -10,6 +10,7 @@ const md5 = require('js-md5')
 const session = require('koa-session');
 const convert = require('koa-convert');
 const fs = require('fs')
+const ip = require('ip')
 const resolve = file => path.resolve(__dirname, file)
 app.keys = ['1232312312312'];
 app.use(require('koa-static')(path.join(__dirname, 'dist')))
@@ -85,11 +86,7 @@ app.use(async (ctx,next)=>{
         let genChar = function(){
           return md5(new Date().getTime()).substring(0, 32)
         }
-        let getIP = function(){
-          console.log(ctx.socket.remoteAddress.split(':').slice(-1)[0])
-          // return '10.12.6.80'
-          return ctx.socket.remoteAddress.split(':').slice(-1)[0]
-        }
+        console.log(ip.address())
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
@@ -99,7 +96,7 @@ app.use(async (ctx,next)=>{
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:genChar(),
-          spbill_create_ip:getIP(),
+          spbill_create_ip:ip.address(),
           total_fee:8888,
           trade_type:'JSAPI'
         }
@@ -118,18 +115,17 @@ app.use(async (ctx,next)=>{
         //统一下单接口 参数
         var params = Object.assign({sign:genSign()},payload)
         console.log('params',params)
-        var out  = '<xml>'+await tool.toXml(JSON.stringify(params))+'</xml>'
+        var out  = await tool.toXml(JSON.stringify(params))
         console.log(out)
         //通过统一下单接口获取package
         var xml = await rp({
-                method: 'POST',
-                headers: { 'Content-Type':'text/xml; charset=utf-8' },
-                uri: 'https://api.mch.weixin.qq.com/pay/unifiedorder',
-                body: out
-            })
-        xml = ""+xml+""
+            method: 'POST',
+            headers: { 'Content-Type':'text/xml; charset=utf-8' },
+            uri: 'https://api.mch.weixin.qq.com/pay/unifiedorder',
+            body: out
+        })
         console.log('xml',xml)
-        var res = JSON.parse(await tool.toJson(xml))
+        var res = JSON.parse(await tool.toJson(xml.toString()))
         console.log(res)
         ctx.body = res.xml.prepay_id
       break;  

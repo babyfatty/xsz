@@ -9,6 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "ip": "^1.1.5",
     "js-md5": "^0.4.2",
     "koa": "^2.0.1",
     "koa-bodyparser": "^4.1.0",
