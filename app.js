@@ -89,8 +89,8 @@ app.use(async (ctx,next)=>{
         }
         let getIP = function(){
           console.log(ctx.socket.remoteAddress.split(':').slice(-1)[0])
-          return '10.12.6.80'
-          //return ctx.socket.remoteAddress.split(':').slice(-1)[0]
+          // return '10.12.6.80'
+          return ctx.socket.remoteAddress.split(':').slice(-1)[0]
         }
         var payload = {
           appid:'wx829b884172f246ea',
@@ -151,7 +151,7 @@ app.use(async (ctx,next)=>{
       let url = ctx.query.url
       var res = await sign(jsapiTicket.ticket,url)
       var openid = ctx.session.openid
-      ctx.body = Object.Assign(res,{openid:openid})
+      ctx.body = Object.assign(res,{openid:openid})
       break;
     case '/api/accessToken': 
       ctx.body = await rp('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07')
