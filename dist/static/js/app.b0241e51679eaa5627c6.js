@@ -27,7 +27,6 @@ const orderDetail = resolve => __webpack_require__.e/* require */(1).then(functi
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  mode: 'history',
   routes: [{
     path: '/register',
     name: 'register',
@@ -162,4 +161,4 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ })
 ],[13]);
-//# sourceMappingURL=app.c6390bf46d8b65f8bc19.js.map
+//# sourceMappingURL=app.b0241e51679eaa5627c6.js.map
