@@ -12457,7 +12457,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted() {
     var self = this;
-    this.$http.get('http://localhost:8889/api/sign', {
+    this.$http.get('/xsz/api/sign', {
       params: {
         url: location.href
       }
@@ -12473,11 +12473,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
       });
       wx.ready(function () {
-        self.$http.get('/xsz/api/unifiedorder', {
-          params: {
-            code: self.$route.params.code
-          }
-        }).then(res => {
+        self.$http.get('/xsz/api/unifiedorder').then(res => {
           console.log(res);
           var payload = {
             nonceStr: '123',
@@ -13854,7 +13850,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22124,4 +22120,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.0a297e5d3fc2c294b8f3.js.map
+//# sourceMappingURL=0.30d74f9699529d726533.js.map

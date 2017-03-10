@@ -84,8 +84,6 @@ app.use(async (ctx,next)=>{
       
       break;
     case '/api/unifiedorder':
-
-
         let genChar = function(){
           return md5(new Date().getTime()).substring(0, 32)
         }
@@ -100,7 +98,7 @@ app.use(async (ctx,next)=>{
           mch_id:'1446670502',
           nonce_str:genChar(),
           notify_url:'http://xesfun.com/xsz/#/',
-          openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
+          openid:ctx.session.openid,
           out_trade_no:genChar(),
           spbill_create_ip:getIP(),
           total_fee:8888,
@@ -152,7 +150,8 @@ app.use(async (ctx,next)=>{
       let jsapiTicket = await rp(requestUrl)
       let url = ctx.query.url
       var res = await sign(jsapiTicket.ticket,url)
-      ctx.body = res
+      var openid = ctx.session.openid
+      ctx.body = Object.Assign(res,{openid:openid})
       break;
     case '/api/accessToken': 
       ctx.body = await rp('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07')
