@@ -56,16 +56,18 @@ export default {
               console.log(payload)
               wx.chooseWXPay({
                   nonceStr: nonceStr, 
-                  package: 'prepay_id='+res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                  package: 'prepay_id='+res.data, 
                   signType: 'MD5', 
                   timestamp: time,
-                  paySign: genSign(), // 支付签名
+                  paySign: genSign(), 
                   success: function (res) {
-                    // 支付成功后的回调函数
                     console.log('success',res)
                   },
                   fail: function(res){
                     alert(res)
+                  },
+                  cancel: function(res){
+                      this.$router.replace({"name":"orderdetail"})
                   }
               })
               

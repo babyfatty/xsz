@@ -12497,16 +12497,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log(payload);
           wx.chooseWXPay({
             nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            package: 'prepay_id=' + res.data,
             signType: 'MD5',
             timestamp: time,
-            paySign: genSign(), // 支付签名
+            paySign: genSign(),
             success: function (res) {
-              // 支付成功后的回调函数
               console.log('success', res);
             },
             fail: function (res) {
               alert(res);
+            },
+            cancel: function (res) {
+              this.$router.replace({ "name": "orderdetail" });
             }
           });
         });
@@ -13857,7 +13859,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22129,4 +22131,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.48568c88314ec56b69bc.js.map
+//# sourceMappingURL=0.019c98a65d8ad0c41e35.js.map
