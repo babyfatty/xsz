@@ -9,7 +9,7 @@ router
 })
 .get('/api/unifiedorder',async function(ctx,next){
 // get code 
-// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx829b884172f246ea&redirect_uri=http://xesfun.com/xsz/&response_type=code&scope=snsapi_base&state=123#wechat_redirect
+// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx829b884172f246ea&redirect_uri=http://xesfun.com/xsz/register&response_type=code&scope=snsapi_base&state=123#wechat_redirect
 
 //get access_token&openid
 	var code = '0219qaJ21jPNZM1D9GK21S0rJ219qaJO'
@@ -54,7 +54,7 @@ router
 		var sign=md5(stringSignTemp).toUpperCase()
 		return sign
 	}
-	
+
 	//统一下单接口 参数
 	var params = Object.assign({sign:genSign()},payload)
 	var out  = '<xml>'+converter.toXML(params)+'</xml>'

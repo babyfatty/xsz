@@ -163,15 +163,15 @@ app.use(async (ctx,next)=>{
       break;
     default:
         // var code = '0219qaJ21jPNZM1D9GK21S0rJ219qaJO'
-        var code = ctx.query.code
-        if(!!code){
+        var wxcode = ctx.query.code
+        if(!!wxcode){
           var openidParams = {
             secret:'36a0109564e755f9ad96322a835d0d07',
-            code:code,
+            code:wxcode,
             appid:'wx829b884172f246ea',
             grant_type:'authorization_code'
           }
-          var openidUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?grant_type=authorization_code&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07&code='+code
+          var openidUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?grant_type=authorization_code&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07&code='+wxcode
           var openid = await rp(openidUrl)
           console.log('openid',openid)
           ctx.redirect(ctx.originalUrl.split('?')[0]+'?/openid='+openid)
