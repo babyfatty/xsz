@@ -91,24 +91,18 @@ app.use(async (ctx,next)=>{
       
       break;
     case '/api/unifiedorder':
-        let genChar = function(){
-          return md5(new Date().getTime()).substring(0, 32)
-        }
-        let genTrans = function(){
-          return md5(new Date().getTime()).substring(2, 34)
-        }
         // console.log(ip.address())
         // console.log('openid',ctx.session.openid.openid)
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
-          nonce_str:genChar(),
+          nonce_str:md5(new Date().getTime()).substring(0, 32),
           notify_url:'http://xesfun.com/xsz/',
           // openid:ctx.session.openid.openid,
           openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
-          out_trade_no:genTrans(),
+          out_trade_no:md5(new Date().getTime()).substring(0, 32),
           spbill_create_ip:ip.address(),
           total_fee:1,
           trade_type:'JSAPI'
