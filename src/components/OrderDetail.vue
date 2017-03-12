@@ -61,16 +61,21 @@ export default {
     this.user = JSON.parse(this.$route.query.user)
     this.session = JSON.parse(this.$route.query.session)
 
-    this.$http.post('/xsz/api/savePay',{
+    this.savePay.then((res)=>{
+      alert('success')
+    })
+  },
+  methods:{
+    savePay(){
+      return this.$http.post('/xsz/api/savePay',{
         uid:this.user.id+"",
         sid:this.session.id+"",
         chosen:JSON.stringify(this.chosen),
-        transID:res.data.transId,
+        transID:this.transId,
         amount:this.amount,
         btime:new Date().getTime()+""
-    }).then(()=>{
-        alert('success')
     })
+    }
   }
   // computed:{
   //   session(){

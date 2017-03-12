@@ -68,16 +68,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.user = JSON.parse(this.$route.query.user);
     this.session = JSON.parse(this.$route.query.session);
 
-    this.$http.post('/xsz/api/savePay', {
-      uid: this.user.id + "",
-      sid: this.session.id + "",
-      chosen: JSON.stringify(this.chosen),
-      transID: res.data.transId,
-      amount: this.amount,
-      btime: new Date().getTime() + ""
-    }).then(() => {
+    this.savePay.then(res => {
       alert('success');
     });
+  },
+  methods: {
+    savePay() {
+      return this.$http.post('/xsz/api/savePay', {
+        uid: this.user.id + "",
+        sid: this.session.id + "",
+        chosen: JSON.stringify(this.chosen),
+        transID: this.transId,
+        amount: this.amount,
+        btime: new Date().getTime() + ""
+      });
+    }
   }
   // computed:{
   //   session(){
@@ -108,7 +113,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
 
 // exports
 
@@ -197,4 +202,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=6.8736190fd114cb010711.js.map
+//# sourceMappingURL=6.b35b3aa02b2d0d6a6f36.js.map
