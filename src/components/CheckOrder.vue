@@ -116,10 +116,8 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
-                    alert(JSON.stringify(res))
                     self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
-                    console.log('success',res)
-                  },
+                   },
                   fail: function(res){
                     alert('payment fail')
                   },

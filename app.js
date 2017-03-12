@@ -137,7 +137,7 @@ app.use(async (ctx,next)=>{
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:md5(new Date().getTime()).substring(0, 32),
-          notify_url:'http://xesfun.com/xsz/',
+          notify_url:'http://xesfun.com/xsz/#/',
           openid:JSON.parse(ctx.session.openid).openid,
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:Math.floor((new Date().getTime()*Math.random()*Math.random()*100000))+"",
