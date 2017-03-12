@@ -74,7 +74,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.amount = this.$route.query.amount;
     this.user = JSON.parse(this.$route.query.user);
     this.session = JSON.parse(this.$route.query.session);
-    this.savePay();
+    this.savePay().then(() => {
+      this.sendSMS();
+    });
   },
   methods: {
     changeTitle(t) {
@@ -97,6 +99,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         transID: this.transId,
         amount: this.amount,
         btime: new Date().getTime() + ""
+      });
+    },
+    sendSms() {
+      this.$http.get('http://xesfun.com/xsz/api/sendNotice', {
+        params: {
+          phone: this.phone
+        }
       });
     }
   }
@@ -127,7 +136,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
 
 // exports
 
@@ -244,4 +253,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=3.d8d6e1d446af00862cc4.js.map
+//# sourceMappingURL=3.a18848873d0ac684492b.js.map

@@ -41,6 +41,16 @@ app.use(async (ctx,next)=>{
         ctx.body = e
       }
       break; 
+    case '/api/sendNotice':
+      try {
+        var res = await tool.sendMsg(code,ctx.query.phone)
+        ctx.body = res
+        // statements
+      } catch(e) {
+        // statements
+        ctx.body = e
+      }
+      break;   
     case '/api/varyLogin':
       console.log('1',ctx.query.code)
       console.log('2',ctx.session)

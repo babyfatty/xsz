@@ -67,7 +67,9 @@ export default {
     this.amount = this.$route.query.amount
     this.user = JSON.parse(this.$route.query.user)
     this.session = JSON.parse(this.$route.query.session)
-    this.savePay()
+    this.savePay().then(()=>{
+      this.sendSMS()
+    })
   },
   methods:{
     changeTitle(t){
@@ -91,6 +93,13 @@ export default {
         amount:this.amount,
         btime:new Date().getTime()+""
     })
+    },
+    sendSms(){
+      this.$http.get('http://xesfun.com/xsz/api/sendNotice',{
+        params:{
+          phone:this.phone
+        }
+      })
     }
   }
 }
