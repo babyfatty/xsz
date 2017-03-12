@@ -140,7 +140,7 @@ app.use(async (ctx,next)=>{
           notify_url:'http://xesfun.com/xsz/',
           openid:JSON.parse(ctx.session.openid).openid,
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
-          out_trade_no:(new Date().getTime()*Math.random()*Math.random()*100000)+"",
+          out_trade_no:Math.floor((new Date().getTime()*Math.random()*Math.random()*100000))+"",
           spbill_create_ip:ip.address(),
           total_fee:1,
           trade_type:'JSAPI'
