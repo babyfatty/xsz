@@ -133,7 +133,18 @@ export default {
                   fail: function(res){
                     alert('payment fail')
                   },
-                  cancel: function(res){
+                  cancel: function(){
+                    self.$http.post('/xsz/api/savePay',{
+                          uid:self.user.id+"",
+                          sid:self.session.id+"",
+                          chosen:JSON.stringify(self.chosen),
+                          transID:res.data.transId,
+                          btime:btime
+                      }).then(()=>{
+                          alert('success')
+                          location.href = 'http://xesfun.com/xsz/#/orderdetail'
+                                  // self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+                      })
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
                       // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})

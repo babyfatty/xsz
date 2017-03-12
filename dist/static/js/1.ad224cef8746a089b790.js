@@ -22104,12 +22104,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             fail: function (res) {
               alert('payment fail');
             },
-            cancel: function (res) {
+            cancel: function () {
+              self.$http.post('/xsz/api/savePay', {
+                uid: self.user.id + "",
+                sid: self.session.id + "",
+                chosen: JSON.stringify(self.chosen),
+                transID: res.data.transId,
+                btime: btime
+              }).then(() => {
+                alert('success');
+                location.href = 'http://xesfun.com/xsz/#/orderdetail';
+                // self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+              });
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
               // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
               // location.href = 'http://xesfun.com/xsz/#/orderdetail'
-
             }
           });
         });
@@ -22146,7 +22156,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22233,4 +22243,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.c0f0a852cc87955016aa.js.map
+//# sourceMappingURL=1.ad224cef8746a089b790.js.map

@@ -14,7 +14,6 @@ const ip = require('ip')
 const resolve = file => path.resolve(__dirname, file)
 app.keys = ['1232312312312'];
 app.use(require('koa-static')(path.join(__dirname, 'dist')))
-// app.use(convert(session(CONFIG,app)));
 app.use(convert(session(app)));
 app.use(bodyParser())
 
@@ -147,7 +146,7 @@ app.use(async (ctx,next)=>{
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:Math.floor((new Date().getTime()*Math.random()*Math.random()*100000))+"",
           spbill_create_ip:ip.address(),
-          total_fee:1,
+          total_fee:0,
           trade_type:'JSAPI'
         }
         xmlJson={
