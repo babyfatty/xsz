@@ -131,7 +131,7 @@ app.use(async (ctx,next)=>{
       break;  
     case '/api/unifiedorder':
         // console.log(ip.address())
-        console.log('openid',ctx.session.openid.openid)
+        console.log('openid',ctx.session)
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
