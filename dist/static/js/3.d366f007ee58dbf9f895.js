@@ -1,6 +1,118 @@
-webpackJsonp([2,9],{
+webpackJsonp([3,9],{
 
-/***/ 115:
+/***/ 161:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      wait: 30,
+      btnShow: true,
+      varyCode: "",
+      phone: ""
+    };
+  },
+  mounted() {},
+  methods: {
+    vary() {
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
+        // this.$http.get('http://localhost:8889/api/varyLogin',{
+        params: {
+          code: this.varyCode,
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res.data);
+        if (res.data.success) {
+          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
+        } else {
+          alert(res.data.msg);
+        }
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
+        params: {
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res);
+        if (res.data.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(181)
+__webpack_require__(182)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(161),
+  /* template */
+  __webpack_require__(189),
+  /* scopeId */
+  "data-v-55a34494",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -15,7 +127,7 @@ exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n", 
 
 /***/ }),
 
-/***/ 116:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -30,13 +142,13 @@ exports.push([module.i, "\n.submitBtn[data-v-55a34494]{\n  width: 100%;\n}\n.cod
 
 /***/ }),
 
-/***/ 146:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(115);
+var content = __webpack_require__(172);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57,13 +169,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 147:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(116);
+var content = __webpack_require__(173);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -84,31 +196,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 17:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(146)
-__webpack_require__(147)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(91),
-  /* template */
-  __webpack_require__(185),
-  /* scopeId */
-  "data-v-55a34494",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 185:
+/***/ 189:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -203,95 +291,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("提交")])])
 },staticRenderFns: []}
 
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      wait: 30,
-      btnShow: true,
-      varyCode: "",
-      phone: ""
-    };
-  },
-  mounted() {},
-  methods: {
-    vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
-        // this.$http.get('http://localhost:8889/api/varyLogin',{
-        params: {
-          code: this.varyCode,
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res.data);
-        if (res.data.success) {
-          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
-        } else {
-          alert(res.data.msg);
-        }
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
-        params: {
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res);
-        if (res.data.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
-        }
-      });
-    }
-  }
-};
-
 /***/ })
 
 });
-//# sourceMappingURL=2.cbff101a60c6f6a865af.js.map
+//# sourceMappingURL=3.d366f007ee58dbf9f895.js.map

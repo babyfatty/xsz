@@ -1,6 +1,114 @@
-webpackJsonp([1,9],{
+webpackJsonp([2,9],{
 
-/***/ 111:
+/***/ 165:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      name: '',
+      school: '',
+      grade: '',
+      phone: '',
+      varyCode: '',
+      wait: 10,
+      btnShow: true
+    };
+  },
+  mounted() {},
+  methods: {
+    submit() {
+      this.$http.post('http://xesfun.com/xsz/api/addUser', {
+        // this.$http.post('http://localhost:8889/api/addUser',{
+
+        name: this.name,
+        grade: this.grade,
+        school: this.school,
+        phone: this.phone,
+        code: this.varyCode
+      }).then(res => {
+        console.log(res.data);
+        if (res.data.success) {
+          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
+        } else {
+          alert(res.data.msg);
+        }
+      });
+    },
+    vary() {
+      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
+        // this.$http.get('http://localhost:8889/api/varyCode',{
+
+        params: {
+          code: this.varyCode
+        }
+      }).then(res => {
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.btnShow = false;
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
+        params: {
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res);
+        if (res.data.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -15,7 +123,7 @@ exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n", 
 
 /***/ }),
 
-/***/ 112:
+/***/ 169:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -30,13 +138,13 @@ exports.push([module.i, "\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\
 
 /***/ }),
 
-/***/ 142:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(111);
+var content = __webpack_require__(168);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57,13 +165,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 143:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(112);
+var content = __webpack_require__(169);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -84,7 +192,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 182:
+/***/ 186:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -281,14 +389,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(142)
-__webpack_require__(143)
+__webpack_require__(177)
+__webpack_require__(178)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(95),
+  __webpack_require__(165),
   /* template */
-  __webpack_require__(182),
+  __webpack_require__(186),
   /* scopeId */
   "data-v-46075134",
   /* cssModules */
@@ -298,115 +406,7 @@ var Component = __webpack_require__(4)(
 module.exports = Component.exports
 
 
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      name: '',
-      school: '',
-      grade: '',
-      phone: '',
-      varyCode: '',
-      wait: 10,
-      btnShow: true
-    };
-  },
-  mounted() {},
-  methods: {
-    submit() {
-      this.$http.post('http://xesfun.com/xsz/api/addUser', {
-        // this.$http.post('http://localhost:8889/api/addUser',{
-
-        name: this.name,
-        grade: this.grade,
-        school: this.school,
-        phone: this.phone,
-        code: this.varyCode
-      }).then(res => {
-        console.log(res.data);
-        if (res.data.success) {
-          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
-        } else {
-          alert(res.data.msg);
-        }
-      });
-    },
-    vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
-        // this.$http.get('http://localhost:8889/api/varyCode',{
-
-        params: {
-          code: this.varyCode
-        }
-      }).then(res => {
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.btnShow = false;
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
-        params: {
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res);
-        if (res.data.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
-        }
-      });
-    }
-  }
-};
-
 /***/ })
 
 });
-//# sourceMappingURL=1.d7bcf0698fc29e82a036.js.map
+//# sourceMappingURL=2.942ef72c8211d3cadaa6.js.map
