@@ -66,7 +66,8 @@ export default {
         sid:this.session.id+"",
         chosen:JSON.stringify(this.chosen),
         transID:res.data.transId,
-        amount:this.amount
+        amount:this.amount,
+        btime:new Date().getTime()+""
     }).then(()=>{
         alert('success')
     })
