@@ -22065,21 +22065,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log(payload);
           wx.chooseWXPay({
             nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data,
+            package: 'prepay_id=' + res.data.package,
             signType: 'MD5',
             timestamp: time,
             paySign: genSign(),
             success: function (res) {
               alert(JSON.stringify(res));
-              self.$router.replace({ "name": "orderdetail" });
+              self.$router.replace({ 'name': 'orderdetail', params: { session: this.session, user: this.user, chosen: this.chosen, transID: res.data.transId, btime: btime, amount: this.amount } });
               console.log('success', res);
             },
             fail: function (res) {
-              alert(res);
+              alert('payment fail');
             },
             cancel: function (res) {
-              alert(res);
-              self.$router.replace({ "name": "orderdetail" });
+              // alert(res)
+              // self.$router.replace({"name":"orderdetail"})
             }
           });
         });
@@ -22200,4 +22200,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]));
-//# sourceMappingURL=0.f4ba08a7ded5107cd9f8.js.map
+//# sourceMappingURL=0.27d917ef902e8e7d3b5b.js.map

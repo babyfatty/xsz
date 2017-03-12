@@ -111,21 +111,21 @@ export default {
               console.log(payload)
               wx.chooseWXPay({
                   nonceStr: nonceStr, 
-                  package: 'prepay_id='+res.data, 
+                  package: 'prepay_id='+res.data.package, 
                   signType: 'MD5', 
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
                     alert(JSON.stringify(res))
-                    self.$router.replace({"name":"orderdetail"})
+                    self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
                     console.log('success',res)
                   },
                   fail: function(res){
-                    alert(res)
+                    alert('payment fail')
                   },
                   cancel: function(res){
-                      alert(res)
-                      self.$router.replace({"name":"orderdetail"})
+                      // alert(res)
+                      // self.$router.replace({"name":"orderdetail"})
                   }
               })
               
