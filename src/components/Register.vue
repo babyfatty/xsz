@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-      <div>
+      <div class="toLoginLink">
         <router-link :to="{name:'login'}" class="loginLink">已经注册过，直接登录 >></router-link>        
       </div>
       <div class="form-group">
@@ -122,6 +122,9 @@ export default {
   }
 </style>
 <style scoped>
+.toLoginLink{
+  overflow: hidden;
+}
 .registerTitle{
   font-size: 17px;
 }

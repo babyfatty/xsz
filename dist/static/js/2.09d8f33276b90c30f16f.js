@@ -146,7 +146,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,gBAAgB;CACjB;AACD;EACE,aAAa;CACd;AACD;EACE,mBAAmB;EACnB,UAAU;EACV,SAAS;CACV;AACD;EACE,mBAAmB;CACpB;AACD;EACE,YAAY;CACb","file":"Register.vue","sourcesContent":["\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.toLoginLink[data-v-46075134]{\n  overflow: hidden;\n}\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Register.vue"],"names":[],"mappings":";AACA;EACE,iBAAiB;CAClB;AACD;EACE,gBAAgB;CACjB;AACD;EACE,aAAa;CACd;AACD;EACE,mBAAmB;EACnB,UAAU;EACV,SAAS;CACV;AACD;EACE,mBAAmB;CACpB;AACD;EACE,YAAY;CACb","file":"Register.vue","sourcesContent":["\n.toLoginLink[data-v-46075134]{\n  overflow: hidden;\n}\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\n}\n.loginLink[data-v-46075134]{\n  float: right;\n}\n.codeBtn[data-v-46075134]{\n  position: absolute;\n  bottom: 0;\n  right: 0;\n}\n.form-group[data-v-46075134]{\n  position: relative;\n}\n.submitBtn[data-v-46075134]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -213,7 +213,9 @@ if(false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
-  }, [_c('div', [_c('router-link', {
+  }, [_c('div', {
+    staticClass: "toLoginLink"
+  }, [_c('router-link', {
     staticClass: "loginLink",
     attrs: {
       "to": {
@@ -422,4 +424,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=2.f75cf97d16416ba5baeb.js.map
+//# sourceMappingURL=2.09d8f33276b90c30f16f.js.map
