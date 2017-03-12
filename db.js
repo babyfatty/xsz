@@ -43,8 +43,8 @@ var USER_SEATS_PAID = sql.define('user_seats_paid',{
 User.sync({ force: false })
 Register.sync({ force: false })
 Speech.sync({ force: false })
-Seats.sync({ force: true })
-USER_SEATS_PAID.sync({ force: true })
+Seats.sync({ force: false })
+USER_SEATS_PAID.sync({ force: false })
 
 var addPayInfo = function(payInfo){
 	return USER_SEATS_PAID.create(payInfo)

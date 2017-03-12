@@ -22088,6 +22088,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             paySign: genSign(),
             success: function (res) {
               self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
+              location.href = 'http://xesfun.com/xsz/#/orderdetail';
             },
             fail: function (res) {
               alert('payment fail');
@@ -22096,6 +22097,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
               self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
+              location.href = 'http://xesfun.com/xsz/#/orderdetail';
             }
           });
         });
@@ -22132,7 +22134,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22219,4 +22221,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.0b9cac587ca5cebfc047.js.map
+//# sourceMappingURL=1.b7046c9669532ed14e8b.js.map

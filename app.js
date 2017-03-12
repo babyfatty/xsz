@@ -244,7 +244,7 @@ app.use(async (ctx,next)=>{
           var openid = await rp(openidUrl)
           console.log('openid',openid)
           ctx.session.openid = openid
-          // ctx.redirect(ctx.originalUrl.split('?')[0]+'?openid='+openid)
+          ctx.redirect(ctx.originalUrl.split('?')[0]+'?openid='+openid)
         }
         const template = fs.readFileSync(resolve('./dist/static/index.html'), 'utf-8')
         ctx.body = template

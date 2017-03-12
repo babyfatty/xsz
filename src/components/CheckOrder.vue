@@ -117,6 +117,7 @@ export default {
                   paySign: genSign(), 
                   success: function (res) {
                     self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+                    location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
                     alert('payment fail')
@@ -125,6 +126,8 @@ export default {
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
                       self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+                    location.href = 'http://xesfun.com/xsz/#/orderdetail'
+                      
                   }
               })
               
