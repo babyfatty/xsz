@@ -124,7 +124,7 @@ export default {
                   cancel: function(res){
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
-                      self.$router.replace({'path':'http://xesfun.com/xsz/#/'})
+                      self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
                   }
               })
               

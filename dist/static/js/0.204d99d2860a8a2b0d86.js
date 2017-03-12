@@ -22078,7 +22078,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             cancel: function (res) {
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
-              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/' });
+              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail', params: { session: this.session, user: this.user, chosen: this.chosen, transID: res.data.transId, btime: btime, amount: this.amount } });
             }
           });
         });
@@ -22199,4 +22199,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]));
-//# sourceMappingURL=0.c425a5d947342b83fca7.js.map
+//# sourceMappingURL=0.204d99d2860a8a2b0d86.js.map
