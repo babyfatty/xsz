@@ -53,8 +53,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   methods: {
     submit() {
-      // this.$http.post('http://xesfun.com/xsz/api/addUser',{
-      this.$http.post('http://localhost:8889/api/addUser', {
+      this.$http.post('http://xesfun.com/xsz/api/addUser', {
+        // this.$http.post('http://localhost:8889/api/addUser',{
 
         name: this.name,
         grade: this.grade,
@@ -71,8 +71,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     vary() {
-      // this.$http.get('http://xesfun.com/xsz/api/varyCode',{
-      this.$http.get('http://localhost:8889/api/varyCode', {
+      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
+        // this.$http.get('http://localhost:8889/api/varyCode',{
 
         params: {
           code: this.varyCode
@@ -409,4 +409,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=2.c3f22ce2828a7bbdd05a.js.map
+//# sourceMappingURL=2.33167c6c7c7fa893903c.js.map

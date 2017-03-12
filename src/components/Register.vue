@@ -47,8 +47,8 @@ export default {
   },
   methods: {
     submit(){
-      // this.$http.post('http://xesfun.com/xsz/api/addUser',{
-      this.$http.post('http://localhost:8889/api/addUser',{
+      this.$http.post('http://xesfun.com/xsz/api/addUser',{
+      // this.$http.post('http://localhost:8889/api/addUser',{
 
         name:this.name,
         grade:this.grade,
@@ -65,8 +65,8 @@ export default {
       })
     },
     vary(){
-      // this.$http.get('http://xesfun.com/xsz/api/varyCode',{
-      this.$http.get('http://localhost:8889/api/varyCode',{
+      this.$http.get('http://xesfun.com/xsz/api/varyCode',{
+      // this.$http.get('http://localhost:8889/api/varyCode',{
         
         params:{
           code:this.varyCode

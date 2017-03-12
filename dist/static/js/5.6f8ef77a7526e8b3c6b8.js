@@ -57,7 +57,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.getSessionInfo().then(res => {
       this.session = res.data[0];
     });
-    this.$http.get('http://localhost:8889/api/bookedSeats').then(res => {
+    // this.$http.get('http://localhost:8889/api/bookedSeats').then((res)=>{
+    this.$http.get('http://xesfun.com/xsz/api/bookedSeats').then(res => {
       var temp = [];
       res.data.forEach((element, index) => {
         console.log(element.chosen);
@@ -105,8 +106,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user, session: this.session } });
     },
     getSessionInfo() {
-      // return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')
-      return this.$http.get('http://localhost:8889/api/sessionInfo');
+      return this.$http.get('http://xesfun.com/xsz/api/sessionInfo');
+      // return this.$http.get('http://localhost:8889/api/sessionInfo')
     }
   }
 
@@ -236,4 +237,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=5.dfac4e5d57f9cefce716.js.map
+//# sourceMappingURL=5.6f8ef77a7526e8b3c6b8.js.map

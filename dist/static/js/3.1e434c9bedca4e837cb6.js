@@ -46,8 +46,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   methods: {
     vary() {
-      // this.$http.get('http://xesfun.com/xsz/api/varyLogin',{
-      this.$http.get('http://localhost:8889/api/varyLogin', {
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
+        // this.$http.get('http://localhost:8889/api/varyLogin',{
         params: {
           code: this.varyCode,
           phone: this.phone
@@ -294,4 +294,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=3.278da99e1e6921a27f62.js.map
+//# sourceMappingURL=3.1e434c9bedca4e837cb6.js.map

@@ -40,8 +40,8 @@ export default {
   },
   methods:{
     vary(){
-      // this.$http.get('http://xesfun.com/xsz/api/varyLogin',{
-      this.$http.get('http://localhost:8889/api/varyLogin',{
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin',{
+      // this.$http.get('http://localhost:8889/api/varyLogin',{
         params:{
           code:this.varyCode,
           phone:this.phone
