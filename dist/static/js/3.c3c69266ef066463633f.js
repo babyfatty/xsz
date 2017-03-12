@@ -74,7 +74,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.user = JSON.parse(this.$route.query.user);
     this.session = JSON.parse(this.$route.query.session);
     this.savePay().then(() => {
-      this.sendSMS();
+      this.sendSms();
     });
   },
   methods: {
@@ -252,4 +252,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=3.8990be0a600ebbfd6798.js.map
+//# sourceMappingURL=3.c3c69266ef066463633f.js.map
