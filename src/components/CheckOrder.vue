@@ -116,7 +116,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
-                    self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+                    self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
                    },
                   fail: function(res){
                     alert('payment fail')
