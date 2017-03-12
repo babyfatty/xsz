@@ -129,6 +129,10 @@ app.use(async (ctx,next)=>{
         console.log(e);
       }
       break;  
+    case '/api/buyTicket':
+      console.log(ctx.request.body)
+      console.log(ctx.query.body)
+      break;  
     case '/api/unifiedorder':
         // console.log(ip.address())
         console.log('openid',JSON.parse(ctx.session.openid).openid)
@@ -137,7 +141,7 @@ app.use(async (ctx,next)=>{
           body:'橡树籽讲座报名',
           mch_id:'1446670502',
           nonce_str:md5(new Date().getTime()).substring(0, 32),
-          notify_url:'http://xesfun.com/xsz/#/',
+          notify_url:'http://xesfun.com/xsz/api/buyTicket',
           openid:JSON.parse(ctx.session.openid).openid,
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:Math.floor((new Date().getTime()*Math.random()*Math.random()*100000))+"",
@@ -244,7 +248,7 @@ app.use(async (ctx,next)=>{
           var openid = await rp(openidUrl)
           console.log('openid',openid)
           ctx.session.openid = openid
-          
+
           // ctx.redirect(ctx.originalUrl.split('?')[0]+'?openid='+openid)
         }
         const template = fs.readFileSync(resolve('./dist/static/index.html'), 'utf-8')
