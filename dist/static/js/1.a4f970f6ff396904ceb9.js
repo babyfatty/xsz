@@ -22086,8 +22086,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             signType: 'MD5',
             timestamp: time,
             paySign: genSign(),
-            success: function (res) {
+            success: function () {
               // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+              self.$http.post('http://xesfun.com/xsz/api/savePay', {
+                uid: self.user.id + "",
+                sid: self.session.id + "",
+                chosen: JSON.stringify(self.chosen),
+                transID: res.data.transId,
+                btime: btime
+              }).then(() => {
+                location.href = 'http://xesfun.com/xsz/#/orderdetail';
+                // self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+              });
               location.href = 'http://xesfun.com/xsz/#/orderdetail';
             },
             fail: function (res) {
@@ -22097,7 +22107,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
               // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-              location.href = 'http://xesfun.com/xsz/#/orderdetail';
+              // location.href = 'http://xesfun.com/xsz/#/orderdetail'
+
             }
           });
         });
@@ -22134,7 +22145,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22221,4 +22232,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.8a89ee7e8324b40d97a7.js.map
+//# sourceMappingURL=1.a4f970f6ff396904ceb9.js.map

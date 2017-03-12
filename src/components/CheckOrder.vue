@@ -115,8 +115,18 @@ export default {
                   signType: 'MD5', 
                   timestamp: time,
                   paySign: genSign(), 
-                  success: function (res) {
+                  success: function () {
                     // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+                      self.$http.post('http://xesfun.com/xsz/api/savePay',{
+                          uid:self.user.id+"",
+                          sid:self.session.id+"",
+                          chosen:JSON.stringify(self.chosen),
+                          transID:res.data.transId,
+                          btime:btime
+                      }).then(()=>{
+                          location.href = 'http://xesfun.com/xsz/#/orderdetail'
+                                  // self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+                        })
                     location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
@@ -126,8 +136,8 @@ export default {
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
                       // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-                    location.href = 'http://xesfun.com/xsz/#/orderdetail'
-                      
+                    // location.href = 'http://xesfun.com/xsz/#/orderdetail'
+
                   }
               })
               
