@@ -68,7 +68,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.user = JSON.parse(this.$route.query.user);
     this.session = JSON.parse(this.$route.query.session);
 
-    this.savePay.then(res => {
+    this.savePay().then(res => {
       alert('success');
     });
   },
@@ -202,4 +202,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=6.b35b3aa02b2d0d6a6f36.js.map
+//# sourceMappingURL=6.e86c0d76415e12186099.js.map

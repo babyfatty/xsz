@@ -61,7 +61,7 @@ export default {
     this.user = JSON.parse(this.$route.query.user)
     this.session = JSON.parse(this.$route.query.session)
 
-    this.savePay.then((res)=>{
+    this.savePay().then((res)=>{
       alert('success')
     })
   },
