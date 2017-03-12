@@ -35,6 +35,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Login',
@@ -211,14 +213,14 @@ if(false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
-  }, [_c('router-link', {
+  }, [_c('div', [_c('router-link', {
     staticClass: "loginLink",
     attrs: {
       "to": {
         name: 'login'
       }
     }
-  }, [_vm._v("已经注册过，直接登录 >>")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("已经注册过，直接登录 >>")])], 1), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     attrs: {
@@ -390,7 +392,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.submit
     }
-  }, [_vm._v("提交")])], 1)
+  }, [_vm._v("提交")])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -420,4 +422,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=2.43b79b68d0a30a91c2cb.js.map
+//# sourceMappingURL=2.f75cf97d16416ba5baeb.js.map

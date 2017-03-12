@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <router-link :to="{name:'login'}" class="loginLink">已经注册过，直接登录 >></router-link>
+      <div>
+        <router-link :to="{name:'login'}" class="loginLink">已经注册过，直接登录 >></router-link>        
+      </div>
       <div class="form-group">
       <label for="">姓名</label>
       <input type="numbder" class="form-control" id="" v-model="name" placeholder="姓名">
