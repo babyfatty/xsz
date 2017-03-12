@@ -22020,6 +22020,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {};
   },
   mounted() {
+    this.changeTitle('订单确认');
     console.log(this.$route.params);
     var self = this;
     this.$http.get('/xsz/api/sign', {
@@ -22040,6 +22041,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
   },
   computed: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
     chosen() {
       console.log(JSON.parse(this.$route.params.chosen));
       return JSON.parse(this.$route.params.chosen);
@@ -22148,7 +22161,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22235,4 +22248,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.ff33abed2018b843aa11.js.map
+//# sourceMappingURL=1.bb40da5ceda4b48e75f9.js.map

@@ -35,7 +35,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Login',
@@ -50,8 +49,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       btnShow: true
     };
   },
-  mounted() {},
+  mounted() {
+    this.changeTitle('注册-橡树籽讲座报名');
+  },
   methods: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
     submit() {
       this.$http.post('http://xesfun.com/xsz/api/addUser', {
         // this.$http.post('http://localhost:8889/api/addUser',{
@@ -198,9 +211,7 @@ if(false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
-  }, [_c('span', {
-    staticClass: "registerTitle"
-  }, [_vm._v("注册")]), _vm._v(" "), _c('router-link', {
+  }, [_c('router-link', {
     staticClass: "loginLink",
     attrs: {
       "to": {
@@ -409,4 +420,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=2.942ef72c8211d3cadaa6.js.map
+//# sourceMappingURL=2.43b79b68d0a30a91c2cb.js.map

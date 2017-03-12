@@ -30,7 +30,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Login',
@@ -43,8 +42,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       phone: ""
     };
   },
-  mounted() {},
+  mounted() {
+    this.changeTitle('登录-橡树籽讲座报名');
+  },
   methods: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
     vary() {
       this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
         // this.$http.get('http://localhost:8889/api/varyLogin',{
@@ -202,7 +215,7 @@ if(false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "hello"
-  }, [_c('h3', [_vm._v("登录")]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "form-group"
   }, [_c('label', {
     staticClass: "col-sm-2 control-label",
@@ -294,4 +307,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=3.d366f007ee58dbf9f895.js.map
+//# sourceMappingURL=3.86e3a04502aa962b6a48.js.map

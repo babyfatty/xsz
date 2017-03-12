@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <span class="registerTitle">注册</span>
     <router-link :to="{name:'login'}" class="loginLink">已经注册过，直接登录 >></router-link>
       <div class="form-group">
       <label for="">姓名</label>
@@ -44,8 +43,21 @@ export default {
     }
   },
   mounted() {
+    this.changeTitle('注册-橡树籽讲座报名')
   },
   methods: {
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     submit(){
       this.$http.post('http://xesfun.com/xsz/api/addUser',{
       // this.$http.post('http://localhost:8889/api/addUser',{
@@ -67,7 +79,7 @@ export default {
     vary(){
       this.$http.get('http://xesfun.com/xsz/api/varyCode',{
       // this.$http.get('http://localhost:8889/api/varyCode',{
-        
+
         params:{
           code:this.varyCode
         }

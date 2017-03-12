@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h3>登录</h3>
         <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">手机号</label>
         <div class="">
@@ -37,8 +36,21 @@ export default {
     }
   },
   mounted() {
+    this.changeTitle('登录-橡树籽讲座报名')
   },
   methods:{
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     vary(){
       this.$http.get('http://xesfun.com/xsz/api/varyLogin',{
       // this.$http.get('http://localhost:8889/api/varyLogin',{

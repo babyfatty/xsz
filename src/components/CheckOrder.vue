@@ -49,6 +49,7 @@ export default {
     }
   },
   mounted() {
+    this.changeTitle('订单确认')
     console.log(this.$route.params)
     var self = this
     this.$http.get('/xsz/api/sign',{
@@ -69,6 +70,18 @@ export default {
      })
   },
   computed:{
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     chosen(){
       console.log(JSON.parse(this.$route.params.chosen))
       return JSON.parse(this.$route.params.chosen)

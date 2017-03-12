@@ -53,6 +53,7 @@ export default {
     }
   },
   mounted() {
+    this.changeTitle('订单详情')
     this.session = this.$route.query.session
     this.user = this.$route.query.user
     this.transID = this.$route.query.transID
@@ -66,6 +67,18 @@ export default {
     })
   },
   methods:{
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     savePay(){
       return this.$http.post('/xsz/api/savePay',{
         uid:this.user.id+"",

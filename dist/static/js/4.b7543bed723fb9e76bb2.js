@@ -56,6 +56,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted() {
     console.log(this.$route.params);
+    this.changeTitle('在线选座-橡树籽讲座报名');
     this.getSessionInfo().then(res => {
       this.session = res.data[0];
     });
@@ -78,6 +79,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
   },
   methods: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
     handleClick(r, c) {
       var temp = r + '' + c;
       var index = this.chosenArray.indexOf(temp);
@@ -125,7 +138,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;IACb,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B;AACD;EACE,iBAAiB;CAClB;AACD;EACE,YAAY;CACb","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.infoSection[data-v-ac2ff24a]{\n  padding: 10px 16px;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;IACb,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B;AACD;EACE,iBAAiB;CAClB;AACD;EACE,mBAAmB;CACpB;AACD;EACE,YAAY;CACb","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.infoSection[data-v-ac2ff24a]{\n  padding: 10px 16px;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -241,4 +254,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=4.6c8990d2bd5804dee85b.js.map
+//# sourceMappingURL=4.b7543bed723fb9e76bb2.js.map

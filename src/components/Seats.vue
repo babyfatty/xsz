@@ -49,6 +49,7 @@ export default {
   },
   mounted(){
     console.log(this.$route.params)
+    this.changeTitle('在线选座-橡树籽讲座报名')
     this.getSessionInfo().then((res)=>{
       this.session = res.data[0]
     })
@@ -71,6 +72,18 @@ export default {
     })
   },
   methods: {
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     handleClick(r,c){
       var temp = r+''+c
       var index = this.chosenArray.indexOf(temp)
@@ -154,6 +167,9 @@ div.seatCharts-seat.selected {
 }
 .seatsSection{
   overflow: scroll;
+}
+.infoSection{
+  padding: 10px 16px;
 }
 .submitBtn{
   width: 100%;
