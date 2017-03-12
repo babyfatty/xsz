@@ -36,7 +36,7 @@ export default new Router({
     {
       path: '/orderdetail/',
       name: 'orderdetail',
-      component: PaySuccess
+      component: orderDetail
     },
     {
       path: '/payment/',

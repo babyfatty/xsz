@@ -40,7 +40,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
   }, {
     path: '/orderdetail/',
     name: 'orderdetail',
-    component: PaySuccess
+    component: orderDetail
   }, {
     path: '/payment/',
     name: 'payment',
@@ -159,4 +159,4 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ })
 ],[13]);
-//# sourceMappingURL=app.0209eda3e4da87664f2e.js.map
+//# sourceMappingURL=app.45c136142cf32ee8dacd.js.map
