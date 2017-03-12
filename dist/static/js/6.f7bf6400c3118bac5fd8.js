@@ -1,6 +1,6 @@
-webpackJsonp([4,8],{
+webpackJsonp([6,9],{
 
-/***/ 164:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74,7 +74,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 165:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -82,30 +82,53 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"orderDetail.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 173:
+/***/ 18:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(183)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(162),
+  /* template */
+  __webpack_require__(190),
+  /* scopeId */
+  "data-v-8c5d9e68",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(165);
+var content = __webpack_require__(174);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(15)("6d006f82", content, true);
+var update = __webpack_require__(15)("4cb174b1", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-15830e28&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./orderDetail.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-15830e28&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./orderDetail.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8c5d9e68&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OrderDetail.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8c5d9e68&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OrderDetail.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -116,7 +139,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 181:
+/***/ 190:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -145,30 +168,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('span', [_vm._v("客服联系")]), _vm._v(" "), _c('span', [_vm._v("吴老师：12341231")])])
 }]}
 
-/***/ }),
-
-/***/ 21:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(173)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(164),
-  /* template */
-  __webpack_require__(181),
-  /* scopeId */
-  "data-v-15830e28",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
 /***/ })
 
 });
-//# sourceMappingURL=4.7d9476920f315597a449.js.map
+//# sourceMappingURL=6.f7bf6400c3118bac5fd8.js.map
