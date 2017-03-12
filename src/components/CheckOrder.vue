@@ -124,6 +124,7 @@ export default {
                   cancel: function(res){
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
+                      self.$router.replace({'path':'http://xesfun.com/xsz/#/'})
                   }
               })
               
