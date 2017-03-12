@@ -39,6 +39,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'Seats',
@@ -123,7 +125,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B;AACD;EACE,YAAY;CACb","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/Seats.vue"],"names":[],"mappings":";AACA;IACI,aAAa;IACb,2BAA2B;IAC3B,0BAA0B;IAC1B,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,mBAAmB;CACtB;AACD;IACI,aAAa;IACb,aAAa;CAChB;AACD;IACI,eAAe;IACf,aAAa;IACb,YAAY;IACZ,kBAAkB;IAClB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,cAAc;IACd,gBAAgB;CACnB;AACD;IACI,YAAY;IACZ,gBAAgB;IAChB,mBAAmB;CACtB;AACD;IACI,0BAA0B;CAC7B;AACD;IACI,0BAA0B;IAC1B,oBAAoB;CACvB;AACD;IACI,0BAA0B;CAC7B;AACD;EACE,iBAAiB;CAClB;AACD;EACE,YAAY;CACb","file":"Seats.vue","sourcesContent":["\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    margin: 5px 32px 45px 32px;\n    background-color: #f0f0f0;\n    color: #666;\n    text-align: center;\n    padding: 3px;\n    border-radius: 5px;\n}\ndiv.seatCharts-row[data-v-ac2ff24a] {\n    height: 35px;\n    width: 400px;\n}\ndiv.seatCharts-cell[data-v-ac2ff24a] {\n    color: #182C4E;\n    height: 25px;\n    width: 25px;\n    line-height: 25px;\n    margin: 3px;\n    float: left;\n    text-align: center;\n    outline: none;\n    font-size: 13px;\n}\ndiv.seatCharts-seat[data-v-ac2ff24a] {\n    color: #fff;\n    cursor: pointer;\n    border-radius: 5px;\n}\ndiv.seatCharts-seat.available[data-v-ac2ff24a] {\n    background-color: #B9DEA0;\n}\ndiv.seatCharts-seat.unavailable[data-v-ac2ff24a] {\n    background-color: #472B34;\n    cursor: not-allowed;\n}\ndiv.seatCharts-seat.selected[data-v-ac2ff24a] {\n    background-color: #E6CAC4;\n}\n.seatsSection[data-v-ac2ff24a]{\n  overflow: scroll;\n}\n.submitBtn[data-v-ac2ff24a]{\n  width: 100%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -165,7 +167,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "seats"
   }, [_c('div', {
     staticClass: "front"
-  }, [_vm._v("屏幕")]), _vm._v(" "), _vm._l((_vm.rows), function(row, rindex) {
+  }, [_vm._v("屏幕")]), _vm._v(" "), _c('div', {
+    staticClass: "seatsSection"
+  }, _vm._l((_vm.rows), function(row, rindex) {
     return _c('div', {
       staticClass: "seatCharts-row"
     }, [_c('div', {
@@ -184,9 +188,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             _vm.handleClick(rindex, cindex)
           }
         }
-      }, [_vm._v("\n        " + _vm._s(cindex) + " \n      ")])
+      }, [_vm._v("\n          " + _vm._s(cindex) + " \n        ")])
     })], 2)
-  }), _vm._v(" "), _c('div', {
+  })), _vm._v(" "), _c('div', {
     staticClass: "infoSection"
   }, [_c('div', {
     staticClass: "reserveInfo lead"
@@ -208,7 +212,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.chooseSeat
     }
-  }, [_vm._v("确认选座")])], 2)
+  }, [_vm._v("确认选座")])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -237,4 +241,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=4.07a9f7da0f6e33f5f453.js.map
+//# sourceMappingURL=4.6c8990d2bd5804dee85b.js.map

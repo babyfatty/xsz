@@ -1,11 +1,13 @@
 <template>
   <div class="seats">
       <div class="front">屏幕</div>
-      <div class="seatCharts-row" v-for="(row, rindex) in rows">
-        <div class="seatCharts-cell seatCharts-space">{{rindex}}</div>
-        <div role="checkbox" class="seatCharts-seat seatCharts-cell available" v-for="(column, cindex) in columns" v-on:click="handleClick(rindex,cindex)" v-bind:class="{selected:chosenArray.indexOf(rindex+''+cindex) !== -1,unavailable:selected.indexOf(rindex+''+cindex) !== -1}"
-        >
-          {{cindex}} 
+      <div class="seatsSection">
+        <div class="seatCharts-row" v-for="(row, rindex) in rows">
+          <div class="seatCharts-cell seatCharts-space">{{rindex}}</div>
+          <div role="checkbox" class="seatCharts-seat seatCharts-cell available" v-for="(column, cindex) in columns" v-on:click="handleClick(rindex,cindex)" v-bind:class="{selected:chosenArray.indexOf(rindex+''+cindex) !== -1,unavailable:selected.indexOf(rindex+''+cindex) !== -1}"
+          >
+            {{cindex}} 
+          </div>
         </div>
       </div>
       <div class="infoSection">
@@ -120,6 +122,7 @@ export default {
 }
 div.seatCharts-row {
     height: 35px;
+    width: 400px;
 }
 div.seatCharts-cell {
     color: #182C4E;
@@ -148,6 +151,9 @@ div.seatCharts-seat.unavailable {
 }
 div.seatCharts-seat.selected {
     background-color: #E6CAC4;
+}
+.seatsSection{
+  overflow: scroll;
 }
 .submitBtn{
   width: 100%;
