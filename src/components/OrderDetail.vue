@@ -30,6 +30,7 @@
       <h5>取票须知</h5>
       <div>1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金</div>
       <div>2,本场讲座设计大量人力物力，预约成功不可退款</div>
+      <div>3,请凭确认短信入场</div>
     </div>
     <div class="kfInfo">
       <span>客服联系</span>
@@ -60,8 +61,6 @@ export default {
   },
   mounted() {
     this.changeTitle('订单详情')
-    this.session = this.$route.query.session
-    this.user = this.$route.query.user
     this.transID = this.$route.query.transID
     this.chosen = JSON.parse(this.$route.query.chosen)
     this.amount = this.$route.query.amount
@@ -97,7 +96,7 @@ export default {
     sendSms(){
       this.$http.get('http://xesfun.com/xsz/api/sendNotice',{
         params:{
-          phone:this.phone
+          phone:this.user.phone
         }
       })
     }

@@ -43,7 +43,7 @@ app.use(async (ctx,next)=>{
       break; 
     case '/api/sendNotice':
       try {
-        var res = await tool.sendMsg(code,ctx.query.phone)
+        var res = await tool.sendNotice(code,ctx.query.phone)
         ctx.body = res
         // statements
       } catch(e) {
@@ -54,16 +54,16 @@ app.use(async (ctx,next)=>{
     case '/api/varyLogin':
       console.log('1',ctx.query.code)
       console.log('2',ctx.session)
-      // if(ctx.query.code===ctx.session.code){
+      if(ctx.query.code===ctx.session.code){
         let userFind = await db.findUserByPhone(ctx.query.phone)
         if(!!userFind){
           ctx.body = {success:true,user:userFind}              
         }else{
-          ctx.body = {success:false,msg: "this phone hasn't been registered"}    
+          ctx.body = {success:false,msg: "此号码尚未注册"}    
         }
-      // }else{
-      //   ctx.body = {success:false,msg:"验证码错误"}  
-      // }
+      }else{
+        ctx.body = {success:false,msg:"验证码错误"}  
+      }
       break;   
     case '/api/varyCode':
       console.log('1',ctx.query.code)
@@ -82,13 +82,13 @@ app.use(async (ctx,next)=>{
       console.log(ctx.request.body)
       console.log('2',ctx.session)
       var param = ctx.request.body
-      // if(param.code!==ctx.session.code){
-      //   ctx.body = {
-      //     success:false,
-      //     msg:"验证码错误"
-      //   }
-      //   return    
-      // }
+      if(param.code!==ctx.session.code){
+        ctx.body = {
+          success:false,
+          msg:"验证码错误"
+        }
+        return    
+      }
       try {
         // statements
         let hasUser = await db.findUserByPhone(param.phone) 
@@ -158,11 +158,6 @@ app.use(async (ctx,next)=>{
           spbill_create_ip:ip.address(),
           total_fee:1,
           trade_type:'JSAPI'
-        }
-        xmlJson={
-          xml:{
-            prepay_id:'123'
-          }
         }
         // 统一下单接口签名
         let genSign = function(){ 
