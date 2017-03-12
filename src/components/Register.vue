@@ -47,7 +47,9 @@ export default {
   },
   methods: {
     submit(){
-      this.$http.post('http://xesfun.com/xsz/api/addUser',{
+      // this.$http.post('http://xesfun.com/xsz/api/addUser',{
+      this.$http.post('http://localhost:8889/api/addUser',{
+
         name:this.name,
         grade:this.grade,
         school:this.school,
@@ -63,7 +65,9 @@ export default {
       })
     },
     vary(){
-      this.$http.get('http://xesfun.com/xsz/api/varyCode',{
+      // this.$http.get('http://xesfun.com/xsz/api/varyCode',{
+      this.$http.get('http://localhost:8889/api/varyCode',{
+        
         params:{
           code:this.varyCode
         }
@@ -73,15 +77,6 @@ export default {
     },
     sendSms(){
       this.btnShow = false
-          // var interval = setInterval(()=>{
-          //   if(this.wait>0){
-          //     this.wait--
-          //   }else{
-          //     this.btnShow = true
-          //     this.wait = 30
-          //     clearInterval(interval)
-          //   }
-          // },1000)
       this.$http.get('http://xesfun.com/xsz/api/sendSMS',{
         params:{
           phone:this.phone

@@ -53,7 +53,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   mounted() {},
   methods: {
     submit() {
-      this.$http.post('http://xesfun.com/xsz/api/addUser', {
+      // this.$http.post('http://xesfun.com/xsz/api/addUser',{
+      this.$http.post('http://localhost:8889/api/addUser', {
+
         name: this.name,
         grade: this.grade,
         school: this.school,
@@ -69,7 +71,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyCode', {
+      // this.$http.get('http://xesfun.com/xsz/api/varyCode',{
+      this.$http.get('http://localhost:8889/api/varyCode', {
+
         params: {
           code: this.varyCode
         }
@@ -79,15 +83,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     sendSms() {
       this.btnShow = false;
-      // var interval = setInterval(()=>{
-      //   if(this.wait>0){
-      //     this.wait--
-      //   }else{
-      //     this.btnShow = true
-      //     this.wait = 30
-      //     clearInterval(interval)
-      //   }
-      // },1000)
       this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
         params: {
           phone: this.phone
@@ -143,7 +138,7 @@ exports.push([module.i, "\n.registerTitle[data-v-46075134]{\n  font-size: 17px;\
 
 /***/ }),
 
-/***/ 173:
+/***/ 174:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -170,7 +165,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 174:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -202,14 +197,14 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(173)
 __webpack_require__(174)
+__webpack_require__(175)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(161),
   /* template */
-  __webpack_require__(180),
+  __webpack_require__(182),
   /* scopeId */
   "data-v-46075134",
   /* cssModules */
@@ -221,7 +216,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 180:
+/***/ 182:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -414,4 +409,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=2.bca2b18317fae630a03a.js.map
+//# sourceMappingURL=2.c3f22ce2828a7bbdd05a.js.map

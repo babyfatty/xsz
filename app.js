@@ -45,12 +45,16 @@ app.use(async (ctx,next)=>{
     case '/api/varyLogin':
       console.log('1',ctx.query.code)
       console.log('2',ctx.session)
-      if(ctx.query.code===ctx.session.code){
-        let userFind = db.findUserByPhone(ctx.query.phone)
-        ctx.body = {success:true,user:userFind}    
-      }else{
-        ctx.body = {success:false}  
-      }
+      // if(ctx.query.code===ctx.session.code){
+        let userFind = await db.findUserByPhone(ctx.query.phone)
+        if(!!userFind){
+          ctx.body = {success:true,user:userFind}              
+        }else{
+          ctx.body = {success:false,msg: "this phone hasn't been registered"}    
+        }
+      // }else{
+      //   ctx.body = {success:false,msg:"验证码错误"}  
+      // }
       break;   
     case '/api/varyCode':
       console.log('1',ctx.query.code)
@@ -69,13 +73,13 @@ app.use(async (ctx,next)=>{
       console.log(ctx.request.body)
       console.log('2',ctx.session)
       var param = ctx.request.body
-      if(param.code!==ctx.session.code){
-        ctx.body = {
-          success:false,
-          msg:"验证码错误"
-        }
-        return    
-      }
+      // if(param.code!==ctx.session.code){
+      //   ctx.body = {
+      //     success:false,
+      //     msg:"验证码错误"
+      //   }
+      //   return    
+      // }
       try {
         // statements
         let hasUser = await db.findUserByPhone(param.phone) 
@@ -114,9 +118,20 @@ app.use(async (ctx,next)=>{
       }
       
       break;
+    case '/api/bookedSeats':
+      try {
+        // statements
+        var booked = await db.bookedSeats()
+        console.log('booked',booked)
+        ctx.body = booked
+      } catch(e) {
+        // statements
+        console.log(e);
+      }
+      break;  
     case '/api/unifiedorder':
         // console.log(ip.address())
-        // console.log('openid',ctx.session.openid.openid)
+        console.log('openid',ctx.session.openid.openid)
         var payload = {
           appid:'wx829b884172f246ea',
           body:'橡树籽讲座报名',
@@ -130,6 +145,11 @@ app.use(async (ctx,next)=>{
           spbill_create_ip:ip.address(),
           total_fee:1,
           trade_type:'JSAPI'
+        }
+        xmlJson={
+          xml:{
+            prepay_id:'123'
+          }
         }
         // 统一下单接口签名
         let genSign = function(){ 
@@ -158,7 +178,10 @@ app.use(async (ctx,next)=>{
         console.log('xml',xml)
         var xmlJson = await tool.toJson(xml.toString())
         console.log(xmlJson)
-        ctx.body = xmlJson.xml.prepay_id
+        ctx.body = {
+          transId:payload.out_trade_no, 
+          package:xmlJson.xml.prepay_id
+        }
         break;  
     case '/api/checkLogin':
       var user = ctx.session.user
@@ -194,6 +217,24 @@ app.use(async (ctx,next)=>{
       var ACCESS_TOKEN = await rp('https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx829b884172f246ea&secret=36a0109564e755f9ad96322a835d0d07')
       var tempurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ACCESS_TOKEN.access_token+'&type=jsapi'
       ctx.body = await rp(tempurl)
+      break;
+    case '/api/savePay':
+      var payParam = ctx.request.body
+      console.log("payParam",payParam)
+      try {
+        // statements
+        var payInfo = await db.addPayInfo(payParam)
+        ctx.body = {
+          success:true,
+          payInfo:payInfo
+        }
+      } catch(e) {
+        // statements
+        ctx.body = {
+          success:false,
+          msg:e
+        }
+      }
       break;
     default:
         // var code = '0219qaJ21jPNZM1D9GK21S0rJ219qaJO'

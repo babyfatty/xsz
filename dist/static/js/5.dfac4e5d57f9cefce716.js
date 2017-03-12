@@ -1,10 +1,14 @@
-webpackJsonp([4,8],{
+webpackJsonp([5,8],{
 
 /***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -44,35 +48,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       columns: new Array(10),
       chosen: [],
       chosenArray: [],
-      session: {}
+      session: {},
+      selected: []
     };
-  },
-  mounted() {},
-  beforeCreate() {
-    // this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
-    //     // if(res.data.success){
-    //     //   console.log(res.data.user)
-    //     // }else{
-    //     //   console.log(res.data.success)
-    //     //   this.$router.push({name: 'register'})
-    //     // }
-    // })
   },
   mounted() {
     console.log(this.$route.params);
     this.getSessionInfo().then(res => {
       this.session = res.data[0];
     });
+    this.$http.get('http://localhost:8889/api/bookedSeats').then(res => {
+      var temp = [];
+      res.data.forEach((element, index) => {
+        console.log(element.chosen);
+        temp = temp.concat(JSON.parse(element.chosen));
+      });
+      temp.forEach((element, index) => {
+        // statements
+        if (!!element) {
+          this.selected.push(element.row + "" + element.column);
+        } else {
+          return;
+        }
+      });
+      console.log('selectef', this.selected);
+    });
   },
   methods: {
     handleClick(r, c) {
-      if (this.chosenArray.length >= 2) {
-        alert('只能选两个座位');
-        return;
-      }
       var temp = r + '' + c;
       var index = this.chosenArray.indexOf(temp);
+      var sindex = this.selected.indexOf(temp);
+      if (sindex !== -1) {
+        return;
+      }
       if (index === -1) {
+        if (this.chosenArray.length >= 2) {
+          alert('只能选两个座位');
+          return;
+        }
         this.chosenArray.push(temp);
         this.chosen.push({
           row: r,
@@ -84,10 +98,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     chooseSeat() {
-      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user } });
+      if (this.chosen.length === 0) {
+        alert('you have not chosen a seat');
+        return;
+      }
+      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user, session: this.session } });
     },
     getSessionInfo() {
-      return this.$http.get('http://xesfun.com/xsz/api/sessionInfo');
+      // return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')
+      return this.$http.get('http://localhost:8889/api/sessionInfo');
     }
   }
 
@@ -95,7 +114,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 171:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -110,13 +129,13 @@ exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    marg
 
 /***/ }),
 
-/***/ 178:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(171);
+var content = __webpack_require__(172);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -137,7 +156,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 184:
+/***/ 186:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -150,11 +169,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "seatCharts-row"
     }, [_c('div', {
       staticClass: "seatCharts-cell seatCharts-space"
-    }, [_vm._v(_vm._s(rindex + 1))]), _vm._v(" "), _vm._l((_vm.columns), function(column, cindex) {
+    }, [_vm._v(_vm._s(rindex))]), _vm._v(" "), _vm._l((_vm.columns), function(column, cindex) {
       return _c('div', {
         staticClass: "seatCharts-seat seatCharts-cell available",
         class: {
-          selected: _vm.chosenArray.indexOf(rindex + '' + cindex) !== -1
+          selected: _vm.chosenArray.indexOf(rindex + '' + cindex) !== -1, unavailable: _vm.selected.indexOf(rindex + '' + cindex) !== -1
         },
         attrs: {
           "role": "checkbox"
@@ -164,7 +183,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             _vm.handleClick(rindex, cindex)
           }
         }
-      }, [_vm._v("\n        " + _vm._s(cindex + 1) + " \n      ")])
+      }, [_vm._v("\n        " + _vm._s(cindex) + " \n      ")])
     })], 2)
   }), _vm._v(" "), _c('div', {
     staticClass: "infoSection"
@@ -175,6 +194,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('span', [_vm._v("讲座名：")]), _c('span', [_vm._v(_vm._s(_vm.session.name))])])]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "speachTime"
   }, [_c('span', [_vm._v("讲座时间：")]), _c('span', [_vm._v(_vm._s(_vm.session.time))])])]), _vm._v(" "), _c('li', [_c('div', {
+    staticClass: "speachTime"
+  }, [_c('span', [_vm._v("讲座location：")]), _c('span', [_vm._v(_vm._s(_vm.session.location))])])]), _vm._v(" "), _c('li', [_c('div', {
     staticClass: "seatsChosen"
   }, [_c('span', [_vm._v("已选座位：")]), _vm._v(" "), _vm._l((_vm.chosen), function(csn) {
     return _c('span', [_vm._v("\n              " + _vm._s(csn.row) + "排" + _vm._s(csn.column) + "座\n            ")])
@@ -196,13 +217,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(178)
+__webpack_require__(180)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(162),
   /* template */
-  __webpack_require__(184),
+  __webpack_require__(186),
   /* scopeId */
   "data-v-ac2ff24a",
   /* cssModules */
@@ -215,4 +236,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=4.7fec11ec8e1d99071844.js.map
+//# sourceMappingURL=5.dfac4e5d57f9cefce716.js.map

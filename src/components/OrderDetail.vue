@@ -1,31 +1,28 @@
 <template>
   <div class="checkOrder">
     <div class="confirm-seats-info">
-      <h3>{{sname}}</h3>
+      <h3>{{session.name}}</h3>
       <div class="location">
-        {{slocation}}
+        {{session.location}}
       </div>
       <div class="time">
-        {{stime}}
+        {{session.time}}
       </div>
       <div class="seats">
-        <!-- <span v-for="item in chosen">
-          {{item.row}}排{{item.column}}座
-        </span> -->
+        <span v-for="item in chosen">
+          {{item.row*1+1}}排{{item.column*1+1}}座
+        </span>
       </div>
     </div>
     <div class="price">
       <div>
-      <span>实付金额</span> <span>{{price}}元</span>        
+      <span>实付金额</span> <span>{{amount}}元</span>        
       </div>
       <div>
-        <span>订单号</span><span>{{order}}</span>
+        <span>订单号</span><span>{{transID}}</span>
       </div>
       <div>
-        <span>购买时间</span><span>{{btime}}</span>
-      </div>
-      <div>
-        <span>手机号</span><span>{{phone}}</span>
+        <span>手机号</span><span>{{user.phone}}</span>
       </div>
     </div>
     <div class="statement">
@@ -46,20 +43,28 @@ export default {
   name: 'orderDetail',
   data () {
     return {
-      sname:'小高考公益讲座',
-      slocation:'南京市中山会议中心中山厅',
-      phone:'13222001020',
-      stime:'03-15 09:25-11:04',
-      price:'123',
-      order:'123412412',
-      btime:'03-15 09:25-11:04'
+      
     }
   },
   props:[],
   mounted() {
   },
   computed:{
-    
+    session(){
+      return this.$route.params.session
+    },
+    user(){
+      return this.$route.params.user
+    },
+    transID(){
+      return this.$route.params.transID
+    },
+    chosen(){
+      return this.$route.params.chosen
+    },
+    amount(){
+      return this.$route.params.amount
+    }
   }
 }
 </script>

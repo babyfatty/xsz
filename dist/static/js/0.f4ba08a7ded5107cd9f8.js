@@ -4,13 +4,13 @@ webpackJsonp([0,8],Array(20).concat([
 
 
 /* styles */
-__webpack_require__(177)
+__webpack_require__(179)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(163),
   /* template */
-  __webpack_require__(183),
+  __webpack_require__(185),
   /* scopeId */
   "data-v-7cf2bb89",
   /* cssModules */
@@ -22000,12 +22000,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'checkOrder',
   data() {
-    return {
-      sname: '小高考公益讲座',
-      slocation: '南京市中山会议中心中山厅',
-      phone: '13222001020',
-      stime: '03-15 09:25-11:04'
-    };
+    return {};
   },
   mounted() {
     console.log(this.$route.params);
@@ -22029,10 +22024,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {
     chosen() {
+      console.log(JSON.parse(this.$route.params.chosen));
       return JSON.parse(this.$route.params.chosen);
     },
     user() {
       return this.$route.params.user;
+    },
+    session() {
+      return this.$route.params.session;
+    },
+    amount() {
+      return JSON.parse(this.$route.params.chosen).length * 2;
     }
   },
   methods: {
@@ -22082,7 +22084,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           });
         });
       });
-      // this.$router.replace({'name':'payment'})
+      // var btime =new Date()
+      // self.$http.get('http://localhost:8889/api/unifiedorder').then((res)=>{
+      //   self.$http.post('http://localhost:8889/api/savePay',{
+      //     uid:this.user.id+"",
+      //     sid:this.session.id+"",
+      //     chosen:JSON.stringify(this.chosen),
+      //     transID:res.data.transId,
+      //     btime:btime
+      // }).then(()=>{
+      //             self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+      //   })
+
+      // })
     }
   }
 };
@@ -22094,7 +22108,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 167 */,
 /* 168 */,
 /* 169 */,
-/* 170 */
+/* 170 */,
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -22102,25 +22117,26 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"checkOrder.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 171 */,
 /* 172 */,
 /* 173 */,
 /* 174 */,
 /* 175 */,
 /* 176 */,
-/* 177 */
+/* 177 */,
+/* 178 */,
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(170);
+var content = __webpack_require__(171);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22140,12 +22156,12 @@ if(false) {
 }
 
 /***/ }),
-/* 178 */,
-/* 179 */,
 /* 180 */,
 /* 181 */,
 /* 182 */,
-/* 183 */
+/* 183 */,
+/* 184 */,
+/* 185 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -22153,17 +22169,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "checkOrder"
   }, [_c('div', {
     staticClass: "confirm-seats-info"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.sname))]), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v(_vm._s(_vm.session.name))]), _vm._v(" "), _c('div', {
     staticClass: "location"
-  }, [_vm._v("\n      " + _vm._s(_vm.slocation) + "\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n      " + _vm._s(_vm.session.location) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "time"
-  }, [_vm._v("\n      " + _vm._s(_vm.stime) + "\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n      " + _vm._s(_vm.session.time) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "seats"
   }, _vm._l((_vm.chosen), function(item) {
     return _c('span', [_vm._v("\n        " + _vm._s(item.row * 1 + 1) + "排" + _vm._s(item.column * 1 + 1) + "座\n      ")])
   })), _vm._v(" "), _c('div', [_vm._v("\n      电话：" + _vm._s(_vm.user.phone) + "\n    ")]), _vm._v(" "), _c('div', [_vm._v("\n      预订人：" + _vm._s(_vm.user.username) + "\n    ")])]), _vm._v(" "), _c('div', {
     staticClass: "price"
-  }, [_vm._v("\n    预约费用总计：4元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n    预约费用总计：" + _vm._s(_vm.amount) + "元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "priceInfo"
+  }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付" + _vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', {
     staticClass: "payBtn"
   }, [_c('button', {
     staticClass: "btn btn-danger",
@@ -22178,12 +22196,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "statement"
   }, [_c('h5', [_vm._v("购票须知")]), _vm._v(" "), _c('div', [_vm._v("1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金")]), _vm._v(" "), _c('div', [_vm._v("2,本场讲座设计大量人力物力，预约成功不可退款")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "priceInfo"
-  }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付4元")])])
 }]}
 
 /***/ })
 ]));
-//# sourceMappingURL=0.497abeda6ad8c3a55ce2.js.map
+//# sourceMappingURL=0.f4ba08a7ded5107cd9f8.js.map

@@ -1,4 +1,4 @@
-webpackJsonp([3,8],{
+webpackJsonp([4,8],{
 
 /***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -44,27 +44,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'orderDetail',
   data() {
-    return {
-      sname: '小高考公益讲座',
-      slocation: '南京市中山会议中心中山厅',
-      phone: '13222001020',
-      stime: '03-15 09:25-11:04',
-      price: '123',
-      order: '123412412',
-      btime: '03-15 09:25-11:04'
-    };
+    return {};
   },
   props: [],
   mounted() {},
-  computed: {}
+  computed: {
+    session() {
+      return this.$route.params.session;
+    },
+    user() {
+      return this.$route.params.user;
+    },
+    transID() {
+      return this.$route.params.transID;
+    },
+    chosen() {
+      return this.$route.params.chosen;
+    },
+    amount() {
+      return this.$route.params.amount;
+    }
+  }
 };
 
 /***/ }),
@@ -77,14 +82,14 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"orderDetail.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"orderDetail.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 172:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -111,7 +116,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 179:
+/***/ 181:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -119,15 +124,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "checkOrder"
   }, [_c('div', {
     staticClass: "confirm-seats-info"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.sname))]), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v(_vm._s(_vm.session.name))]), _vm._v(" "), _c('div', {
     staticClass: "location"
-  }, [_vm._v("\n      " + _vm._s(_vm.slocation) + "\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n      " + _vm._s(_vm.session.location) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "time"
-  }, [_vm._v("\n      " + _vm._s(_vm.stime) + "\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n      " + _vm._s(_vm.session.time) + "\n    ")]), _vm._v(" "), _c('div', {
     staticClass: "seats"
-  })]), _vm._v(" "), _c('div', {
+  }, _vm._l((_vm.chosen), function(item) {
+    return _c('span', [_vm._v("\n        " + _vm._s(item.row * 1 + 1) + "排" + _vm._s(item.column * 1 + 1) + "座\n      ")])
+  }))]), _vm._v(" "), _c('div', {
     staticClass: "price"
-  }, [_c('div', [_c('span', [_vm._v("实付金额")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.price) + "元")])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("订单号")]), _c('span', [_vm._v(_vm._s(_vm.order))])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("购买时间")]), _c('span', [_vm._v(_vm._s(_vm.btime))])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("手机号")]), _c('span', [_vm._v(_vm._s(_vm.phone))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])
+  }, [_c('div', [_c('span', [_vm._v("实付金额")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("订单号")]), _c('span', [_vm._v(_vm._s(_vm.transID))])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("手机号")]), _c('span', [_vm._v(_vm._s(_vm.user.phone))])])]), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "statement"
@@ -145,13 +152,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(172)
+__webpack_require__(173)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(164),
   /* template */
-  __webpack_require__(179),
+  __webpack_require__(181),
   /* scopeId */
   "data-v-15830e28",
   /* cssModules */
@@ -164,4 +171,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=3.9177cde9108fc1d4ed7c.js.map
+//# sourceMappingURL=4.7d9476920f315597a449.js.map

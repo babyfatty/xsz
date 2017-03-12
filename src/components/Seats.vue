@@ -2,9 +2,10 @@
   <div class="seats">
       <div class="front">屏幕</div>
       <div class="seatCharts-row" v-for="(row, rindex) in rows">
-        <div class="seatCharts-cell seatCharts-space">{{rindex+1}}</div>
-        <div role="checkbox" class="seatCharts-seat seatCharts-cell available" v-for="(column, cindex) in columns" v-on:click="handleClick(rindex,cindex)" v-bind:class="{selected:chosenArray.indexOf(rindex+''+cindex) !== -1}">
-          {{cindex+1}} 
+        <div class="seatCharts-cell seatCharts-space">{{rindex}}</div>
+        <div role="checkbox" class="seatCharts-seat seatCharts-cell available" v-for="(column, cindex) in columns" v-on:click="handleClick(rindex,cindex)" v-bind:class="{selected:chosenArray.indexOf(rindex+''+cindex) !== -1,unavailable:selected.indexOf(rindex+''+cindex) !== -1}"
+        >
+          {{cindex}} 
         </div>
       </div>
       <div class="infoSection">
@@ -13,6 +14,9 @@
           <li><div class="speachName"><span>讲座名：</span><span>{{session.name}}</span></div></li>
           <li>
             <div class="speachTime"><span>讲座时间：</span><span>{{session.time}}</span></div>
+          </li>
+          <li>
+            <div class="speachTime"><span>讲座location：</span><span>{{session.location}}</span></div>
           </li>
           <li>
             <div class="seatsChosen">
@@ -37,37 +41,45 @@ export default {
       columns: new Array(10),
       chosen: [],
       chosenArray: [],
-      session:{} 
+      session:{},
+      selected:[]
     }
-  },
-  mounted() {
-    
-  },
-  beforeCreate(){
-    // this.$http.get('http://localhost:8889/api/checkLogin').then((res)=>{
-    //     // if(res.data.success){
-    //     //   console.log(res.data.user)
-    //     // }else{
-    //     //   console.log(res.data.success)
-    //     //   this.$router.push({name: 'register'})
-    //     // }
-    // })
   },
   mounted(){
     console.log(this.$route.params)
     this.getSessionInfo().then((res)=>{
       this.session = res.data[0]
     })
+    this.$http.get('http://localhost:8889/api/bookedSeats').then((res)=>{
+      var temp = []
+      res.data.forEach( (element, index)=> {
+        console.log(element.chosen)
+        temp = temp.concat(JSON.parse(element.chosen))
+      });
+      temp.forEach( (element, index)=> {
+        // statements
+        if(!!element){
+          this.selected.push(element.row+""+element.column)          
+        }else{
+          return 
+        }
+      });
+      console.log('selectef',this.selected)
+    })
   },
   methods: {
     handleClick(r,c){
-      if(this.chosenArray.length>=2){
-        alert('只能选两个座位')
-        return 
-      }
       var temp = r+''+c
       var index = this.chosenArray.indexOf(temp)
+      var sindex = this.selected.indexOf(temp)
+      if(sindex!==-1){
+        return
+      }
       if(index===-1){
+        if(this.chosenArray.length>=2){
+          alert('只能选两个座位')
+          return 
+        }
         this.chosenArray.push(temp)
         this.chosen.push({
           row:r,
@@ -79,10 +91,16 @@ export default {
       }
     },
     chooseSeat(){
-      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user}})
+      if(this.chosen.length===0){
+        alert('you have not chosen a seat')
+        return
+      }
+      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user,session:this.session}})
     },
     getSessionInfo(){
-      return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')
+      // return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')
+      return this.$http.get('http://localhost:8889/api/sessionInfo')
+
     }
   },
   
