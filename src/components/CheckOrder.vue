@@ -116,7 +116,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
-                    self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+                    // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
                     location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
@@ -125,7 +125,7 @@ export default {
                   cancel: function(res){
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
-                      self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
+                      // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
                     location.href = 'http://xesfun.com/xsz/#/orderdetail'
                       
                   }

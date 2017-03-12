@@ -22087,7 +22087,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             timestamp: time,
             paySign: genSign(),
             success: function (res) {
-              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
+              // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
               location.href = 'http://xesfun.com/xsz/#/orderdetail';
             },
             fail: function (res) {
@@ -22096,7 +22096,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             cancel: function (res) {
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
-              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
+              // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
               location.href = 'http://xesfun.com/xsz/#/orderdetail';
             }
           });
@@ -22221,4 +22221,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.b7046c9669532ed14e8b.js.map
+//# sourceMappingURL=1.8a89ee7e8324b40d97a7.js.map
