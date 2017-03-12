@@ -130,8 +130,9 @@ app.use(async (ctx,next)=>{
       }
       break;  
     case '/api/buyTicket':
-      console.log(ctx.request.body)
-      console.log(ctx.query.body)
+      console.log(ctx.request)
+      console.log(ctx.query)
+      console.log(ctx)
       break;  
     case '/api/unifiedorder':
         // console.log(ip.address())
