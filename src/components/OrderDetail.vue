@@ -3,12 +3,13 @@
     <div class="confirm-seats-info">
       <h3>{{session.name}}</h3>
       <div class="location">
-        {{session.location}}
+        地点：{{session.location}}
       </div>
       <div class="time">
-        {{session.time}}
+        时间：{{session.time}}
       </div>
       <div class="seats">
+        座位：
         <span v-for="item in chosen">
           {{item.row*1+1}}排{{item.column*1+1}}座
         </span>
@@ -16,13 +17,13 @@
     </div>
     <div class="price">
       <div>
-      <span>实付金额</span> <span>{{amount}}元</span>        
+      <span>实付金额：</span> <span>{{amount}}元</span>        
       </div>
       <div>
-        <span>订单号</span><span>{{transID}}</span>
+        <span>订单号：</span><span>{{transID}}</span>
       </div>
       <div>
-        <span>手机号</span><span>{{user.phone}}</span>
+        <span>手机号：</span><span>{{user.phone}}</span>
       </div>
     </div>
     <div class="statement">
@@ -36,7 +37,12 @@
     </div>
   </div>
 </template>
-
+<style>
+  #app{
+    padding: 20px;
+    padding-top: 10px;
+  }
+</style>
 <script>
 
 export default {
@@ -61,10 +67,7 @@ export default {
     this.amount = this.$route.query.amount
     this.user = JSON.parse(this.$route.query.user)
     this.session = JSON.parse(this.$route.query.session)
-
-    this.savePay().then((res)=>{
-      alert('success')
-    })
+    this.savePay()
   },
   methods:{
     changeTitle(t){
@@ -90,23 +93,6 @@ export default {
     })
     }
   }
-  // computed:{
-  //   session(){
-  //     return this.$route.query.session
-  //   },
-  //   user(){
-  //     return this.$route.query.user
-  //   },
-  //   transID(){
-  //     return this.$route.query.transID
-  //   },
-  //   chosen(){
-  //     return JSON.parse(this.$route.query.chosen)
-  //   },
-  //   amount(){
-  //     return this.$route.query.amount
-  //   }
-  // }
 }
 </script>
 

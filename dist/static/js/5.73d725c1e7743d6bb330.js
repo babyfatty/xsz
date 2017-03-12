@@ -1,4 +1,4 @@
-webpackJsonp([4,9],{
+webpackJsonp([5,9],{
 
 /***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -118,7 +118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         alert('you have not chosen a seat');
         return;
       }
-      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user, session: this.session } });
+      this.$router.replace({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen), user: this.$route.params.user, session: this.session } });
     },
     getSessionInfo() {
       return this.$http.get('http://xesfun.com/xsz/api/sessionInfo');
@@ -130,7 +130,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 175:
+/***/ 176:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -145,13 +145,13 @@ exports.push([module.i, "\n.front[data-v-ac2ff24a]{\n    width: 300px;\n    marg
 
 /***/ }),
 
-/***/ 184:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(175);
+var content = __webpack_require__(176);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -172,7 +172,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 191:
+/***/ 193:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -235,13 +235,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 
 /* styles */
-__webpack_require__(184)
+__webpack_require__(186)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(166),
   /* template */
-  __webpack_require__(191),
+  __webpack_require__(193),
   /* scopeId */
   "data-v-ac2ff24a",
   /* cssModules */
@@ -254,4 +254,4 @@ module.exports = Component.exports
 /***/ })
 
 });
-//# sourceMappingURL=4.b7543bed723fb9e76bb2.js.map
+//# sourceMappingURL=5.73d725c1e7743d6bb330.js.map

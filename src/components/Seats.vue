@@ -111,7 +111,7 @@ export default {
         alert('you have not chosen a seat')
         return
       }
-      this.$router.push({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user,session:this.session}})
+      this.$router.replace({ name: 'checkorder', params: { chosen: JSON.stringify(this.chosen) ,user:this.$route.params.user,session:this.session}})
     },
     getSessionInfo(){
       return this.$http.get('http://xesfun.com/xsz/api/sessionInfo')

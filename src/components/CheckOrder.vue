@@ -3,12 +3,13 @@
     <div class="confirm-seats-info">
       <h3>{{session.name}}</h3>
       <div class="location">
-        {{session.location}}
+        地点：{{session.location}}
       </div>
       <div class="time">
-        {{session.time}}
+        时间：{{session.time}}
       </div>
       <div class="seats">
+        座位：
         <span v-for="item in chosen">
           {{item.row*1+1}}排{{item.column*1+1}}座
         </span>
@@ -130,14 +131,14 @@ export default {
                   paySign: genSign(), 
                   success: function () {
                     // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)+"&amount="+this.amount
                     // location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
                     alert('payment fail')
                   },
                   cancel: function(){
-                    location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)
+                    // location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)
 
                     // self.$http.post('/xsz/api/savePay',{
                     //       uid:self.user.id+"",
@@ -179,5 +180,8 @@ export default {
 </script>
 
 <style scoped>
-
+.payBtn button{
+  width: 100%;
+  padding-top: 20px;
+}
 </style>

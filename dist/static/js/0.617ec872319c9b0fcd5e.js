@@ -1,34 +1,18 @@
-webpackJsonp([1,9],[
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */
+webpackJsonp([0,9],Array(20).concat([
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(176)
+__webpack_require__(180)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(160),
+  __webpack_require__(164),
   /* template */
-  __webpack_require__(185),
+  __webpack_require__(189),
   /* scopeId */
-  "data-v-413987a9",
+  "data-v-505a5eda",
   /* cssModules */
   null
 )
@@ -37,10 +21,6 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
 /* 21 */,
 /* 22 */,
 /* 23 */
@@ -21962,7 +21942,11 @@ module.exports = function(module) {
 /* (ignored) */
 
 /***/ }),
-/* 160 */
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21977,51 +21961,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
-  name: 'checkOrder',
+  name: 'payment',
   data() {
     return {};
   },
   mounted() {
-    this.changeTitle('订单确认');
-    console.log(this.$route.params);
     var self = this;
     this.$http.get('/xsz/api/sign', {
       params: {
@@ -22031,45 +21979,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var data = res.data;
       console.log('data', data);
       wx.config({
-        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
         appId: 'wx829b884172f246ea', // 必填，公众号的唯一标识
         timestamp: data.timestamp, // 必填，生成签名的时间戳
         nonceStr: data.nonceStr, // 必填，生成签名的随机串
         signature: data.signature, // 必填，签名，见附录1
         jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
       });
-    });
-  },
-  computed: {
-    chosen() {
-      console.log(JSON.parse(this.$route.params.chosen));
-      return JSON.parse(this.$route.params.chosen);
-    },
-    user() {
-      return this.$route.params.user;
-    },
-    session() {
-      return this.$route.params.session;
-    },
-    amount() {
-      return JSON.parse(this.$route.params.chosen).length * 2;
-    }
-  },
-  methods: {
-    changeTitle(t) {
-      document.title = t;
-      var i = document.createElement('iframe');
-      i.src = '//m.baidu.com/favicon.ico';
-      i.style.display = 'none';
-      i.onload = function () {
-        setTimeout(function () {
-          i.remove();
-        }, 9);
-      };
-      document.body.appendChild(i);
-    },
-    goToPay() {
-      var self = this;
       wx.ready(function () {
         self.$http.get('/xsz/api/unifiedorder').then(res => {
           console.log(res);
@@ -22078,7 +21994,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           var payload = {
             appId: 'wx829b884172f246ea',
             nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             signType: 'MD5',
             timeStamp: time
           };
@@ -22095,65 +22011,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           console.log(payload);
           wx.chooseWXPay({
             nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data.package,
+            package: 'prepay_id=' + res.data,
             signType: 'MD5',
             timestamp: time,
             paySign: genSign(),
-            success: function () {
-              // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session);
-              // location.href = 'http://xesfun.com/xsz/#/orderdetail'
+            success: function (res) {
+              alert(JSON.stringify(res));
+              console.log('success', res);
             },
             fail: function (res) {
-              alert('payment fail');
+              alert(res);
             },
-            cancel: function () {
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session);
-
-              // self.$http.post('/xsz/api/savePay',{
-              //       uid:self.user.id+"",
-              //       sid:self.session.id+"",
-              //       chosen:JSON.stringify(self.chosen),
-              //       transID:res.data.transId,
-              //       btime:btime
-              //   }).then(()=>{
-              //       alert('success')
-              //       location.href = 'http://xesfun.com/xsz/#/orderdetail'
-              //               // self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
-              //   })
-              // alert(res)
-              // self.$router.replace({"name":"orderdetail"})
-              // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-              // location.href = 'http://xesfun.com/xsz/#/orderdetail'
+            cancel: function (res) {
+              alert(res);
+              self.$router.replace({ "name": "orderdetail" });
             }
           });
         });
       });
-      // var btime =new Date()
-      // self.$http.get('http://localhost:8889/api/unifiedorder').then((res)=>{
-      //   self.$http.post('http://localhost:8889/api/savePay',{
-      //     uid:this.user.id+"",
-      //     sid:this.session.id+"",
-      //     chosen:JSON.stringify(this.chosen),
-      //     transID:res.data.transId,
-      //     btime:btime
-      // }).then(()=>{
-      //             self.$router.replace({'name':'orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
-      //   })
-
-      // })
-    }
+    });
+  },
+  methods: {
+    pay() {}
   }
 };
 
 /***/ }),
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
 /* 165 */,
 /* 166 */,
-/* 167 */
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -22161,37 +22050,38 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Payment.vue","sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 168 */,
-/* 169 */,
-/* 170 */,
 /* 171 */,
 /* 172 */,
 /* 173 */,
 /* 174 */,
 /* 175 */,
-/* 176 */
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(167);
+var content = __webpack_require__(170);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(15)("98bdc720", content, true);
+var update = __webpack_require__(15)("6772d99e", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-413987a9&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckOrder.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-413987a9&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./CheckOrder.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-505a5eda&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-505a5eda&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Payment.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -22201,51 +22091,31 @@ if(false) {
 }
 
 /***/ }),
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
 /* 181 */,
 /* 182 */,
 /* 183 */,
 /* 184 */,
-/* 185 */
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "checkOrder"
-  }, [_c('div', {
-    staticClass: "confirm-seats-info"
-  }, [_c('h3', [_vm._v(_vm._s(_vm.session.name))]), _vm._v(" "), _c('div', {
-    staticClass: "location"
-  }, [_vm._v("\n      " + _vm._s(_vm.session.location) + "\n    ")]), _vm._v(" "), _c('div', {
-    staticClass: "time"
-  }, [_vm._v("\n      " + _vm._s(_vm.session.time) + "\n    ")]), _vm._v(" "), _c('div', {
-    staticClass: "seats"
-  }, _vm._l((_vm.chosen), function(item) {
-    return _c('span', [_vm._v("\n        " + _vm._s(item.row * 1 + 1) + "排" + _vm._s(item.column * 1 + 1) + "座\n      ")])
-  })), _vm._v(" "), _c('div', [_vm._v("\n      电话：" + _vm._s(_vm.user.phone) + "\n    ")]), _vm._v(" "), _c('div', [_vm._v("\n      预订人：" + _vm._s(_vm.user.username) + "\n    ")])]), _vm._v(" "), _c('div', {
-    staticClass: "price"
-  }, [_vm._v("\n    预约费用总计：" + _vm._s(_vm.amount) + "元\n  ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "priceInfo"
-  }, [_c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付" + _vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', {
-    staticClass: "payBtn"
+    staticClass: "payment"
   }, [_c('button', {
-    staticClass: "btn btn-danger",
+    staticClass: "btn btn-primary",
     attrs: {
       "type": "button"
     },
     on: {
-      "click": _vm.goToPay
+      "click": _vm.pay
     }
-  }, [_vm._v("立即付款")])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "statement"
-  }, [_c('h5', [_vm._v("购票须知")]), _vm._v(" "), _c('div', [_vm._v("1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金")]), _vm._v(" "), _c('div', [_vm._v("2,本场讲座设计大量人力物力，预约成功不可退款")])])
-}]}
+  }, [_vm._v("付款")])])
+},staticRenderFns: []}
 
 /***/ })
-]);
-//# sourceMappingURL=1.9910bedd8bc602be5690.js.map
+]));
+//# sourceMappingURL=0.617ec872319c9b0fcd5e.js.map
