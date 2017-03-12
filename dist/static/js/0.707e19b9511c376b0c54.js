@@ -22048,7 +22048,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           var payload = {
             appId: 'wx829b884172f246ea',
             nonceStr: nonceStr,
-            package: 'prepay_id=' + res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            package: 'prepay_id=' + res.data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
             signType: 'MD5',
             timeStamp: time
           };
@@ -22200,4 +22200,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]));
-//# sourceMappingURL=0.27d917ef902e8e7d3b5b.js.map
+//# sourceMappingURL=0.707e19b9511c376b0c54.js.map

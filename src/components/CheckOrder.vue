@@ -94,7 +94,7 @@ export default {
               var payload = {
                 appId:'wx829b884172f246ea',
                 nonceStr: nonceStr, 
-                package: 'prepay_id='+res.data, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                package: 'prepay_id='+res.data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                 signType: 'MD5', 
                 timeStamp: time
               }
