@@ -43,29 +43,46 @@ export default {
   name: 'orderDetail',
   data () {
     return {
-      
+      session:"",
+      user:"",
+      transID:"",
+      chosen:"",
+      amount:""
     }
   },
-  props:[],
   mounted() {
-  },
-  computed:{
-    session(){
-      return this.$route.params.session
-    },
-    user(){
-      return this.$route.params.user
-    },
-    transID(){
-      return this.$route.params.transID
-    },
-    chosen(){
-      return this.$route.params.chosen
-    },
-    amount(){
-      return this.$route.params.amount
-    }
+    this.session = this.$route.query.session
+    this.user = this.$route.query.user
+    this.transID = this.$route.query.transID
+    this.chosen = JSON.parse(this.$route.query.chosen)
+    this.amount = this.$route.query.amount
+    this.$http.post('/xsz/api/savePay',{
+        uid:this.user.id+"",
+        sid:this.session.id+"",
+        chosen:JSON.stringify(this.chosen),
+        transID:res.data.transId,
+        amount:this.amount
+    }).then(()=>{
+        alert('success')
+    })
   }
+  // computed:{
+  //   session(){
+  //     return this.$route.query.session
+  //   },
+  //   user(){
+  //     return this.$route.query.user
+  //   },
+  //   transID(){
+  //     return this.$route.query.transID
+  //   },
+  //   chosen(){
+  //     return JSON.parse(this.$route.query.chosen)
+  //   },
+  //   amount(){
+  //     return this.$route.query.amount
+  //   }
+  // }
 }
 </script>
 
