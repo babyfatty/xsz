@@ -131,7 +131,7 @@ export default {
                   paySign: genSign(), 
                   success: function () {
                     // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)+"&amount="+this.amount
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)+"&amount="+self.amount
                     // location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
@@ -182,6 +182,6 @@ export default {
 <style scoped>
 .payBtn button{
   width: 100%;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 </style>

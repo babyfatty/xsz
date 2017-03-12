@@ -22102,7 +22102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             paySign: genSign(),
             success: function () {
               // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session) + "&amount=" + this.amount;
+              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session) + "&amount=" + self.amount;
               // location.href = 'http://xesfun.com/xsz/#/orderdetail'
             },
             fail: function (res) {
@@ -22163,7 +22163,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n  padding-top: 20px;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/CheckOrder.vue"],"names":[],"mappings":";AACA;EACE,YAAY;EACZ,kBAAkB;CACnB","file":"CheckOrder.vue","sourcesContent":["\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n  padding-top: 20px;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n  margin-top: 20px;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/CheckOrder.vue"],"names":[],"mappings":";AACA;EACE,YAAY;EACZ,iBAAiB;CAClB","file":"CheckOrder.vue","sourcesContent":["\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n  margin-top: 20px;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22252,4 +22252,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.eeb62a5458475767f38f.js.map
+//# sourceMappingURL=1.9ebd9a3347dcdc21a0fe.js.map
