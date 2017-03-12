@@ -22087,7 +22087,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             timestamp: time,
             paySign: genSign(),
             success: function (res) {
-              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail', params: { session: this.session, user: this.user, chosen: this.chosen, transID: res.data.transId, btime: btime, amount: this.amount } });
+              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
             },
             fail: function (res) {
               alert('payment fail');
@@ -22095,7 +22095,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             cancel: function (res) {
               // alert(res)
               // self.$router.replace({"name":"orderdetail"})
-              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail', params: { session: this.session, user: this.user, chosen: this.chosen, transID: res.data.transId, btime: btime, amount: this.amount } });
+              self.$router.replace({ 'path': 'http://xesfun.com/xsz/#/orderdetail' });
             }
           });
         });
@@ -22219,4 +22219,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.0c767e0fe2100be5c4ab.js.map
+//# sourceMappingURL=1.0b9cac587ca5cebfc047.js.map

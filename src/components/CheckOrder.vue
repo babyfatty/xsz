@@ -116,7 +116,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function (res) {
-                    self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+                    self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
                    },
                   fail: function(res){
                     alert('payment fail')
@@ -124,7 +124,7 @@ export default {
                   cancel: function(res){
                       // alert(res)
                       // self.$router.replace({"name":"orderdetail"})
-                      self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail',params:{session:this.session,user:this.user,chosen:this.chosen,transID:res.data.transId,btime:btime,amount:this.amount}})
+                      self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
                   }
               })
               
