@@ -22088,15 +22088,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             paySign: genSign(),
             success: function () {
               // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId;
-
+              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session);
               // location.href = 'http://xesfun.com/xsz/#/orderdetail'
             },
             fail: function (res) {
               alert('payment fail');
             },
             cancel: function () {
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId;
+              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&sid=" + self.session.id + "&chosen=" + JSON.stringify(self.chosen) + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&session=" + JSON.stringify(self.session);
 
               // self.$http.post('/xsz/api/savePay',{
               //       uid:self.user.id+"",
@@ -22149,7 +22148,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"CheckOrder.vue","sourceRoot":""}]);
 
 // exports
 
@@ -22236,4 +22235,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.39b29fc24fb34cd2fddf.js.map
+//# sourceMappingURL=1.ff33abed2018b843aa11.js.map

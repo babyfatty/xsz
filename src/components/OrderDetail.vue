@@ -47,7 +47,9 @@ export default {
       user:"",
       transID:"",
       chosen:"",
-      amount:""
+      amount:"",
+      user:"",
+      session:""
     }
   },
   mounted() {
@@ -56,6 +58,9 @@ export default {
     this.transID = this.$route.query.transID
     this.chosen = JSON.parse(this.$route.query.chosen)
     this.amount = this.$route.query.amount
+    this.user = JSON.parse(this.$route.query.user)
+    this.session = JSON.parse(this.$route.query.session)
+
     this.$http.post('/xsz/api/savePay',{
         uid:this.user.id+"",
         sid:this.session.id+"",

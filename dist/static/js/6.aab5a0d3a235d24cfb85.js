@@ -54,7 +54,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       user: "",
       transID: "",
       chosen: "",
-      amount: ""
+      amount: "",
+      user: "",
+      session: ""
     };
   },
   mounted() {
@@ -63,6 +65,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     this.transID = this.$route.query.transID;
     this.chosen = JSON.parse(this.$route.query.chosen);
     this.amount = this.$route.query.amount;
+    this.user = JSON.parse(this.$route.query.user);
+    this.session = JSON.parse(this.$route.query.session);
+
     this.$http.post('/xsz/api/savePay', {
       uid: this.user.id + "",
       sid: this.session.id + "",
@@ -102,7 +107,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"OrderDetail.vue","sourceRoot":""}]);
 
 // exports
 
@@ -191,4 +196,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 });
-//# sourceMappingURL=6.156ec574e65752d3e080.js.map
+//# sourceMappingURL=6.aab5a0d3a235d24cfb85.js.map

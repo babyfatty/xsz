@@ -117,16 +117,14 @@ export default {
                   paySign: genSign(), 
                   success: function () {
                     // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId
-
-                      
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)
                     // location.href = 'http://xesfun.com/xsz/#/orderdetail'
                    },
                   fail: function(res){
                     alert('payment fail')
                   },
                   cancel: function(){
-                    location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId
+                    location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)
 
                     // self.$http.post('/xsz/api/savePay',{
                     //       uid:self.user.id+"",
