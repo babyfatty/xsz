@@ -70,18 +70,6 @@ export default {
      })
   },
   computed:{
-    changeTitle(t){
-      document.title = t;
-      var i = document.createElement('iframe');
-      i.src = '//m.baidu.com/favicon.ico';
-      i.style.display = 'none';
-      i.onload = function() {
-        setTimeout(function(){
-          i.remove();
-        }, 9)
-      }
-      document.body.appendChild(i);
-    },
     chosen(){
       console.log(JSON.parse(this.$route.params.chosen))
       return JSON.parse(this.$route.params.chosen)
@@ -97,6 +85,18 @@ export default {
     }
   },
   methods:{
+    changeTitle(t){
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function() {
+        setTimeout(function(){
+          i.remove();
+        }, 9)
+      }
+      document.body.appendChild(i);
+    },
     goToPay(){
       var self = this
       wx.ready(function(){

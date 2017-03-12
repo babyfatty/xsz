@@ -22041,18 +22041,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
   },
   computed: {
-    changeTitle(t) {
-      document.title = t;
-      var i = document.createElement('iframe');
-      i.src = '//m.baidu.com/favicon.ico';
-      i.style.display = 'none';
-      i.onload = function () {
-        setTimeout(function () {
-          i.remove();
-        }, 9);
-      };
-      document.body.appendChild(i);
-    },
     chosen() {
       console.log(JSON.parse(this.$route.params.chosen));
       return JSON.parse(this.$route.params.chosen);
@@ -22068,6 +22056,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
     goToPay() {
       var self = this;
       wx.ready(function () {
@@ -22248,4 +22248,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ })
 ]);
-//# sourceMappingURL=1.bb40da5ceda4b48e75f9.js.map
+//# sourceMappingURL=1.9910bedd8bc602be5690.js.map
