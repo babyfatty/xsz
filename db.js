@@ -1,14 +1,14 @@
 var SQL = require('sequelize')
-var sql = new SQL('xsz', 'root')
-// var sql = new SQL('xsz', 'root', 'VIvid1993@', {
-//   host: 'rm-bp1z7c3g05d1nr18ho.mysql.rds.aliyuncs.com',
-//   dialect: 'mysql',
-//   pool: {
-//     max: 5,
-//     min: 0,
-//     idle: 10000
-//   },
-// });
+// var sql = new SQL('xsz', 'root')
+var sql = new SQL('xsz', 'root', 'VIvid1993@', {
+  host: 'rm-bp1z7c3g05d1nr18ho.mysql.rds.aliyuncs.com',
+  dialect: 'mysql',
+  pool: {
+    max: 5,
+    min: 0,
+    idle: 10000
+  },
+});
 var User = sql.define('user', {
   username: SQL.STRING,
   school: SQL.STRING,
@@ -43,8 +43,8 @@ var USER_SEATS_PAID = sql.define('user_seats_paid',{
 User.sync({ force: false })
 Register.sync({ force: false })
 Speech.sync({ force: false })
-Seats.sync({ force: false })
-USER_SEATS_PAID.sync({ force: false })
+Seats.sync({ force: true })
+USER_SEATS_PAID.sync({ force: true })
 
 var addPayInfo = function(payInfo){
 	return USER_SEATS_PAID.create(payInfo)
