@@ -43,6 +43,8 @@ app.use(async (ctx,next)=>{
       break; 
     case '/api/sendNotice':
       try {
+        console.log(ctx.query)
+        console.log(ctx.query.name,ctx.query.product,ctx.query.phone)
         var res = await tool.sendNotice(ctx.query.name,ctx.query.product,ctx.query.phone)
         ctx.body = res
         // statements
