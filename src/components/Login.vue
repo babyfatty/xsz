@@ -61,7 +61,7 @@ export default {
       }).then((res)=>{
         console.log(res.data)
         if(res.data.success){
-          this.$router.replace({name:'seats',params:{user:res.data.user}})
+          this.$router.replace({name:'payment',params:{user:res.data.user}})
         }else{
           alert(res.data.msg)
         }

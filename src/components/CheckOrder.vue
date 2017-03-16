@@ -1,40 +1,50 @@
 <template>
   <div class="checkOrder">
+    <div class="tip">
+      请在此页面完成支付，退出需要重新报名哦~
+    </div>
     <div class="confirm-seats-info">
-      <h3>{{session.name}}</h3>
-      <div class="location">
-        地点：{{session.location}}
+      <div class="infoSection">
+        <h5>2017年橡树籽教育高考命题专家押题讲座</h5>
+        <div class="location">
+          <span class="infotitle">地点：</span>钟山宾馆（江苏省会议中心）
+        </div>
+        <div class="time">
+          <span  class="infotitle">时间：</span>2017年4月29日-30日
+        </div>
+        <!-- <div class="seats">
+          座位：
+          <span v-for="item in chosen">
+            {{item.row*1+1}}排{{item.column*1+1}}座
+          </span>
+        </div> -->
+        <div>
+          <span  class="infotitle">报名科目：</span><span v-for="(item,index) in chosen"><span v-if="index>=1">，</span>{{item}}</span>
+        </div>
+        <div>
+          <span class="infotitle">电话：</span>{{user.phone}}
+        </div>
+        <div>
+          <span class="infotitle">预订人：</span>{{user.username}}
+        </div>
+        <div class="price">
+          <span class="infotitle">费用总计：</span>{{amount}}元
+        </div>
       </div>
-      <div class="time">
-        时间：{{session.time}}
-      </div>
-      <div class="seats">
-        座位：
-        <span v-for="item in chosen">
-          {{item.row*1+1}}排{{item.column*1+1}}座
-        </span>
-      </div>
-      <div>
-        电话：{{user.phone}}
-      </div>
-      <div>
-        预订人：{{user.username}}
-      </div>
-    </div>
-    <div class="price">
-      预约费用总计：{{amount}}元
-    </div>
-    <div class="statement">
+<!--     <div class="statement">
       <h5>购票须知</h5>
       <div>1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金</div>
       <div>2,本场讲座设计大量人力物力，预约成功不可退款</div>
+    </div> -->
     </div>
     <div class="priceInfo">
+      *
       <span>本场讲座不支持退换票</span>
       <span>应付{{amount}}元</span>
     </div>
     <div class="payBtn">
-        <button type="button" v-on:click="goToPay" class="btn btn-danger">立即付款</button>
+        <!-- <button type="button" v-on:click="goToPay" class="btn btn-danger">立即付款</button> -->
+        <button type="button" v-on:click="testPay" class="btn btn-danger">立即付款</button>
     </div>
   </div>
 </template>
@@ -50,7 +60,7 @@ export default {
     }
   },
   mounted() {
-    this.changeTitle('订单确认')
+    this.changeTitle('确认订单')
     console.log(this.$route.params)
     var self = this
     this.$http.get('/xsz/api/sign',{
@@ -72,17 +82,16 @@ export default {
   },
   computed:{
     chosen(){
-      console.log(JSON.parse(this.$route.params.chosen))
-      return JSON.parse(this.$route.params.chosen)
+      return this.$route.params.chosen
     },
     user(){
       return this.$route.params.user
     },
-    session(){
-      return this.$route.params.session
-    },
+    // session(){
+    //   return this.$route.params.session
+    // },
     amount(){
-      return JSON.parse(this.$route.params.chosen).length*2
+      return this.$route.params.amount
     }
   },
   methods:{
@@ -97,6 +106,9 @@ export default {
         }, 9)
       }
       document.body.appendChild(i);
+    },
+    testPay(){
+      location.href = 'http://localhost:8080/#/orderdetail?uid='+this.user.id+"&chosen="+this.chosen+"&transID=123"+"&user="+JSON.stringify(this.user)+"&amount="+this.amount
     },
     goToPay(){
       var self = this
@@ -130,10 +142,8 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function () {
-                    // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&sid="+self.session.id+"&chosen="+JSON.stringify(self.chosen)+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&session="+JSON.stringify(self.session)+"&amount="+self.amount
-                    // location.href = 'http://xesfun.com/xsz/#/orderdetail'
-                   },
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&chosen="+self.chosen+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&amount="+self.amount
+                  },
                   fail: function(res){
                     alert('payment fail')
                   },
@@ -155,7 +165,6 @@ export default {
                       // self.$router.replace({"name":"orderdetail"})
                       // self.$router.replace({'path':'http://xesfun.com/xsz/#/orderdetail'})
                     // location.href = 'http://xesfun.com/xsz/#/orderdetail'
-
                   }
               })
               
@@ -182,6 +191,42 @@ export default {
 <style scoped>
 .payBtn button{
   width: 100%;
-  margin-top: 20px;
 }
+.priceInfo{
+  padding: 20px 0 10px 0;
+  font-size: 12px;
+}
+.infoSection{
+    border: 1px dotted #eee;
+    padding: 6px;
+    line-height: 25px;
+    background: #fff;
+    border-radius: 5px;
+}
+.tip{
+  height: 20px;
+    color: #fff;
+    background: #f0ad4e;
+    opacity: 0.7;
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 20px;
+    padding: 0 8px;
+    border-radius: 4px;
+    margin: 5px 0;
+    border: 1px dotted;
+}
+.time{
+  color: #d9534f;
+}
+.infotitle{
+  display: inline-block;
+  width: 30%;
+  text-align: left;
+}
+</style>
+<style>
+    body{
+      background: #F8F8F8;
+    }
 </style>

@@ -8,6 +8,7 @@ const Payment = resolve => require(['../components/Payment.vue'], resolve)
 const checkOrder = resolve => require(['../components/CheckOrder.vue'], resolve)
 const orderDetail = resolve => require(['../components/OrderDetail.vue'], resolve)
 const PaySuccess = resolve => require(['../components/PaySuccess.vue'], resolve)
+const SessionList = resolve => require(['../components/SessionList.vue'], resolve)
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/sessionList',
+      name:'sessionList',
+      components: SessionList
     },
     {
       path: '/login',

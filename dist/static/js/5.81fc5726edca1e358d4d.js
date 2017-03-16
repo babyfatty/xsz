@@ -1,131 +1,6 @@
-webpackJsonp([4,9],{
+webpackJsonp([5,10],{
 
-/***/ 161:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = {
-  name: 'Login',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-      wait: 30,
-      btnShow: true,
-      varyCode: "",
-      phone: ""
-    };
-  },
-  mounted() {
-    this.changeTitle('登录-橡树籽讲座报名');
-  },
-  methods: {
-    changeTitle(t) {
-      document.title = t;
-      var i = document.createElement('iframe');
-      i.src = '//m.baidu.com/favicon.ico';
-      i.style.display = 'none';
-      i.onload = function () {
-        setTimeout(function () {
-          i.remove();
-        }, 9);
-      };
-      document.body.appendChild(i);
-    },
-    vary() {
-      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
-        // this.$http.get('http://localhost:8889/api/varyLogin',{
-        params: {
-          code: this.varyCode,
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res.data);
-        if (res.data.success) {
-          this.$router.replace({ name: 'seats', params: { user: res.data.user } });
-        } else {
-          alert(res.data.msg);
-        }
-        console.log(res);
-      });
-    },
-    sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
-        params: {
-          phone: this.phone
-        }
-      }).then(res => {
-        console.log(res);
-        if (res.data.success) {
-          this.btnShow = false;
-          var interval = setInterval(() => {
-            if (this.wait > 0) {
-              this.wait--;
-            } else {
-              this.btnShow = true;
-              this.wait = 30;
-              clearInterval(interval);
-            }
-          }, 1000);
-        }
-      });
-    }
-  }
-};
-
-/***/ }),
-
-/***/ 17:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(182)
-__webpack_require__(183)
-
-var Component = __webpack_require__(4)(
-  /* script */
-  __webpack_require__(161),
-  /* template */
-  __webpack_require__(191),
-  /* scopeId */
-  "data-v-55a34494",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 172:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -140,7 +15,7 @@ exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\n", 
 
 /***/ }),
 
-/***/ 173:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -155,13 +30,13 @@ exports.push([module.i, "\n.submitBtn[data-v-55a34494]{\n  width: 100%;\n}\n.cod
 
 /***/ }),
 
-/***/ 182:
+/***/ 155:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(172);
+var content = __webpack_require__(119);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -182,13 +57,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 183:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(173);
+var content = __webpack_require__(120);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -209,7 +84,31 @@ if(false) {
 
 /***/ }),
 
-/***/ 191:
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(155)
+__webpack_require__(156)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(92),
+  /* template */
+  __webpack_require__(199),
+  /* scopeId */
+  "data-v-55a34494",
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 199:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -304,7 +203,108 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("提交")])])
 },staticRenderFns: []}
 
+/***/ }),
+
+/***/ 92:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+  name: 'Login',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      wait: 30,
+      btnShow: true,
+      varyCode: "",
+      phone: ""
+    };
+  },
+  mounted() {
+    this.changeTitle('登录-橡树籽讲座报名');
+  },
+  methods: {
+    changeTitle(t) {
+      document.title = t;
+      var i = document.createElement('iframe');
+      i.src = '//m.baidu.com/favicon.ico';
+      i.style.display = 'none';
+      i.onload = function () {
+        setTimeout(function () {
+          i.remove();
+        }, 9);
+      };
+      document.body.appendChild(i);
+    },
+    vary() {
+      this.$http.get('http://xesfun.com/xsz/api/varyLogin', {
+        // this.$http.get('http://localhost:8889/api/varyLogin',{
+        params: {
+          code: this.varyCode,
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res.data);
+        if (res.data.success) {
+          this.$router.replace({ name: 'payment', params: { user: res.data.user } });
+        } else {
+          alert(res.data.msg);
+        }
+        console.log(res);
+      });
+    },
+    sendSms() {
+      this.$http.get('http://xesfun.com/xsz/api/sendSMS', {
+        params: {
+          phone: this.phone
+        }
+      }).then(res => {
+        console.log(res);
+        if (res.data.success) {
+          this.btnShow = false;
+          var interval = setInterval(() => {
+            if (this.wait > 0) {
+              this.wait--;
+            } else {
+              this.btnShow = true;
+              this.wait = 30;
+              clearInterval(interval);
+            }
+          }, 1000);
+        }
+      });
+    }
+  }
+};
+
 /***/ })
 
 });
-//# sourceMappingURL=4.614d974a016c684e8696.js.map
+//# sourceMappingURL=5.81fc5726edca1e358d4d.js.map
