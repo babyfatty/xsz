@@ -1,5 +1,5 @@
 <template>
-		
+	<div class="table-responsive">
 		<table class="table table-striped">
 		  <thead>
 	        <tr>
@@ -39,6 +39,7 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
 </template>
 <script>
 	export default {

@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Admin.vue","sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"Admin.vue","sourceRoot":""}]);
 
 // exports
 
@@ -69,11 +69,13 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('table', {
+  return _c('div', {
+    staticClass: "table-responsive"
+  }, [_c('table', {
     staticClass: "table table-striped"
   }, [_vm._m(0), _vm._v(" "), _c('tbody', _vm._l((_vm.orders), function(order) {
     return _c('tr', [_c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(order.uname) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(order.chosen) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(order.amount) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(JSON.parse(order.adress).name) + "，" + _vm._s(JSON.parse(order.adress).tel) + "，\n\t\t\t\t\t\t" + _vm._s(JSON.parse(order.adress).city) + "市" + _vm._s(JSON.parse(order.adress).district) + "区，\n\t\t\t\t\t\t" + _vm._s(JSON.parse(order.adress).detail) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(order.createdAt) + "\n\t\t\t\t\t")]), _vm._v(" "), _c('td', [_vm._v("\n\t\t\t\t\t\t" + _vm._s(order.transID) + "\n\t\t\t\t\t")])])
-  }))])
+  }))])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', [_c('th', [_vm._v("姓名")]), _vm._v(" "), _c('th', [_vm._v("报名课程")]), _vm._v(" "), _c('th', [_vm._v("付款金额")]), _vm._v(" "), _c('th', [_vm._v("邮寄地址")]), _vm._v(" "), _c('th', [_vm._v("下单时间")]), _vm._v(" "), _c('th', [_vm._v("订单号")])])])
 }]}
@@ -85,6 +87,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -145,4 +148,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=8.24934c6e92d1cf865405.js.map
+//# sourceMappingURL=8.50832b4b2fd30c400061.js.map
