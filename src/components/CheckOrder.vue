@@ -43,8 +43,8 @@
       <span>应付{{amount}}元</span>
     </div>
     <div class="payBtn">
-        <!-- <button type="button" v-on:click="goToPay" class="btn btn-danger">立即付款</button> -->
-        <button type="button" v-on:click="testPay" class="btn btn-danger">立即付款</button>
+        <button type="button" v-on:click="goToPay" class="btn btn-danger">立即付款</button>
+        <!-- <button type="button" v-on:click="testPay" class="btn btn-danger">立即付款</button> -->
     </div>
   </div>
 </template>

@@ -22258,7 +22258,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "button"
     },
     on: {
-      "click": _vm.testPay
+      "click": _vm.goToPay
     }
   }, [_vm._v("立即付款")])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -22333,4 +22333,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.def1a06c3ccab2e941ff.js.map
+//# sourceMappingURL=0.bae3f4b2679741b35728.js.map
