@@ -1,6 +1,6 @@
-webpackJsonp([4,10],{
+webpackJsonp([4,11],{
 
-/***/ 121:
+/***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -15,7 +15,7 @@ exports.push([module.i, "\n#app{\n  padding: 20px;\n  padding-top: 10px;\n}\nbod
 
 /***/ }),
 
-/***/ 122:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(14)();
@@ -30,13 +30,13 @@ exports.push([module.i, "\n.infoSection[data-v-8c5d9e68],.price[data-v-8c5d9e68]
 
 /***/ }),
 
-/***/ 157:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(121);
+var content = __webpack_require__(124);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -57,13 +57,13 @@ if(false) {
 
 /***/ }),
 
-/***/ 158:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(122);
+var content = __webpack_require__(125);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -84,19 +84,19 @@ if(false) {
 
 /***/ }),
 
-/***/ 18:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(157)
-__webpack_require__(158)
+__webpack_require__(161)
+__webpack_require__(162)
 
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(93),
+  __webpack_require__(95),
   /* template */
-  __webpack_require__(200),
+  __webpack_require__(205),
   /* scopeId */
   "data-v-8c5d9e68",
   /* cssModules */
@@ -108,7 +108,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 200:
+/***/ 205:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -161,7 +161,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 93:
+/***/ 95:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -309,4 +309,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.25bcb585425fe8c6320c.js.map
+//# sourceMappingURL=4.f4d557a97567621a69ff.js.map

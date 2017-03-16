@@ -9,6 +9,7 @@ const checkOrder = resolve => require(['../components/CheckOrder.vue'], resolve)
 const orderDetail = resolve => require(['../components/OrderDetail.vue'], resolve)
 const PaySuccess = resolve => require(['../components/PaySuccess.vue'], resolve)
 const SessionList = resolve => require(['../components/SessionList.vue'], resolve)
+const admin = resolve => require(['../components/Admin.vue'], resolve)
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/',
       name:'index',
       component:Register
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: admin
     }
   ]
 })
