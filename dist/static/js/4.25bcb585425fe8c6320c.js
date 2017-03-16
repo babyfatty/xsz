@@ -298,10 +298,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$http.get('/xsz/api/sendNotice', {
         params: {
           phone: this.user.phone,
-          param: {
-            name: this.user.username,
-            product: this.chosen
-          }
+          name: this.user.username,
+          product: this.chosen
         }
       });
     }
@@ -311,4 +309,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.16f0f7560c5eb206e8ab.js.map
+//# sourceMappingURL=4.25bcb585425fe8c6320c.js.map

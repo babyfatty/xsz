@@ -130,10 +130,8 @@ export default {
       this.$http.get('/xsz/api/sendNotice',{
         params:{
           phone:this.user.phone,
-          param:{
-            name:this.user.username,
-            product:this.chosen
-          }
+          name:this.user.username,
+          product:this.chosen
         }
       })
     }
