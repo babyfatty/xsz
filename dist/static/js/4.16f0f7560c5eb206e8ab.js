@@ -23,7 +23,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.infoSection[data-v-8c5d9e68],.price[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.kfInfo[data-v-8c5d9e68]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    margin: 3px 0;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-8c5d9e68]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.infoSection[data-v-8c5d9e68],.statement div[data-v-8c5d9e68]{\n  font-size: 12px;\n}\n\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/OrderDetail.vue"],"names":[],"mappings":";AACA;IACI,wBAAwB;IACxB,aAAa;IACb,kBAAkB;IAClB,cAAc;IACd,iBAAiB;IACjB,mBAAmB;CACtB;AACD;EACE,aAAa;IACX,YAAY;IACZ,oBAAoB;IACpB,aAAa;IACb,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;IACd,mBAAmB;CACtB;AACD;EACE,gBAAgB;CACjB","file":"OrderDetail.vue","sourcesContent":["\n.infoSection[data-v-8c5d9e68],.price[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.kfInfo[data-v-8c5d9e68]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    margin: 3px 0;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-8c5d9e68]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.infoSection[data-v-8c5d9e68],.statement div[data-v-8c5d9e68]{\n  font-size: 12px;\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.infoSection[data-v-8c5d9e68],.price[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.kfInfo[data-v-8c5d9e68]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    margin: 3px 0;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-8c5d9e68]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.infoSection[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.price div[data-v-8c5d9e68]{\n  font-size: 12px;\n}\n\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/OrderDetail.vue"],"names":[],"mappings":";AACA;IACI,wBAAwB;IACxB,aAAa;IACb,kBAAkB;IAClB,cAAc;IACd,iBAAiB;IACjB,mBAAmB;CACtB;AACD;EACE,aAAa;IACX,YAAY;IACZ,oBAAoB;IACpB,aAAa;IACb,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;IACd,mBAAmB;CACtB;AACD;EACE,gBAAgB;CACjB","file":"OrderDetail.vue","sourcesContent":["\n.infoSection[data-v-8c5d9e68],.price[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.kfInfo[data-v-8c5d9e68]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    margin: 3px 0;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-8c5d9e68]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.infoSection[data-v-8c5d9e68],.statement[data-v-8c5d9e68],.price div[data-v-8c5d9e68]{\n  font-size: 12px;\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -128,7 +128,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "infotitle"
   }, [_vm._v("预订人：")]), _vm._v(_vm._s(_vm.user.username) + "\n        ")])])]), _vm._v(" "), _c('div', {
     staticClass: "price"
-  }, [_c('div', [_c('span', [_vm._v("实付金额：")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("订单号：")]), _c('span', [_vm._v(_vm._s(_vm.transID))])])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4)])
+  }, [_c('div', [_c('span', [_vm._v("实付金额：")]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', [_c('span', [_vm._v("订单号：")]), _c('span', [_vm._v(_vm._s(_vm.transID))])])]), _vm._v(" "), _c('div', {
+    staticClass: "price"
+  }, [_vm._m(2), _vm._v(" "), _c('div', [_c('span', [_vm._v(_vm._s(_vm.mail.name) + " " + _vm._s(_vm.mail.tel) + " " + _vm._s(_vm.mail.city) + "市" + _vm._s(_vm.mail.district) + "区" + _vm._s(_vm.mail.detail))])])]), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _vm._m(5)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "location"
@@ -142,9 +144,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "infotitle"
   }, [_vm._v("时间：")]), _vm._v("2017年4月29日-30日\n        ")])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('span', [_vm._v("邮寄地址：")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "statement"
-  }, [_c('h5', [_vm._v("取票须知")]), _vm._v(" "), _c('div', [_vm._v("讲座地点为江苏省会议中心(钟山宾馆)主楼，登记后凭券领取资料入场。")])])
+  }, [_c('h5', [_vm._v("入场须知")]), _vm._v(" "), _c('div', [_vm._v("讲座地点为江苏省会议中心(钟山宾馆)主楼，登记后凭券领取资料入场。")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "statement"
@@ -232,6 +236,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
@@ -242,7 +254,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       transID: "",
       chosen: "",
       amount: "",
-      user: ""
+      user: "",
+      mail: ""
     };
   },
   mounted() {
@@ -252,6 +265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     console.log(this.chosen);
     this.amount = this.$route.query.amount;
     this.user = JSON.parse(this.$route.query.user);
+    this.mail = JSON.parse(this.$route.query.mailInfo);
     this.savePay().then(() => {
       this.sendSms();
     });
@@ -272,16 +286,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     savePay() {
       return this.$http.post('/xsz/api/savePay', {
         uid: this.user.id + "",
+        uname: this.user.username,
         chosen: this.chosen,
-        transID: this.transId,
+        adress: this.$route.query.mailInfo,
+        transID: this.transID,
         amount: this.amount,
         btime: new Date().getTime() + ""
       });
     },
     sendSms() {
-      this.$http.get('http://xesfun.com/xsz/api/sendNotice', {
+      this.$http.get('/xsz/api/sendNotice', {
         params: {
-          phone: this.user.phone
+          phone: this.user.phone,
+          param: {
+            name: this.user.username,
+            product: this.chosen
+          }
         }
       });
     }
@@ -291,4 +311,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=4.4490a463bfef688f76cd.js.map
+//# sourceMappingURL=4.16f0f7560c5eb206e8ab.js.map

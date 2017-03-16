@@ -43,7 +43,7 @@ app.use(async (ctx,next)=>{
       break; 
     case '/api/sendNotice':
       try {
-        var res = await tool.sendNotice(code,ctx.query.phone)
+        var res = await tool.sendNotice(ctx.query.param,ctx.query.phone)
         ctx.body = res
         // statements
       } catch(e) {
@@ -226,12 +226,23 @@ app.use(async (ctx,next)=>{
       var tempurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ACCESS_TOKEN.access_token+'&type=jsapi'
       ctx.body = await rp(tempurl)
       break;
+    case '/api/viewOrders':
+      try {
+        // statements
+        var orders = await db.viewOrders()
+        console.log('orders',orders)
+        ctx.body = orders
+      } catch(e) {
+        // statements
+        console.log(e);
+      }
+      break;  
     case '/api/savePay':
       var payParam = ctx.request.body
       console.log("payParam",payParam)
       try {
         // statements
-        var payInfo = await db.addPayInfo(payParam)
+        var payInfo = await db.addPayment(payParam)
         ctx.body = {
           success:true,
           payInfo:payInfo

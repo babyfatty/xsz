@@ -12,12 +12,6 @@
         <div class="time">
           <span  class="infotitle">时间：</span>2017年4月29日-30日
         </div>
-        <!-- <div class="seats">
-          座位：
-          <span v-for="item in chosen">
-            {{item.row*1+1}}排{{item.column*1+1}}座
-          </span>
-        </div> -->
         <div>
           <span  class="infotitle">报名科目：</span><span v-for="(item,index) in chosen"><span v-if="index>=1">，</span>{{item}}</span>
         </div>
@@ -31,11 +25,24 @@
           <span class="infotitle">费用总计：</span>{{amount}}元
         </div>
       </div>
-<!--     <div class="statement">
-      <h5>购票须知</h5>
-      <div>1,本场讲座位公益讲座，所有预约费用讲捐献给学习基金</div>
-      <div>2,本场讲座设计大量人力物力，预约成功不可退款</div>
-    </div> -->
+    </div>
+    <div class="infoSection">
+      <h5>邮寄信息（必填）</h5>
+      <div class="mailInfo">
+        <span class="control-label">姓名</span>
+        <input class="form-control input-sm" type="text" v-model="mail.name" placeholder="请填写收件人姓名">
+      </div>
+      <div class="mailInfo">
+        <span class="control-label">电话</span>
+        <input class="form-control input-sm" type="tel" v-model="mail.tel" placeholder="请填写收件人电话">
+      </div>
+      <div class="mailInfo">
+        <span class="control-label">地址</span>
+        <input class="form-control mailDST input-sm" type="text" v-model="mail.city" placeholder="市">
+        <input type="text" class="form-control mailDST input-sm" v-model="mail.district" placeholder="区">
+      </div>
+      <span class="control-label" style="opacity:0">地址</span>
+      <textarea class="form-control input-sm" rows="3" placeholder="详细地址，具体到门牌号" v-model="mail.detail"></textarea>
     </div>
     <div class="priceInfo">
       *
@@ -56,7 +63,13 @@ export default {
   name: 'checkOrder',
   data () {
     return {
-
+      mail:{
+        name:"",
+        tel:"",
+        city:"",
+        district:"",
+        detail:""
+      }
     }
   },
   mounted() {
@@ -85,11 +98,8 @@ export default {
       return this.$route.params.chosen
     },
     user(){
-      return this.$route.params.user
+      return this.$route.params.user||{id:'1',phone:"13222001020",username:"沈星辰"}
     },
-    // session(){
-    //   return this.$route.params.session
-    // },
     amount(){
       return this.$route.params.amount
     }
@@ -108,9 +118,29 @@ export default {
       document.body.appendChild(i);
     },
     testPay(){
-      location.href = 'http://localhost:8080/#/orderdetail?uid='+this.user.id+"&chosen="+this.chosen+"&transID=123"+"&user="+JSON.stringify(this.user)+"&amount="+this.amount
+      location.href = 'http://10.12.142.13:8080/#/orderdetail?uid='+this.user.id+"&chosen="+this.chosen+"&transID=123"+"&user="+JSON.stringify(this.user)+"&amount="+this.amount+"&mailInfo="+JSON.stringify(this.mail)
     },
     goToPay(){
+      if(!this.mail.name){
+        alert('姓名必填')
+        return
+      }
+      if(!this.mail.tel){
+        alert('电话必填')
+        return
+      }
+      if(!this.mail.city){
+        alert('城市必填')
+        return
+      }
+      if(!this.mail.district){
+        alert('区必填')
+        return
+      }
+      if(!this.mail.detail){
+        alert('详细地址必填')
+        return
+      }
       var self = this
       wx.ready(function(){
           self.$http.get('/xsz/api/unifiedorder').then((res)=>{
@@ -142,7 +172,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function () {
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&chosen="+self.chosen+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&amount="+self.amount
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&chosen="+self.chosen+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&amount="+self.amount+"&mailInfo="+JSON.stringify(self.mailInfo)
                   },
                   fail: function(res){
                     alert('payment fail')
@@ -189,6 +219,21 @@ export default {
 </script>
 
 <style scoped>
+.mailInfo{
+  margin: 5px 0;
+}
+.control-label{
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+}
+.form-control{
+  width: 80%;
+  display: inline-block;
+}
+.mailDST{
+  width: 30%;
+}
 .payBtn button{
   width: 100%;
 }

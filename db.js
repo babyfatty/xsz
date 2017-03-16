@@ -40,11 +40,22 @@ var USER_SEATS_PAID = sql.define('user_seats_paid',{
 	btime:SQL.STRING
 })
 
+var USER_PAID_RECORD = sql.define('user_paid_record',{
+	chosen:SQL.STRING,
+	uid:SQL.STRING,
+	transID:SQL.STRING,
+	btime:SQL.STRING,
+	adress:SQL.STRING,
+	amount:SQL.STRING,
+	uname:SQL.STRING
+})
+
 User.sync({ force: false })
 Register.sync({ force: false })
 Speech.sync({ force: false })
 Seats.sync({ force: false })
 USER_SEATS_PAID.sync({ force: false })
+USER_PAID_RECORD.sync({ force: false })
 
 var addPayInfo = function(payInfo){
 	return USER_SEATS_PAID.create(payInfo)
@@ -70,11 +81,21 @@ var bookedSeats = function(){
 	return USER_SEATS_PAID.findAll()
 }
 
+var addPayment = function(payInfo){
+	return USER_PAID_RECORD.create(payInfo)
+}
+
+var viewOrders = function(){
+	return USER_PAID_RECORD.findAll()
+}
+
 module.exports = {
 	addUser,
 	register,
 	sessionInfo,
 	findUserByPhone,
 	addPayInfo,
-	bookedSeats
+	bookedSeats,
+	addPayment,
+	viewOrders
 }

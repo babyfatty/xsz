@@ -12494,13 +12494,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'checkOrder',
   data() {
-    return {};
+    return {
+      mail: {
+        name: "",
+        tel: "",
+        city: "",
+        district: "",
+        detail: ""
+      }
+    };
   },
   mounted() {
     this.changeTitle('确认订单');
@@ -12528,11 +12543,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.$route.params.chosen;
     },
     user() {
-      return this.$route.params.user;
+      return this.$route.params.user || { id: '1', phone: "13222001020", username: "沈星辰" };
     },
-    // session(){
-    //   return this.$route.params.session
-    // },
     amount() {
       return this.$route.params.amount;
     }
@@ -12551,9 +12563,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       document.body.appendChild(i);
     },
     testPay() {
-      location.href = 'http://localhost:8080/#/orderdetail?uid=' + this.user.id + "&chosen=" + this.chosen + "&transID=123" + "&user=" + JSON.stringify(this.user) + "&amount=" + this.amount;
+      location.href = 'http://10.12.142.13:8080/#/orderdetail?uid=' + this.user.id + "&chosen=" + this.chosen + "&transID=123" + "&user=" + JSON.stringify(this.user) + "&amount=" + this.amount + "&mailInfo=" + JSON.stringify(this.mail);
     },
     goToPay() {
+      if (!this.mail.name) {
+        alert('姓名必填');
+        return;
+      }
+      if (!this.mail.tel) {
+        alert('电话必填');
+        return;
+      }
+      if (!this.mail.city) {
+        alert('城市必填');
+        return;
+      }
+      if (!this.mail.district) {
+        alert('区必填');
+        return;
+      }
+      if (!this.mail.detail) {
+        alert('详细地址必填');
+        return;
+      }
       var self = this;
       wx.ready(function () {
         self.$http.get('/xsz/api/unifiedorder').then(res => {
@@ -12585,7 +12617,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             timestamp: time,
             paySign: genSign(),
             success: function () {
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&chosen=" + self.chosen + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&amount=" + self.amount;
+              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&chosen=" + self.chosen + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&amount=" + self.amount + "&mailInfo=" + JSON.stringify(self.mailInfo);
             },
             fail: function (res) {
               alert('payment fail');
@@ -13983,7 +14015,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n}\n.priceInfo[data-v-413987a9]{\n  padding: 20px 0 10px 0;\n  font-size: 12px;\n}\n.infoSection[data-v-413987a9]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-413987a9]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.time[data-v-413987a9]{\n  color: #d9534f;\n}\n.infotitle[data-v-413987a9]{\n  display: inline-block;\n  width: 30%;\n  text-align: left;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/CheckOrder.vue"],"names":[],"mappings":";AACA;EACE,YAAY;CACb;AACD;EACE,uBAAuB;EACvB,gBAAgB;CACjB;AACD;IACI,wBAAwB;IACxB,aAAa;IACb,kBAAkB;IAClB,iBAAiB;IACjB,mBAAmB;CACtB;AACD;EACE,aAAa;IACX,YAAY;IACZ,oBAAoB;IACpB,aAAa;IACb,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;IACd,mBAAmB;CACtB;AACD;EACE,eAAe;CAChB;AACD;EACE,sBAAsB;EACtB,WAAW;EACX,iBAAiB;CAClB","file":"CheckOrder.vue","sourcesContent":["\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n}\n.priceInfo[data-v-413987a9]{\n  padding: 20px 0 10px 0;\n  font-size: 12px;\n}\n.infoSection[data-v-413987a9]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-413987a9]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.time[data-v-413987a9]{\n  color: #d9534f;\n}\n.infotitle[data-v-413987a9]{\n  display: inline-block;\n  width: 30%;\n  text-align: left;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mailInfo[data-v-413987a9]{\n  margin: 5px 0;\n}\n.control-label[data-v-413987a9]{\n    width: 15%;\n    display: inline-block;\n    text-align: center;\n}\n.form-control[data-v-413987a9]{\n  width: 80%;\n  display: inline-block;\n}\n.mailDST[data-v-413987a9]{\n  width: 30%;\n}\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n}\n.priceInfo[data-v-413987a9]{\n  padding: 20px 0 10px 0;\n  font-size: 12px;\n}\n.infoSection[data-v-413987a9]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-413987a9]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.time[data-v-413987a9]{\n  color: #d9534f;\n}\n.infotitle[data-v-413987a9]{\n  display: inline-block;\n  width: 30%;\n  text-align: left;\n}\n", "", {"version":3,"sources":["/Users/babyfat/Desktop/XHS/rlp-fe/src/components/CheckOrder.vue"],"names":[],"mappings":";AACA;EACE,cAAc;CACf;AACD;IACI,WAAW;IACX,sBAAsB;IACtB,mBAAmB;CACtB;AACD;EACE,WAAW;EACX,sBAAsB;CACvB;AACD;EACE,WAAW;CACZ;AACD;EACE,YAAY;CACb;AACD;EACE,uBAAuB;EACvB,gBAAgB;CACjB;AACD;IACI,wBAAwB;IACxB,aAAa;IACb,kBAAkB;IAClB,iBAAiB;IACjB,mBAAmB;CACtB;AACD;EACE,aAAa;IACX,YAAY;IACZ,oBAAoB;IACpB,aAAa;IACb,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,eAAe;IACf,mBAAmB;IACnB,cAAc;IACd,mBAAmB;CACtB;AACD;EACE,eAAe;CAChB;AACD;EACE,sBAAsB;EACtB,WAAW;EACX,iBAAiB;CAClB","file":"CheckOrder.vue","sourcesContent":["\n.mailInfo[data-v-413987a9]{\n  margin: 5px 0;\n}\n.control-label[data-v-413987a9]{\n    width: 15%;\n    display: inline-block;\n    text-align: center;\n}\n.form-control[data-v-413987a9]{\n  width: 80%;\n  display: inline-block;\n}\n.mailDST[data-v-413987a9]{\n  width: 30%;\n}\n.payBtn button[data-v-413987a9]{\n  width: 100%;\n}\n.priceInfo[data-v-413987a9]{\n  padding: 20px 0 10px 0;\n  font-size: 12px;\n}\n.infoSection[data-v-413987a9]{\n    border: 1px dotted #eee;\n    padding: 6px;\n    line-height: 25px;\n    background: #fff;\n    border-radius: 5px;\n}\n.tip[data-v-413987a9]{\n  height: 20px;\n    color: #fff;\n    background: #f0ad4e;\n    opacity: 0.7;\n    font-size: 12px;\n    font-weight: 200;\n    line-height: 20px;\n    padding: 0 8px;\n    border-radius: 4px;\n    margin: 5px 0;\n    border: 1px dotted;\n}\n.time[data-v-413987a9]{\n  color: #d9534f;\n}\n.infotitle[data-v-413987a9]{\n  display: inline-block;\n  width: 30%;\n  text-align: left;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22232,7 +22264,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "checkOrder"
   }, [_c('div', {
     staticClass: "tip"
-  }, [_vm._v("\n      请在此页面完成支付，退出需要重新报名哦~\n    ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n    请在此页面完成支付，退出需要重新报名哦~\n  ")]), _vm._v(" "), _c('div', {
     staticClass: "confirm-seats-info"
   }, [_c('div', {
     staticClass: "infoSection"
@@ -22242,15 +22274,139 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('span', [(index >= 1) ? _c('span', [_vm._v("，")]) : _vm._e(), _vm._v(_vm._s(item))])
   })], 2), _vm._v(" "), _c('div', [_c('span', {
     staticClass: "infotitle"
-  }, [_vm._v("电话：")]), _vm._v(_vm._s(_vm.user.phone) + "\n        ")]), _vm._v(" "), _c('div', [_c('span', {
+  }, [_vm._v("电话：")]), _vm._v(_vm._s(_vm.user.phone) + "\n      ")]), _vm._v(" "), _c('div', [_c('span', {
     staticClass: "infotitle"
-  }, [_vm._v("预订人：")]), _vm._v(_vm._s(_vm.user.username) + "\n        ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("预订人：")]), _vm._v(_vm._s(_vm.user.username) + "\n      ")]), _vm._v(" "), _c('div', {
     staticClass: "price"
   }, [_c('span', {
     staticClass: "infotitle"
-  }, [_vm._v("费用总计：")]), _vm._v(_vm._s(_vm.amount) + "元\n        ")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("费用总计：")]), _vm._v(_vm._s(_vm.amount) + "元\n      ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "infoSection"
+  }, [_c('h5', [_vm._v("邮寄信息（必填）")]), _vm._v(" "), _c('div', {
+    staticClass: "mailInfo"
+  }, [_c('span', {
+    staticClass: "control-label"
+  }, [_vm._v("姓名")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mail.name),
+      expression: "mail.name"
+    }],
+    staticClass: "form-control input-sm",
+    attrs: {
+      "type": "text",
+      "placeholder": "请填写收件人姓名"
+    },
+    domProps: {
+      "value": (_vm.mail.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mail.name = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "mailInfo"
+  }, [_c('span', {
+    staticClass: "control-label"
+  }, [_vm._v("电话")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mail.tel),
+      expression: "mail.tel"
+    }],
+    staticClass: "form-control input-sm",
+    attrs: {
+      "type": "tel",
+      "placeholder": "请填写收件人电话"
+    },
+    domProps: {
+      "value": (_vm.mail.tel)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mail.tel = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "mailInfo"
+  }, [_c('span', {
+    staticClass: "control-label"
+  }, [_vm._v("地址")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mail.city),
+      expression: "mail.city"
+    }],
+    staticClass: "form-control mailDST input-sm",
+    attrs: {
+      "type": "text",
+      "placeholder": "市"
+    },
+    domProps: {
+      "value": (_vm.mail.city)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mail.city = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mail.district),
+      expression: "mail.district"
+    }],
+    staticClass: "form-control mailDST input-sm",
+    attrs: {
+      "type": "text",
+      "placeholder": "区"
+    },
+    domProps: {
+      "value": (_vm.mail.district)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mail.district = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('span', {
+    staticClass: "control-label",
+    staticStyle: {
+      "opacity": "0"
+    }
+  }, [_vm._v("地址")]), _vm._v(" "), _c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.mail.detail),
+      expression: "mail.detail"
+    }],
+    staticClass: "form-control input-sm",
+    attrs: {
+      "rows": "3",
+      "placeholder": "详细地址，具体到门牌号"
+    },
+    domProps: {
+      "value": (_vm.mail.detail)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.mail.detail = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
     staticClass: "priceInfo"
-  }, [_vm._v("\n      *\n      "), _c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付" + _vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n    *\n    "), _c('span', [_vm._v("本场讲座不支持退换票")]), _vm._v(" "), _c('span', [_vm._v("应付" + _vm._s(_vm.amount) + "元")])]), _vm._v(" "), _c('div', {
     staticClass: "payBtn"
   }, [_c('button', {
     staticClass: "btn btn-danger",
@@ -22266,13 +22422,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "location"
   }, [_c('span', {
     staticClass: "infotitle"
-  }, [_vm._v("地点：")]), _vm._v("钟山宾馆（江苏省会议中心）\n        ")])
+  }, [_vm._v("地点：")]), _vm._v("钟山宾馆（江苏省会议中心）\n      ")])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "time"
   }, [_c('span', {
     staticClass: "infotitle"
-  }, [_vm._v("时间：")]), _vm._v("2017年4月29日-30日\n        ")])
+  }, [_vm._v("时间：")]), _vm._v("2017年4月29日-30日\n      ")])
 }]}
 
 /***/ }),
@@ -22333,4 +22489,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.bae3f4b2679741b35728.js.map
+//# sourceMappingURL=0.91aa32d371065ce03c01.js.map

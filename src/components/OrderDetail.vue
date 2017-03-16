@@ -42,8 +42,16 @@
         <span>订单号：</span><span>{{transID}}</span>
       </div>
     </div>
+    <div class="price">
+      <div>
+      <span>邮寄地址：</span>        
+      </div>
+      <div>
+        <span>{{mail.name}} {{mail.tel}} {{mail.city}}市{{mail.district}}区{{mail.detail}}</span>
+      </div>
+    </div>
     <div class="statement">
-      <h5>取票须知</h5>
+      <h5>入场须知</h5>
       <div>讲座地点为江苏省会议中心(钟山宾馆)主楼，登记后凭券领取资料入场。</div>
     </div>
     <div class="statement">
@@ -78,7 +86,8 @@ export default {
       transID:"",
       chosen:"",
       amount:"",
-      user:""
+      user:"",
+      mail:""
     }
   },
   mounted() {
@@ -88,6 +97,7 @@ export default {
     console.log(this.chosen)
     this.amount = this.$route.query.amount
     this.user = JSON.parse(this.$route.query.user)
+    this.mail = JSON.parse(this.$route.query.mailInfo)
     this.savePay().then(()=>{
       this.sendSms()
     })
@@ -108,16 +118,22 @@ export default {
     savePay(){
       return this.$http.post('/xsz/api/savePay',{
         uid:this.user.id+"",
+        uname:this.user.username,
         chosen:this.chosen,
-        transID:this.transId,
+        adress:this.$route.query.mailInfo,
+        transID:this.transID,
         amount:this.amount,
         btime:new Date().getTime()+""
     })
     },
     sendSms(){
-      this.$http.get('http://xesfun.com/xsz/api/sendNotice',{
+      this.$http.get('/xsz/api/sendNotice',{
         params:{
-          phone:this.user.phone
+          phone:this.user.phone,
+          param:{
+            name:this.user.username,
+            product:this.chosen
+          }
         }
       })
     }
@@ -147,7 +163,7 @@ export default {
     margin: 5px 0;
     border: 1px dotted;
 }
-.infoSection,.statement div{
+.infoSection,.statement,.price div{
   font-size: 12px;
 }
 
