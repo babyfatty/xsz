@@ -82,6 +82,7 @@ var bookedSeats = function(){
 }
 
 var addPayment = function(payInfo){
+	console.log(payInfo)
 	return USER_PAID_RECORD.create(payInfo)
 }
 

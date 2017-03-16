@@ -172,7 +172,7 @@ export default {
                   timestamp: time,
                   paySign: genSign(), 
                   success: function () {
-                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&chosen="+self.chosen+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&amount="+self.amount+"&mailInfo="+JSON.stringify(self.mailInfo)
+                      location.href = 'http://xesfun.com/xsz/#/orderdetail?uid='+self.user.id+"&chosen="+self.chosen+"&transID="+res.data.transId+"&user="+JSON.stringify(self.user)+"&amount="+self.amount+"&mailInfo="+JSON.stringify(self.mail)
                   },
                   fail: function(res){
                     alert('payment fail')

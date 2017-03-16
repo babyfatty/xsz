@@ -12617,7 +12617,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             timestamp: time,
             paySign: genSign(),
             success: function () {
-              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&chosen=" + self.chosen + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&amount=" + self.amount + "&mailInfo=" + JSON.stringify(self.mailInfo);
+              location.href = 'http://xesfun.com/xsz/#/orderdetail?uid=' + self.user.id + "&chosen=" + self.chosen + "&transID=" + res.data.transId + "&user=" + JSON.stringify(self.user) + "&amount=" + self.amount + "&mailInfo=" + JSON.stringify(self.mail);
             },
             fail: function (res) {
               alert('payment fail');
@@ -22489,4 +22489,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.91aa32d371065ce03c01.js.map
+//# sourceMappingURL=0.0e277e624b6e0e9d2640.js.map
