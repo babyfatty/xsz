@@ -31,12 +31,7 @@
 						{{JSON.parse(order.adress).detail}}
 					</td>
 					<td>
-						<span>{{new Date(order.createdAt).getFullYear()}}</span>-
-						<span>{{new Date(order.createdAt).getMonth()+1}}</span>-
-						<span>{{new Date(order.createdAt).getDate()+1}}</span>-
-						<span>{{new Date(order.createdAt).getHours()}}</span>:
-						<span>{{new Date(order.createdAt).getMinutes()}}</span>:
-						<span>{{new Date(order.createdAt).getSeconds()}}</span>
+						<span>{{new Date(order.createdAt).getFullYear()}}</span>/<span>{{new Date(order.createdAt).getMonth()+1}}</span>/<span>{{new Date(order.createdAt).getDate()}}</span>-<span>{{new Date(order.createdAt).getHours()>9?new Date(order.createdAt).getHours():"0"+new Date(order.createdAt).getHours()}}</span>:<span>{{new Date(order.createdAt).getMinutes()>9?new Date(order.createdAt).getMinutes():"0"+new Date(order.createdAt).getMinutes()}}</span>:<span>{{new Date(order.createdAt).getSeconds()>9?new Date(order.createdAt).getSeconds():"0"+new Date(order.createdAt).getSeconds()}}</span>
 					</td>
 					<td>
 						{{order.transID}}
