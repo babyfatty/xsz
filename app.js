@@ -158,7 +158,7 @@ app.use(async (ctx,next)=>{
           // openid:'obpzlvsvow6bBKbxj8Dnk3O5PbOM',
           out_trade_no:Math.floor((new Date().getTime()*Math.random()*Math.random()*100000))+"",
           spbill_create_ip:ip.address(),
-          total_fee:1,
+          total_fee:ctx.query.price*1,
           trade_type:'JSAPI'
         }
         // 统一下单接口签名

@@ -143,7 +143,11 @@ export default {
       }
       var self = this
       wx.ready(function(){
-          self.$http.get('/xsz/api/unifiedorder').then((res)=>{
+          self.$http.get('/xsz/api/unifiedorder',{
+            params:{
+              price:this.amount
+            }
+          }).then((res)=>{
             console.log(res)
               var nonceStr = md5(new Date().getTime()).substring(0, 32)
               var time = Math.floor(new Date().getTime()/1000)

@@ -12590,7 +12590,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
       var self = this;
       wx.ready(function () {
-        self.$http.get('/xsz/api/unifiedorder').then(res => {
+        self.$http.get('/xsz/api/unifiedorder', {
+          params: {
+            price: this.amount
+          }
+        }).then(res => {
           console.log(res);
           var nonceStr = __WEBPACK_IMPORTED_MODULE_1_js_md5___default()(new Date().getTime()).substring(0, 32);
           var time = Math.floor(new Date().getTime() / 1000);
@@ -22494,4 +22498,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.c6dfc1d4e367689ce891.js.map
+//# sourceMappingURL=0.645824d160ef0644b51d.js.map
