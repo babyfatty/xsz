@@ -31,7 +31,12 @@
 						{{JSON.parse(order.adress).detail}}
 					</td>
 					<td>
-						{{order.createdAt}}
+						<span>{{new Date(order.createdAt).getFullYear()}}</span>-
+						<span>{{new Date(order.createdAt).getMonth()+1}}</span>-
+						<span>{{new Date(order.createdAt).getDate()+1}}</span>-
+						<span>{{new Date(order.createdAt).getHours()}}</span>:
+						<span>{{new Date(order.createdAt).getMinutes()}}</span>:
+						<span>{{new Date(order.createdAt).getSeconds()}}</span>
 					</td>
 					<td>
 						{{order.transID}}

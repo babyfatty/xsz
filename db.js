@@ -8,6 +8,7 @@ var sql = new SQL('xsz', 'root', 'VIvid1993@', {
     min: 0,
     idle: 10000
   },
+  timezone:'+08:00'
 });
 var User = sql.define('user', {
   username: SQL.STRING,
