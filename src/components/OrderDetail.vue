@@ -63,7 +63,7 @@
     </div>
     <div class="statement">
       <h5>客服联系</h5>
-      <div>吴老师：12341231</div>
+      <div>吴老师：13851776847</div>
     </div>
   </div>
 </template>
