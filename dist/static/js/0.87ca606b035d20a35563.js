@@ -12592,7 +12592,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       wx.ready(function () {
         self.$http.get('/xsz/api/unifiedorder', {
           params: {
-            price: this.amount
+            price: self.amount
           }
         }).then(res => {
           console.log(res);
@@ -22498,4 +22498,4 @@ module.exports = function(module) {
 
 /***/ })
 ]);
-//# sourceMappingURL=0.645824d160ef0644b51d.js.map
+//# sourceMappingURL=0.87ca606b035d20a35563.js.map

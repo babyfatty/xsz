@@ -145,7 +145,7 @@ export default {
       wx.ready(function(){
           self.$http.get('/xsz/api/unifiedorder',{
             params:{
-              price:this.amount
+              price:self.amount
             }
           }).then((res)=>{
             console.log(res)
