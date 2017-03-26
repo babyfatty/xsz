@@ -323,7 +323,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "additionalInfo"
   }, [_c('div', {
     staticClass: "fee"
-  }, [_c('h5', [_vm._v("报名费用计算方式")]), _vm._v(" "), _c('div', [_vm._v("高考报名：语数外+两门选修 = 2017元")]), _vm._v(" "), _c('div', [_vm._v("其他任意报名费用：语文/数学/英语/物理/历史（498元/科目） 化学/生物/政治/地理（398元/科目）")])]), _vm._v(" "), _c('div', {
+  }, [_c('h5', [_vm._v("报名费用计算方式")]), _vm._v(" "), _c('div', [_vm._v("高考报名：语数外+两门选修 = 2017元")]), _vm._v(" "), _c('div', [_vm._v("其他任意报名费用：语文/数学/英语/物理/历史（498元/科目） 化学/生物/政治/地理（398元/科目）")]), _vm._v(" "), _c('div', [_vm._v("每一场讲座凭券领取价值399元绝密资料一份（命题专家亲自编著，绝不外售）")])]), _vm._v(" "), _c('div', {
     staticClass: "speaker"
   }, [_c('h5', [_vm._v("部分命题专家简介")]), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "speakerName"
@@ -492,6 +492,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = {
   name: 'SessionList',
@@ -536,9 +537,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         name: '英语',
         price: '498'
       }, {
-        startTime: '13:00',
-        endTime: '16:00',
+        startTime: '17:00',
+        endTime: '20:00',
         name: '物理',
+        price: '498'
+      }, {
+        startTime: '17:00',
+        endTime: '20:00',
+        name: '历史',
         price: '498'
       }],
       chosenList: [],
@@ -610,4 +616,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=2.665d6546b09c7c30c9e1.js.map
+//# sourceMappingURL=2.498e4fa9bf656a352118.js.map
