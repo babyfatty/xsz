@@ -722,14 +722,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           this.miaoSession[2].status = '未开始';
           this.miaoSession[3].status = '未开始';
           this.miaoSession[4].status = '未开始';
-          if (hour === 14) {
+          if (hour === 14 || hour === 15) {
             this.canBuy = true;
             this.showTimeLeft = true;
             let interval = setInterval(() => {
               this.minute = 14 - new Date().getMinutes();
               this.second = 60 - new Date().getSeconds();
             }, 1000);
-            if (minute > 14) {
+            if (minute > 54) {
               this.showTimeLeft = false;
               this.miaoSession[1].status = '已结束';
               this.canBuy = false;
@@ -770,7 +770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           this.miaoSession[2].status = '已结束';
           this.miaoSession[3].status = '抢购中';
           this.miaoSession[4].status = '未开始';
-          if (hour === 17) {
+          if (hour === 19) {
             this.canBuy = true;
             this.showTimeLeft = true;
             let interval = setInterval(() => {
@@ -883,4 +883,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=2.368676cd8e6ec421e6b1.js.map
+//# sourceMappingURL=2.a94c5ca241b15b7e1422.js.map
