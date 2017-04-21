@@ -10,13 +10,15 @@
          </div>
        </div>
        <div class="timeFilter">
-         <span class="time" v-on:click="showSession6" v-bind:class="{active:isShow}">4月29日(周六)</span>
-         <span class="time" v-on:click="showSession7" v-bind:class="{active:!isShow}">4月30日(周日)</span>         
+         <span class="time" v-on:click="showSession6" v-bind:class="{active:isShow6}">4月29日(周六)</span>
+         <span class="time" v-on:click="showSession7" v-bind:class="{active:isShow7}">4月30日(周日)</span>
+         <span class="time" v-on:click="showSession8" v-bind:class="{active:isShow8}">秒杀专场</span>
        </div>
-       <div class="tip">
+
+       <div class="relatedList" v-show="isShow6">
+        <div class="tip">
          *高考报名特惠：语数外+两门选修 = 2017元
        </div> 
-       <div class="relatedList" v-show="isShow">
          <div class="session" v-for="session in sessionList1">
            <div class="stime">
               <div class="startTime">{{session.startTime}}</div>
@@ -33,7 +35,10 @@
             </div>
          </div>
        </div>
-       <div class="relatedList" v-show="!isShow">
+       <div class="relatedList" v-show="isShow7">
+      <div class="tip">
+         *高考报名特惠：语数外+两门选修 = 2017元
+       </div> 
          <div class="session" v-for="session in sessionList2">
            <div class="stime">
               <div class="startTime">{{session.startTime}}</div>
@@ -47,6 +52,42 @@
             </div>
             <div class="addToCart" v-on:click="addToCart(session.name,session.price)" v-bind:class="{disabled:(indexChosenList.indexOf(session.name)!==-1)}">
               <span>报名</span>
+            </div>
+         </div>
+       </div>
+       <div class="relatedList" v-show="isShow8">
+         <div class="tip">
+           *限时秒杀：讲座套餐半价仅需1100元！
+         </div> 
+         <div class="timeBar">
+           <div v-for="ms in miaoSession" class="mclock" v-bind:class="{active: ms.status==='抢购中', disabled: ms.status==='已结束'}">
+             <div>{{ms.time}}</div>
+             <div>{{ms.status}}</div>
+           </div>
+         </div>
+         <div class="timeLeft" v-if="showTimeLeft">
+           距离本场结束还剩 <span class="tsL">{{minute}}</span>分:<span class="tsL">{{second}}</span>秒
+         </div>
+         <div class="timeLeft" v-if="!showTimeLeft">
+           本场已结束，请等待下一场！
+         </div>
+         <div class="session" v-for="session in sessionList3" >
+            <div class="msessionName">
+              {{session.name}}
+            </div>
+            <div class="msessionPrice">
+              <div class="discount">
+                &yen; {{session.price}}元
+              </div>
+              <del class="original">
+                &yen; {{session.original}}元
+              </del>
+            </div>
+            <div class="addToCart" v-on:click="addToCart(session.name,session.price)" v-bind:class="{disabled:(indexChosenList.indexOf(session.name)!==-1)}" v-if="canBuy">
+              <span>秒杀</span>
+            </div>
+            <div class="addToCart disabled" v-bind:class="{disabled:(indexChosenList.indexOf(session.name)!==-1)}" v-if="!canBuy">
+              <span>本场结束</span>
             </div>
          </div>
        </div>
@@ -125,8 +166,12 @@ export default {
   name: 'SessionList',
   data () {
     return {
-      isShow:true,
+      isShow6:true,
+      isShow7:false,
+      isShow8:false,
       showList:false,
+      canBuy:false,
+      miaoSession: [{time:'10:00',status:'未开始'},{time:'14:00',status:'未开始'},{time:'17:00',status:'未开始'},{time:'19:00',status:'未开始'},{time:'21:00',status:'未开始'}],
       sessionList1:[
         {
           startTime:'08:30',
@@ -184,16 +229,172 @@ export default {
           price:'498'
         }
       ],
+      sessionList3:[
+        {
+          name:'语数外政治 + 任意一门选修',
+          price:'1100',
+          original:'2017'
+        },
+        {
+          name:'语数外物理 + 任意一门选修',
+          price:'1100',
+          original:'2017'
+        }
+      ],
       chosenList:[],
       indexChosenList:[],
       totalPrice:0,
-      actualPrice:0
+      actualPrice:0,
+      minute:0,
+      second:0,
+      showTimeLeft:false
     }
   },
   mounted() {
     this.changeTitle('讲座列表')
+    this.setMiaoCC()
   },
   methods:{
+    setMiaoCC(){
+      let hour;
+      let minute;
+      setInterval(() => {
+        hour = new Date().getHours()
+        minute = new Date().getMinutes()
+        if(hour < 10){
+          this.miaoSession[0].status='未开始'
+          this.miaoSession[1].status='未开始'
+          this.miaoSession[2].status='未开始'
+          this.miaoSession[3].status='未开始'
+          this.miaoSession[4].status='未开始'
+          this.canBuy=false
+        }
+        else if(14 > hour && hour >= 10){
+          this.miaoSession[0].status='抢购中'
+          this.miaoSession[1].status='未开始'
+          this.miaoSession[2].status='未开始'
+          this.miaoSession[3].status='未开始'
+          this.miaoSession[4].status='未开始'
+          if(hour===10){
+            this.canBuy=true
+            this.showTimeLeft=true
+            let interval = setInterval(() => {
+               this.minute = 14 - new Date().getMinutes()
+               this.second = 60 - new Date().getSeconds()
+            }, 1000)
+            if(minute>14){
+              this.showTimeLeft=false
+              this.miaoSession[0].status='已结束'
+              this.canBuy=false
+              clearInterval(interval)
+            }
+          }else{
+              this.showTimeLeft=false
+              this.miaoSession[0].status='已结束'
+              this.canBuy=false
+          }
+        }else if(17 > hour && hour >= 14){
+          this.miaoSession[0].status='已结束'
+          this.miaoSession[1].status='抢购中'
+          this.miaoSession[2].status='未开始'
+          this.miaoSession[3].status='未开始'
+          this.miaoSession[4].status='未开始'
+          if(hour===14){
+            this.canBuy=true
+            this.showTimeLeft=true
+            let interval = setInterval(() => {
+               this.minute = 14 - new Date().getMinutes()
+               this.second = 60 - new Date().getSeconds()
+            }, 1000)
+            if(minute>14){
+              this.showTimeLeft=false
+              this.miaoSession[1].status='已结束'
+              this.canBuy=false
+              clearInterval(interval)
+            }
+          }else{
+            this.canBuy=false
+            this.showTimeLeft=false
+            this.miaoSession[1].status='已结束'
+          }
+        }else if(19 > hour && hour >= 17){
+          this.miaoSession[0].status='已结束'
+          this.miaoSession[1].status='已结束'
+          this.miaoSession[2].status='抢购中'
+          this.miaoSession[3].status='未开始'
+          this.miaoSession[4].status='未开始'
+          if(hour===17){
+            this.canBuy=true
+            this.showTimeLeft=true
+            let interval = setInterval(() => {
+               this.minute = 14 - new Date().getMinutes()
+               this.second = 60 - new Date().getSeconds()
+            }, 1000)
+            if(minute>14){
+              this.showTimeLeft=false
+              this.miaoSession[2].status='已结束'
+              this.canBuy=false
+              clearInterval(interval)
+            }
+          }else{
+              this.showTimeLeft=false
+              this.miaoSession[2].status='已结束'
+              this.canBuy=false            
+          }
+          
+        }else if(21 > hour && hour >= 19){
+          this.miaoSession[0].status='已结束'
+          this.miaoSession[1].status='已结束'
+          this.miaoSession[2].status='已结束'
+          this.miaoSession[3].status='抢购中'
+          this.miaoSession[4].status='未开始'
+          if(hour===17){
+            this.canBuy=true
+            this.showTimeLeft=true
+            let interval = setInterval(() => {
+               this.minute = 14 - new Date().getMinutes()
+               this.second = 60 - new Date().getSeconds()
+            }, 1000)
+            if(minute>14){
+              this.showTimeLeft=false
+              this.miaoSession[3].status='已结束'
+              this.canBuy=false
+              clearInterval(interval)
+            }
+          }else{
+              this.showTimeLeft=false
+              this.miaoSession[3].status='已结束'
+              this.canBuy=false            
+          }
+        }else if(hour >= 22){
+          this.miaoSession[0].status1='已结束'
+          this.miaoSession[1].status2='已结束'
+          this.miaoSession[2].status3='已结束'
+          this.miaoSession[3].status4='已结束'
+          this.miaoSession[4].status5='抢购中'
+          if(hour===22){
+            this.canBuy=true
+            this.showTimeLeft=true
+            let interval = setInterval(() => {
+               this.minute = 14 - new Date().getMinutes()
+               this.second = 60 - new Date().getSeconds()
+            }, 1000)
+            if(minute>14){
+              this.showTimeLeft=false
+              this.canBuy=false
+              this.miaoSession[4].status='已结束'
+              clearInterval(interval)
+
+            }
+          }else{
+              this.showTimeLeft=false
+              this.canBuy=false
+              this.miaoSession[4].status='已结束'            
+          }
+        }
+      },1000)
+
+    },
     changeTitle(t){
       document.title = t;
       var i = document.createElement('iframe');
@@ -207,10 +408,19 @@ export default {
       document.body.appendChild(i);
     },
     showSession6(){
-      this.isShow = true
+      this.isShow6 = true
+      this.isShow7 = false
+      this.isShow8 = false
     },
     showSession7(){
-      this.isShow = false
+      this.isShow6 = false
+      this.isShow7 = true
+      this.isShow8 = false
+    },
+    showSession8(){
+      this.isShow6 = false
+      this.isShow7 = false
+      this.isShow8 = true
     },
     addToCart(name,price){
         if(this.indexChosenList.indexOf(name)!==-1){
@@ -251,6 +461,40 @@ export default {
 }
 </script>
 <style scoped>
+.timeLeft{
+  padding: 10px 3px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+}
+.tsL{
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 3px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+.timeBar{
+  display: flex;
+}
+.timeBar .mclock{
+  flex: 1;
+  padding: 5px 0;
+  font-weight: 500;
+  text-align: center;
+  margin: 0 2px;
+  box-sizing: content-box;
+}
+.timeBar .mclock.active{
+  color: #fff;
+  background: #f0ad4e;
+  border-radius: 5px;
+}
+.timeBar .mclock.disabled{
+  color: #fff;
+  background: #999;
+  border-radius: 5px;
+}
 .tip{
     height: 20px;
     color: #fff;
@@ -328,6 +572,10 @@ export default {
     height: 40px;
 
   }
+  .original {
+    color: #999;
+    font-size: 13px;
+  }
   .chosenBar{
     display: flex;
     border-top: 1px solid #d58512;
@@ -375,6 +623,8 @@ export default {
   .relatedList .session{
     display: flex;
     margin: 5px 0;
+    justify-content: center;
+    align-items: center;
   }
   .session .stime{
     flex: 1;
@@ -396,6 +646,17 @@ export default {
     flex: 1;
     text-align: center;
     line-height: 40px;
+    color: #c9302c;
+  }
+  .session .msessionName{
+    flex: 1;
+    text-align: center;
+    line-height: 25px;
+  }
+  .session .msessionPrice{
+    flex: 1;
+    text-align: center;
+    line-height: 25px;
     color: #c9302c;
   }
   .session .addToCart{
