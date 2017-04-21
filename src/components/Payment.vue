@@ -231,7 +231,7 @@ export default {
       ],
       sessionList3:[
         {
-          name:'语数外政治 + 任意一门选修',
+          name:'语数外历史 + 任意一门选修',
           price:'1100',
           original:'2017'
         },

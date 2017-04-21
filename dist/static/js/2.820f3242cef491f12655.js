@@ -657,7 +657,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         price: '498'
       }],
       sessionList3: [{
-        name: '语数外政治 + 任意一门选修',
+        name: '语数外历史 + 任意一门选修',
         price: '1100',
         original: '2017'
       }, {
@@ -883,4 +883,4 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ })
 
 });
-//# sourceMappingURL=2.4ceabac6e576c88348c8.js.map
+//# sourceMappingURL=2.820f3242cef491f12655.js.map
